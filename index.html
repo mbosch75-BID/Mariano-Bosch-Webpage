@@ -349,6 +349,29 @@
     padding:.1rem .35rem;border-radius:10px;min-width:1.4rem;text-align:center;
   }
 
+
+  /* ── Bio toggle ────────────────────────────────────── */
+  .bio-toggle-wrap { margin-top: .5rem; }
+  .bio-toggle-btns {
+    display: inline-flex; gap: 0; margin-bottom: .7rem;
+    border: 1px solid rgba(255,255,255,.25); border-radius: 3px; overflow: hidden;
+  }
+  .bio-btn {
+    font-family: 'Montserrat', sans-serif; font-size: .58rem; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase;
+    padding: .32rem .85rem; border: none; cursor: pointer;
+    background: transparent; color: rgba(255,255,255,.45);
+    transition: background .15s, color .15s;
+  }
+  .bio-btn.active { background: var(--idb-cyan); color: white; }
+  .bio-btn:hover:not(.active) { background: rgba(255,255,255,.1); color: rgba(255,255,255,.75); }
+  .bio-hidden { display: none; }
+  .country-name{font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:800;
+    color:var(--idb-blue);margin-bottom:.2rem;}
+  .country-papers{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;color:var(--idb-cyan);margin-bottom:.4rem;}
+  .country-topics{font-size:.72rem;color:var(--muted);line-height:1.55;font-weight:300;}
+
 </style>
 </head>
 <body>
@@ -362,7 +385,14 @@
       <div class="hero-eyebrow">Economics Principal Advisor · IDB Vice Presidency of Sectors</div>
       <h1 class="hero-name">Mariano Bosch</h1>
       <div class="hero-role">Inter-American Development Bank</div>
-      <p class="hero-bio">I lead the coordination and oversight of the VPS knowledge program at the IDB, working hand-in-hand with operational departments to align our multi-annual agenda with the evolving development priorities of Latin America and the Caribbean. My research focuses on labor markets and pension systems in developing countries, with particular emphasis on how labor market and social protection policies influence employment dynamics and shape pension outcomes in middle-income economies.</p>
+      <div class="bio-toggle-wrap">
+        <div class="bio-toggle-btns">
+          <button class="bio-btn active" onclick="switchBio('academic')" id="btn-academic">Academic</button>
+          <button class="bio-btn" onclick="switchBio('policy')" id="btn-policy">Policy</button>
+        </div>
+        <p class="hero-bio" id="bio-academic">I am Principal Advisor at the IDB&#39;s Vice Presidency of Sectors, where I lead the coordination of the knowledge program. My research focuses on labor markets, informality, and pension systems in developing countries. I have published in the <em>American Economic Journal: Applied Economics</em>, <em>American Economic Journal: Economic Policy</em>, <em>Journal of Development Economics</em>, <em>European Economic Review</em>, <em>Journal of Human Resources</em>, and <em>Labour Economics</em>, among others. I hold a PhD in Economics from the London School of Economics.</p>
+        <p class="hero-bio bio-hidden" id="bio-policy">I have spent 15 years producing the evidence base that governments in Latin America and the Caribbean use to reform pension systems and labor markets. My research has informed pension reform debates and labor market reforms in Mexico, Colombia, Peru, Chile, El Salvador, and other countries across the region, and shaped IDB advisory engagements at the highest level. Before joining the IDB in 2011, I was a consultant at the World Bank and an assistant professor at the University of Alicante. I lead the knowledge agenda for the IDB&#39;s largest operational vice presidency.</p>
+      </div>
     </div>
   </div>
 </header>
@@ -371,6 +401,7 @@
   <a class="nav-a" href="#publications"><span class="nav-icon">📚</span>Publications by Topic</a>
   <a class="nav-a" href="publications_list.html"><span class="nav-icon">📄</span>All Analytical Work</a>
   <a class="nav-a" href="most_cited.html"><span class="nav-icon">⭐</span>Most Cited</a>
+  <a class="nav-a" href="coverage.html"><span class="nav-icon">🌎</span>Coverage</a>
   <a class="nav-a" href="#profiles"><span class="nav-icon">👤</span>Profiles</a>
 </nav>
 
@@ -738,7 +769,9 @@
 
 
 <!-- ══════════════════════════════════════════════════════════ PROFILES -->
-<section class="section" id="profiles">
+<section class="sect
+
+ion" id="profiles">
   <div class="sec-head reveal-left">
     <div class="sec-title">Academic Profiles</div>
     <div class="sec-sub">research &middot; citations &middot; networks</div>
@@ -840,5 +873,13 @@
   })();
 </script>
 
+<script>
+function switchBio(type) {
+  document.getElementById('bio-academic').classList.toggle('bio-hidden', type !== 'academic');
+  document.getElementById('bio-policy').classList.toggle('bio-hidden', type !== 'policy');
+  document.getElementById('btn-academic').classList.toggle('active', type === 'academic');
+  document.getElementById('btn-policy').classList.toggle('active', type === 'policy');
+}
+</script>
 </body>
 </html>
