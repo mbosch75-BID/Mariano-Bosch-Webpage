@@ -454,18 +454,19 @@
   .dot{width:13px;height:13px;border-radius:50%;flex-shrink:0;}
   .map-hint{font-family:'Montserrat',sans-serif;font-size:.52rem;color:var(--muted);margin-left:auto;font-style:italic;}
   .stats{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:1.2rem;}
-  .stat .n{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;color:var(--blue);line-height:1;}
+  .stat .n{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;color:var(--idb-blue);line-height:1;}
   .stat .l{font-family:'Montserrat',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:.2rem;}
   .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.75rem;}
   .ccard{background:var(--card);border:1px solid var(--border);border-radius:3px;border-left:4px solid var(--acc,var(--idb-blue));overflow:hidden;opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease;}
   .ccard.visible{opacity:1;transform:none;}
-  .ccard-hdr{width:100%;display:flex;align-items:center;gap:.75rem;padding:.85rem 1rem;background:none;border:none;cursor:pointer;text-align:left;transition:background .15s;}
+  .ccard-hdr{width:100%;display:flex;align-items:center;gap:.6rem;padding:.85rem 1rem;background:none;border:none;cursor:pointer;text-align:left;transition:background .15s;}
   .ccard-hdr:hover,.ccard-hdr[aria-expanded="true"]{background:#f0f5f8;}
   .ccard-hdr[aria-expanded="true"]{border-bottom:1px solid var(--border);}
   .cname{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:800;color:var(--idb-blue);flex:1;}
-  .cpubs{font-family:'Montserrat',sans-serif;font-size:.55rem;font-weight:800;color:white;padding:.18rem .5rem;border-radius:2px;white-space:nowrap;}
+  .cpubs{font-family:'Montserrat',sans-serif;font-size:.52rem;font-weight:800;color:white;padding:.18rem .5rem;border-radius:2px;white-space:nowrap;}
   .cacc-arrow{font-size:.7rem;color:var(--muted);transition:transform .2s;}
   .ccard-hdr[aria-expanded="true"] .cacc-arrow{transform:rotate(180deg);}
+  .reg-note{font-family:'Montserrat',sans-serif;font-size:.5rem;font-weight:600;letter-spacing:.08em;color:var(--muted);font-style:italic;margin-right:.25rem;}
   .cpanel{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:.55rem;padding:.75rem;}
   .pcard{background:var(--paper);border:1px solid var(--border);border-radius:3px;padding:.7rem .85rem;}
   .pcard-meta{display:flex;align-items:center;gap:.3rem;flex-wrap:wrap;margin-bottom:.35rem;}
@@ -476,9 +477,6 @@
   a.pcard-title:hover{color:var(--idb-cyan);text-decoration:underline;}
   span.pcard-title{color:var(--ink);}
 </style>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
 </head>
 <body>
 <header class="hero">
@@ -515,28 +513,76 @@
     <div class="sec-sub">Countries where research was conducted, policies informed, or advisory work carried out</div>
   </div>
   <div class="stats">
-    <div class="stat"><div class="n">11</div><div class="l">Countries</div></div>
-    <div class="stat"><div class="n">15+</div><div class="l">Years of research</div></div>
+    <div class="stat"><div class="n">10</div><div class="l">Countries</div></div>
     <div class="stat"><div class="n">LAC</div><div class="l">Primary region</div></div>
+    <div class="stat"><div class="n">15+</div><div class="l">Years of research</div></div>
   </div>
   <div id="research-map"></div>
   <div class="legend">
     <div class="leg-lbl">Publications per country</div>
     <div class="leg-items">
       <div class="leg-i"><span class="dot" style="background:#9dd4e8"></span>1</div>
-      <div class="leg-i"><span class="dot" style="background:#5ab8d8"></span>2</div>
-      <div class="leg-i"><span class="dot" style="background:#009ade"></span>3</div>
-      <div class="leg-i"><span class="dot" style="background:#007ab8"></span>4</div>
-      <div class="leg-i"><span class="dot" style="background:#004e70"></span>5+</div>
+      <div class="leg-i"><span class="dot" style="background:#5ab8d8"></span>2–3</div>
+      <div class="leg-i"><span class="dot" style="background:#009ade"></span>4–5</div>
+      <div class="leg-i"><span class="dot" style="background:#004e70"></span>6+</div>
     </div>
-    <div class="map-hint">Click a country to see its publications</div>
+    <div class="map-hint">Click a country on the map or a card to see publications</div>
   </div>
-  <div class="grid-lbl" style="font-family:Montserrat,sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem;">Countries &mdash; click to expand</div>
+  <div style="font-family:Montserrat,sans-serif;font-size:.55rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem;">Countries &amp; regions — click to expand</div>
   <div class="cgrid">
-    <div class="ccard reveal" data-iso="BRA" style="--acc:#005a96;animation-delay:0ms">
+    <div class="ccard reveal" data-iso="REG" style="--acc:#004e70;animation-delay:0ms">
+      <button class="ccard-hdr" onclick="toggleCountry('REG')" aria-expanded="false">
+        <span class="cname">Regional Work (LAC)</span>
+        <span class="reg-note">LAC-wide · not on map</span>
+        <span class="cpubs" style="background:#004e70">9 publications</span>
+        <span class="cacc-arrow">▾</span>
+      </button>
+      <div class="ccard-body" id="cbody-REG" style="display:none">
+        <div class="cpanel">
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2025</span><span class="pmeta-badge" style="background:#ede8f5;color:#4a2d7a">Book Chapter</span><span class="pmeta-venue">Cambridge University Press (Handbook)</span></div>
+          <a href="https://doi.org/10.1017/9781009367615.008" target="_blank" rel="noopener" class="pcard-title">Pensions in Low- and Middle-Income Countries</a>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2025</span><span class="pmeta-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span><span class="pmeta-venue">Oxford Open Economics</span></div>
+          <span class="pcard-title">Calculating the Redistributive Impact of Pension Systems in Latin America</span>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2024</span><span class="pmeta-badge" style="background:#f5e8d0;color:#7a4a10">Book</span><span class="pmeta-venue">IDB Publications</span></div>
+          <a href="https://publications.iadb.org/en/expanding-opportunities-policies-gender-equality-and-inclusion" target="_blank" rel="noopener" class="pcard-title">Expanding Opportunities: Policies for Gender Equality and Inclusion</a>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2022</span><span class="pmeta-badge" style="background:#f5e8d0;color:#7a4a10">Book</span><span class="pmeta-venue">IDB Publications</span></div>
+          <a href="https://publications.iadb.org/en/aging-latin-america-and-caribbean-social-protection-and-quality-life-older-persons" target="_blank" rel="noopener" class="pcard-title">Aging in Latin America and the Caribbean: Social Protection and Quality of Life of Older Persons</a>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2018</span><span class="pmeta-badge" style="background:#f5e8d0;color:#7a4a10">Book</span><span class="pmeta-venue">IDB Publications</span></div>
+          <a href="https://publications.iadb.org/es/presente-y-futuro-de-las-pensiones-en-america-latina-y-el-caribe" target="_blank" rel="noopener" class="pcard-title">Presente y Futuro de las Pensiones en América Latina y el Caribe</a>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2017</span><span class="pmeta-badge" style="background:#ede8f5;color:#4a2d7a">Book Chapter</span><span class="pmeta-venue">Saving for Development, IDB Book</span></div>
+          <span class="pcard-title">Running Out of Time: The Demographics of Saving</span>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2016</span><span class="pmeta-badge" style="background:#ede8f5;color:#4a2d7a">Book Chapter</span><span class="pmeta-venue">Saving for Development, IDB Book</span></div>
+          <span class="pcard-title">Saving for the Future: Pension Systems</span>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2015</span><span class="pmeta-badge" style="background:#f5e8d0;color:#7a4a10">Book</span><span class="pmeta-venue">IDB Publications</span></div>
+          <a href="https://publications.iadb.org/en/jobs-growth" target="_blank" rel="noopener" class="pcard-title">Jobs for Growth</a>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2013</span><span class="pmeta-badge" style="background:#f5e8d0;color:#7a4a10">Book</span><span class="pmeta-venue">IDB Publications</span></div>
+          <a href="https://publications.iadb.org/en/better-pensions-better-jobs-towards-universal-pension-coverage-latin-america-and-caribbean" target="_blank" rel="noopener" class="pcard-title">Better Pensions, Better Jobs: Towards Universal Pension Coverage in Latin America and the Caribbean</a>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard reveal" data-iso="BRA" style="--acc:#005a96;animation-delay:30ms">
       <button class="ccard-hdr" onclick="toggleCountry('BRA')" aria-expanded="false">
         <span class="cname">Brazil</span>
-        <span class="cpubs" style="background:#005a96">5 pubs</span>
+        
+        <span class="cpubs" style="background:#005a96">5 publications</span>
         <span class="cacc-arrow">▾</span>
       </button>
       <div class="ccard-body" id="cbody-BRA" style="display:none">
@@ -564,41 +610,11 @@
         </div>
       </div>
     </div>
-    <div class="ccard reveal" data-iso="PER" style="--acc:#005a96;animation-delay:35ms">
-      <button class="ccard-hdr" onclick="toggleCountry('PER')" aria-expanded="false">
-        <span class="cname">Peru</span>
-        <span class="cpubs" style="background:#005a96">5 pubs</span>
-        <span class="cacc-arrow">▾</span>
-      </button>
-      <div class="ccard-body" id="cbody-PER" style="display:none">
-        <div class="cpanel">
-        <div class="pcard">
-          <div class="pcard-meta"><span class="pmeta-year">2025</span><span class="pmeta-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span><span class="pmeta-venue">Journal (2025)</span></div>
-          <span class="pcard-title">Large Firms and the Intensive Margin of Labor Informality</span>
-        </div>
-        <div class="pcard">
-          <div class="pcard-meta"><span class="pmeta-year">2025</span><span class="pmeta-badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span><span class="pmeta-venue">IDB Working Paper</span></div>
-          <a href="https://doi.org/10.18235/0013584" target="_blank" rel="noopener" class="pcard-title">The Impact of Digital Saving Accounts: Evidence from Taxi App Drivers</a>
-        </div>
-        <div class="pcard">
-          <div class="pcard-meta"><span class="pmeta-year">2025</span><span class="pmeta-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span><span class="pmeta-venue">Oxford Open Economics</span></div>
-          <span class="pcard-title">Calculating the Redistributive Impact of Pension Systems in LAC</span>
-        </div>
-        <div class="pcard">
-          <div class="pcard-meta"><span class="pmeta-year">2023</span><span class="pmeta-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span><span class="pmeta-venue">Journal of Human Resources</span></div>
-          <span class="pcard-title">Increasing Retirement Savings through Access Points and Persuasive Messaging</span>
-        </div>
-        <div class="pcard">
-          <div class="pcard-meta"><span class="pmeta-year">2022</span><span class="pmeta-badge" style="background:#f5e8d0;color:#7a4a10">Book</span><span class="pmeta-venue">IDB Publications</span></div>
-          <a href="https://publications.iadb.org/en/aging-latin-america-and-caribbean-social-protection-and-quality-life-older-persons" target="_blank" rel="noopener" class="pcard-title">Aging in Latin America and the Caribbean: Social Protection and Quality of Life of Older Persons</a>
-        </div>
-        </div>
-      </div>
-    </div>
-    <div class="ccard reveal" data-iso="MEX" style="--acc:#009ade;animation-delay:70ms">
+    <div class="ccard reveal" data-iso="MEX" style="--acc:#009ade;animation-delay:60ms">
       <button class="ccard-hdr" onclick="toggleCountry('MEX')" aria-expanded="false">
         <span class="cname">Mexico</span>
-        <span class="cpubs" style="background:#009ade">3 pubs</span>
+        
+        <span class="cpubs" style="background:#009ade">3 publications</span>
         <span class="cacc-arrow">▾</span>
       </button>
       <div class="ccard-body" id="cbody-MEX" style="display:none">
@@ -618,10 +634,35 @@
         </div>
       </div>
     </div>
-    <div class="ccard reveal" data-iso="COL" style="--acc:#009ade;animation-delay:105ms">
+    <div class="ccard reveal" data-iso="PER" style="--acc:#009ade;animation-delay:90ms">
+      <button class="ccard-hdr" onclick="toggleCountry('PER')" aria-expanded="false">
+        <span class="cname">Peru</span>
+        
+        <span class="cpubs" style="background:#009ade">3 publications</span>
+        <span class="cacc-arrow">▾</span>
+      </button>
+      <div class="ccard-body" id="cbody-PER" style="display:none">
+        <div class="cpanel">
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2025</span><span class="pmeta-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span><span class="pmeta-venue">Journal (2025)</span></div>
+          <span class="pcard-title">Large Firms and the Intensive Margin of Labor Informality</span>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2025</span><span class="pmeta-badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span><span class="pmeta-venue">IDB Working Paper</span></div>
+          <a href="https://doi.org/10.18235/0013584" target="_blank" rel="noopener" class="pcard-title">The Impact of Digital Saving Accounts: Evidence from Taxi App Drivers</a>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2023</span><span class="pmeta-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span><span class="pmeta-venue">Journal of Human Resources</span></div>
+          <span class="pcard-title">Increasing Retirement Savings through Access Points and Persuasive Messaging</span>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard reveal" data-iso="COL" style="--acc:#009ade;animation-delay:120ms">
       <button class="ccard-hdr" onclick="toggleCountry('COL')" aria-expanded="false">
         <span class="cname">Colombia</span>
-        <span class="cpubs" style="background:#009ade">3 pubs</span>
+        
+        <span class="cpubs" style="background:#009ade">3 publications</span>
         <span class="cacc-arrow">▾</span>
       </button>
       <div class="ccard-body" id="cbody-COL" style="display:none">
@@ -641,10 +682,11 @@
         </div>
       </div>
     </div>
-    <div class="ccard reveal" data-iso="ECU" style="--acc:#009ade;animation-delay:140ms">
+    <div class="ccard reveal" data-iso="ECU" style="--acc:#009ade;animation-delay:150ms">
       <button class="ccard-hdr" onclick="toggleCountry('ECU')" aria-expanded="false">
         <span class="cname">Ecuador</span>
-        <span class="cpubs" style="background:#009ade">3 pubs</span>
+        
+        <span class="cpubs" style="background:#009ade">3 publications</span>
         <span class="cacc-arrow">▾</span>
       </button>
       <div class="ccard-body" id="cbody-ECU" style="display:none">
@@ -664,33 +706,11 @@
         </div>
       </div>
     </div>
-    <div class="ccard reveal" data-iso="CHL" style="--acc:#009ade;animation-delay:175ms">
-      <button class="ccard-hdr" onclick="toggleCountry('CHL')" aria-expanded="false">
-        <span class="cname">Chile</span>
-        <span class="cpubs" style="background:#009ade">3 pubs</span>
-        <span class="cacc-arrow">▾</span>
-      </button>
-      <div class="ccard-body" id="cbody-CHL" style="display:none">
-        <div class="cpanel">
-        <div class="pcard">
-          <div class="pcard-meta"><span class="pmeta-year">2022</span><span class="pmeta-badge" style="background:#f5e8d0;color:#7a4a10">Book</span><span class="pmeta-venue">IDB Publications</span></div>
-          <span class="pcard-title">Aging in Latin America and the Caribbean: Social Protection</span>
-        </div>
-        <div class="pcard">
-          <div class="pcard-meta"><span class="pmeta-year">2018</span><span class="pmeta-badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span><span class="pmeta-venue">IDB Working Paper</span></div>
-          <span class="pcard-title">Educación Financiera y Previsional a través del Taller "Ahorra desde Ahora": Evidencia de una Evaluación de Impacto en Chile</span>
-        </div>
-        <div class="pcard">
-          <div class="pcard-meta"><span class="pmeta-year">2000</span><span class="pmeta-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span><span class="pmeta-venue">Estudios de Economía</span></div>
-          <span class="pcard-title">Crecimiento, Convergencia y Espacio en las Regiones Chilenas</span>
-        </div>
-        </div>
-      </div>
-    </div>
-    <div class="ccard reveal" data-iso="ESP" style="--acc:#009ade;animation-delay:210ms">
+    <div class="ccard reveal" data-iso="ESP" style="--acc:#009ade;animation-delay:180ms">
       <button class="ccard-hdr" onclick="toggleCountry('ESP')" aria-expanded="false">
         <span class="cname">Spain</span>
-        <span class="cpubs" style="background:#009ade">3 pubs</span>
+        
+        <span class="cpubs" style="background:#009ade">3 publications</span>
         <span class="cacc-arrow">▾</span>
       </button>
       <div class="ccard-body" id="cbody-ESP" style="display:none">
@@ -710,10 +730,31 @@
         </div>
       </div>
     </div>
-    <div class="ccard reveal" data-iso="ARG" style="--acc:#5ab8d8;animation-delay:245ms">
+    <div class="ccard reveal" data-iso="CHL" style="--acc:#5ab8d8;animation-delay:210ms">
+      <button class="ccard-hdr" onclick="toggleCountry('CHL')" aria-expanded="false">
+        <span class="cname">Chile</span>
+        
+        <span class="cpubs" style="background:#5ab8d8">2 publications</span>
+        <span class="cacc-arrow">▾</span>
+      </button>
+      <div class="ccard-body" id="cbody-CHL" style="display:none">
+        <div class="cpanel">
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2018</span><span class="pmeta-badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span><span class="pmeta-venue">IDB Working Paper</span></div>
+          <span class="pcard-title">Educación Financiera y Previsional a través del Taller "Ahorra desde Ahora": Evidencia de una Evaluación de Impacto en Chile</span>
+        </div>
+        <div class="pcard">
+          <div class="pcard-meta"><span class="pmeta-year">2000</span><span class="pmeta-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span><span class="pmeta-venue">Estudios de Economía</span></div>
+          <span class="pcard-title">Crecimiento, Convergencia y Espacio en las Regiones Chilenas</span>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="ccard reveal" data-iso="ARG" style="--acc:#5ab8d8;animation-delay:240ms">
       <button class="ccard-hdr" onclick="toggleCountry('ARG')" aria-expanded="false">
         <span class="cname">Argentina</span>
-        <span class="cpubs" style="background:#5ab8d8">2 pubs</span>
+        
+        <span class="cpubs" style="background:#5ab8d8">2 publications</span>
         <span class="cacc-arrow">▾</span>
       </button>
       <div class="ccard-body" id="cbody-ARG" style="display:none">
@@ -729,10 +770,11 @@
         </div>
       </div>
     </div>
-    <div class="ccard reveal" data-iso="BOL" style="--acc:#9dd4e8;animation-delay:280ms">
+    <div class="ccard reveal" data-iso="BOL" style="--acc:#9dd4e8;animation-delay:270ms">
       <button class="ccard-hdr" onclick="toggleCountry('BOL')" aria-expanded="false">
         <span class="cname">Bolivia</span>
-        <span class="cpubs" style="background:#9dd4e8">1 pub</span>
+        
+        <span class="cpubs" style="background:#9dd4e8">1 publication</span>
         <span class="cacc-arrow">▾</span>
       </button>
       <div class="ccard-body" id="cbody-BOL" style="display:none">
@@ -744,25 +786,11 @@
         </div>
       </div>
     </div>
-    <div class="ccard reveal" data-iso="SLV" style="--acc:#9dd4e8;animation-delay:315ms">
-      <button class="ccard-hdr" onclick="toggleCountry('SLV')" aria-expanded="false">
-        <span class="cname">El Salvador</span>
-        <span class="cpubs" style="background:#9dd4e8">1 pub</span>
-        <span class="cacc-arrow">▾</span>
-      </button>
-      <div class="ccard-body" id="cbody-SLV" style="display:none">
-        <div class="cpanel">
-        <div class="pcard">
-          <div class="pcard-meta"><span class="pmeta-year">2022</span><span class="pmeta-badge" style="background:#f5e8d0;color:#7a4a10">Book</span><span class="pmeta-venue">IDB Publications</span></div>
-          <span class="pcard-title">Aging in Latin America and the Caribbean (includes El Salvador)</span>
-        </div>
-        </div>
-      </div>
-    </div>
-    <div class="ccard reveal" data-iso="DOM" style="--acc:#9dd4e8;animation-delay:350ms">
+    <div class="ccard reveal" data-iso="DOM" style="--acc:#9dd4e8;animation-delay:300ms">
       <button class="ccard-hdr" onclick="toggleCountry('DOM')" aria-expanded="false">
         <span class="cname">Dominican Republic</span>
-        <span class="cpubs" style="background:#9dd4e8">1 pub</span>
+        
+        <span class="cpubs" style="background:#9dd4e8">1 publication</span>
         <span class="cacc-arrow">▾</span>
       </button>
       <div class="ccard-body" id="cbody-DOM" style="display:none">
@@ -818,45 +846,34 @@ function switchBio(type) {
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const HL = {"MEX": {"color": "#009ade", "papers": 3, "name": "Mexico"}, "BRA": {"color": "#005a96", "papers": 5, "name": "Brazil"}, "PER": {"color": "#005a96", "papers": 5, "name": "Peru"}, "COL": {"color": "#009ade", "papers": 3, "name": "Colombia"}, "ECU": {"color": "#009ade", "papers": 3, "name": "Ecuador"}, "CHL": {"color": "#009ade", "papers": 3, "name": "Chile"}, "ESP": {"color": "#009ade", "papers": 3, "name": "Spain"}, "ARG": {"color": "#5ab8d8", "papers": 2, "name": "Argentina"}, "BOL": {"color": "#9dd4e8", "papers": 1, "name": "Bolivia"}, "SLV": {"color": "#9dd4e8", "papers": 1, "name": "El Salvador"}, "DOM": {"color": "#9dd4e8", "papers": 1, "name": "Dominican Republic"}};
-var activeISO = null;
+const HL = {"MEX": {"color": "#009ade", "papers": 3, "name": "Mexico"}, "BRA": {"color": "#005a96", "papers": 5, "name": "Brazil"}, "PER": {"color": "#009ade", "papers": 3, "name": "Peru"}, "COL": {"color": "#009ade", "papers": 3, "name": "Colombia"}, "ECU": {"color": "#009ade", "papers": 3, "name": "Ecuador"}, "CHL": {"color": "#5ab8d8", "papers": 2, "name": "Chile"}, "ESP": {"color": "#009ade", "papers": 3, "name": "Spain"}, "ARG": {"color": "#5ab8d8", "papers": 2, "name": "Argentina"}, "BOL": {"color": "#9dd4e8", "papers": 1, "name": "Bolivia"}, "DOM": {"color": "#9dd4e8", "papers": 1, "name": "Dominican Republic"}};
 var layerMap = {};
-
 function toggleCountry(iso) {
-  var body   = document.getElementById('cbody-' + iso);
-  var header = body ? body.previousElementSibling : null;
+  var body = document.getElementById('cbody-' + iso);
+  var hdr  = body ? body.previousElementSibling : null;
   if (!body) return;
-  var open = header && header.getAttribute('aria-expanded') === 'true';
-  if (header) header.setAttribute('aria-expanded', open ? 'false' : 'true');
+  var open = hdr && hdr.getAttribute('aria-expanded') === 'true';
+  if (hdr) hdr.setAttribute('aria-expanded', open ? 'false' : 'true');
   body.style.display = open ? 'none' : 'block';
-  // Map highlight
-  if (layerMap[iso]) {
-    layerMap[iso].setStyle({fillOpacity: open ? 0.65 : 0.95, weight: open ? 1.5 : 2.5});
-  }
+  if (layerMap[iso]) layerMap[iso].setStyle({fillOpacity: open ? 0.65 : 0.92, weight: open ? 1.5 : 2.5});
 }
-
 document.addEventListener('DOMContentLoaded', function() {
-  var map = L.map('research-map', {center:[-8,-55],zoom:3,zoomControl:true,scrollWheelZoom:false,minZoom:2,maxZoom:8});
+  var map = L.map('research-map',{center:[-8,-55],zoom:3,zoomControl:true,scrollWheelZoom:false,minZoom:2,maxZoom:8});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',{maxZoom:12,subdomains:'abcd',attribution:'&copy; OpenStreetMap &copy; <a href="https://carto.com">CARTO</a>'}).addTo(map);
-
   fetch('https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson')
     .then(function(r){return r.json();})
-    .then(function(geojson){
-      L.geoJSON(geojson,{style:function(){return{fillColor:'#dce8ee',fillOpacity:0.5,color:'#bdd0db',weight:0.5}},interactive:false}).addTo(map);
-      geojson.features.forEach(function(feature){
-        var name = feature.properties.name;
-        var nameMap = {'Mexico':'MEX','Brazil':'BRA','Peru':'PER','Colombia':'COL','Ecuador':'ECU','Chile':'CHL','Spain':'ESP','Argentina':'ARG','Bolivia':'BOL','El Salvador':'SLV','Dominican Republic':'DOM','Dominican Rep.':'DOM'};
-        var iso = nameMap[name];
-        if (!iso || !HL[iso]) return;
-        var h = HL[iso];
-        var layer = L.geoJSON(feature,{style:function(){return{fillColor:h.color,fillOpacity:0.65,color:'#fff',weight:1.5}}}).addTo(map);
-        layerMap[iso] = layer;
+    .then(function(geo){
+      L.geoJSON(geo,{style:function(){return{fillColor:'#dce8ee',fillOpacity:0.5,color:'#bdd0db',weight:0.5}},interactive:false}).addTo(map);
+      var nameMap={'Mexico':'MEX','Brazil':'BRA','Peru':'PER','Colombia':'COL','Ecuador':'ECU','Chile':'CHL','Spain':'ESP','Argentina':'ARG','Bolivia':'BOL','Dominican Republic':'DOM','Dominican Rep.':'DOM'};
+      geo.features.forEach(function(f){
+        var iso=nameMap[f.properties.name];
+        if(!iso||!HL[iso]) return;
+        var h=HL[iso];
+        var layer=L.geoJSON(f,{style:function(){return{fillColor:h.color,fillOpacity:0.65,color:'#fff',weight:1.5}}}).addTo(map);
+        layerMap[iso]=layer;
         layer.bindTooltip('<b style="font-family:Montserrat,sans-serif;color:#004e70">'+h.name+'</b><br><span style="color:#009ade;font-size:11px">'+h.papers+' publication'+(h.papers!==1?'s':'')+'</span>',{sticky:true,direction:'top',opacity:0.97});
-        layer.on('mouseover',function(){this.setStyle({fillOpacity:0.88,weight:2});});
-        layer.on('mouseout',function(){
-          var open = document.getElementById('cbody-'+iso) && document.getElementById('cbody-'+iso).style.display!=='none';
-          this.setStyle({fillOpacity:open?0.95:0.65,weight:open?2.5:1.5});
-        });
+        layer.on('mouseover',function(){if(document.getElementById('cbody-'+iso).style.display==='none')this.setStyle({fillOpacity:0.88,weight:2});});
+        layer.on('mouseout',function(){if(document.getElementById('cbody-'+iso).style.display==='none')this.setStyle({fillOpacity:0.65,weight:1.5});});
         layer.on('click',function(){
           toggleCountry(iso);
           var card=document.querySelector('.ccard[data-iso="'+iso+'"]');
@@ -866,9 +883,7 @@ document.addEventListener('DOMContentLoaded', function() {
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png',{maxZoom:12,subdomains:'abcd',pane:'overlayPane',zIndex:500}).addTo(map);
       map.fitBounds([[-56,-120],[44,10]]);
     })
-    .catch(function(){
-      document.getElementById('research-map').innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#5a6470;font-family:Montserrat,sans-serif">Map unavailable — browse countries below.</div>';
-    });
+    .catch(function(){document.getElementById('research-map').innerHTML='<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#5a6470;font-family:Montserrat,sans-serif">Map unavailable — browse countries below.</div>';});
 });
 </script>
 </body>

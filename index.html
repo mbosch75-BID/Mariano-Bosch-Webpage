@@ -445,7 +445,15 @@
 
   .nav-active{color:var(--idb-cyan)!important;border-bottom:2px solid var(--idb-cyan);}
 </style>
-
+<style>
+  .acc-title-group{display:flex;flex-direction:column;flex:1;gap:.2rem;text-align:left;}
+  .acc-desc{font-size:.72rem;color:var(--muted);font-weight:300;line-height:1.45;font-family:'Open Sans',sans-serif;}
+  .acc-header{align-items:flex-start;padding:1rem 1.1rem;}
+  .acc-icon{margin-top:.1rem;}
+  .acc-count-badge{margin-top:.15rem;align-self:flex-start;}
+  .acc-arrow{align-self:flex-start;margin-top:.3rem;}
+  .acc-inner.pub-list{display:flex;flex-direction:column;gap:.6rem;padding:.75rem .85rem .85rem;}
+</style>
 </head>
 <body>
 <header class="hero">
@@ -477,29 +485,18 @@
 </nav>
 <div class="page-body">
 <section class="section" id="publications">
-  <nav class="topic-tab-nav">
-  <a href="#topic-labor-dynamics" class="topic-tab" onclick="openAcc('ta-topic-labor-dynamics');return true;">⚙ Labor Market Dynamics<span class="topic-tab-count">8</span></a>
-  <a href="#topic-labor-policies" class="topic-tab" onclick="openAcc('ta-topic-labor-policies');return true;">📋 Labor Market Policies<span class="topic-tab-count">10</span></a>
-  <a href="#topic-pensions" class="topic-tab" onclick="openAcc('ta-topic-pensions');return true;">🏦 Pensions &amp; Social Protection<span class="topic-tab-count">25</span></a>
-  <a href="#topic-discrimination" class="topic-tab" onclick="openAcc('ta-topic-discrimination');return true;">⚖ Discrimination<span class="topic-tab-count">3</span></a>
-  <a href="#topic-growth" class="topic-tab" onclick="openAcc('ta-topic-growth');return true;">🌎 Growth &amp; Development<span class="topic-tab-count">10</span></a>
-</nav>
-    <div class="acc-block reveal" id="topic-labor-dynamics">
+    <div class="acc-block" id="topic-labor-dynamics">
     <button class="acc-header" onclick="toggleAcc('ta-topic-labor-dynamics')" aria-expanded="false">
       <span class="acc-icon">⚙</span>
-      <span class="acc-label">Labor Market Dynamics</span>
+      <div class="acc-title-group">
+        <span class="acc-label">Labor Market Dynamics</span>
+        <span class="acc-desc">How workers and firms move between formal and informal employment — the mechanics of job creation, destruction, and labor market transitions in developing economies.</span>
+      </div>
       <span class="acc-count-badge">8</span>
       <span class="acc-arrow">▾</span>
     </button>
-    <div class="acc-body acc-inner" id="body-ta-topic-labor-dynamics" style="display:none">
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-labor-dynamics-journal')" aria-expanded="false">
-        <span class="sub-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span>
-        <span class="sub-count">5 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-labor-dynamics-journal" style="display:none">
-        <div class="pub-list">
+    <div class="acc-body" id="body-ta-topic-labor-dynamics" style="display:none">
+      <div class="acc-inner pub-list">
       <div class="pub-card reveal" style="animation-delay:0ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2024</span><span class="badge b-venue">Journal of Behavioral and Experimental Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
@@ -509,7 +506,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.socec.2024.102257" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:40ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2023</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">The COVID-19 Pandemic in Latin American and Caribbean Countries: Gender Differentials in Labor Market Dynamics</div>
@@ -518,7 +515,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://econpapers.repec.org/article/vrsizajdm/v_3a14_3ay_3a2023_3ai_3a1_3ap_3a57_3an_3a3.htm" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:80ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue">Journal of Development Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Job Creation and Job Destruction in the Presence of Informal Markets</div>
@@ -527,7 +524,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.jdeveco.2011.08.004" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:150ms">
+      <div class="pub-card reveal" style="animation-delay:120ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue">Labour Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Trade Liberalization, Labor Reforms and Formal–Informal Employment Dynamics</div>
@@ -536,7 +533,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.labeco.2011.12.005" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:200ms">
+      <div class="pub-card reveal" style="animation-delay:160ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2010</span><span class="badge b-venue">Labour Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Comparative Analysis of Labor Market Dynamics Using Markov Processes: An Application to Informality</div>
@@ -545,18 +542,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.labeco.2009.12.004" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
-      </div>
-    </div>
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-labor-dynamics-working-paper')" aria-expanded="false">
-        <span class="sub-badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span>
-        <span class="sub-count">3 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-labor-dynamics-working-paper" style="display:none">
-        <div class="pub-list">
-      <div class="pub-card reveal" style="animation-delay:0ms">
+      <div class="pub-card reveal" style="animation-delay:200ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">BBVA Research Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Savings under Formal and Informal Conditions</div>
@@ -565,7 +551,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/bbv/wpaper/1519.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:240ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2008</span><span class="badge b-venue">IZA Discussion Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Cyclical Movements in Unemployment and Informality in Developing Countries</div>
@@ -574,7 +560,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/iza/izadps/dp3514.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:280ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2005</span><span class="badge b-venue">World Bank Policy Research Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Patenting and Research and Development: A Global View</div>
@@ -583,26 +569,20 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/wbk/wbrwps/3739.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
       </div>
     </div>
-    </div>
-  </div>  <div class="acc-block reveal" id="topic-labor-policies">
+  </div>  <div class="acc-block" id="topic-labor-policies">
     <button class="acc-header" onclick="toggleAcc('ta-topic-labor-policies')" aria-expanded="false">
       <span class="acc-icon">📋</span>
-      <span class="acc-label">Labor Market Policies</span>
+      <div class="acc-title-group">
+        <span class="acc-label">Labor Market Policies</span>
+        <span class="acc-desc">The effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.</span>
+      </div>
       <span class="acc-count-badge">10</span>
       <span class="acc-arrow">▾</span>
     </button>
-    <div class="acc-body acc-inner" id="body-ta-topic-labor-policies" style="display:none">
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-labor-policies-journal')" aria-expanded="false">
-        <span class="sub-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span>
-        <span class="sub-count">6 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-labor-policies-journal" style="display:none">
-        <div class="pub-list">
+    <div class="acc-body" id="body-ta-topic-labor-policies" style="display:none">
+      <div class="acc-inner pub-list">
       <div class="pub-card reveal" style="animation-delay:0ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2026</span><span class="badge b-venue">World Development</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
@@ -612,7 +592,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.worlddev.2025.107309" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:40ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2025</span><span class="badge b-venue">Journal of Development Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Large Firms and the Intensive Margin of Labor Informality: Evidence from an Enforcement Intervention in Peru</div>
@@ -621,7 +601,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.jdeveco.2025.103679" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:80ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">Journal of Development Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">The Effect of Welfare Payments on Work: Regression Discontinuity Evidence from Ecuador</div>
@@ -630,7 +610,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/eee/deveco/v139y2019icp17-27.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:150ms">
+      <div class="pub-card reveal" style="animation-delay:120ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">European Economic Review</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Labor Market Effects of Introducing Unemployment Benefits in an Economy with High Informality</div>
@@ -639,7 +619,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.euroecorev.2015.01.007" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:200ms">
+      <div class="pub-card reveal" style="animation-delay:160ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2014</span><span class="badge b-venue">American Economic Journal: Economic Policy</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">The Trade-Offs of Welfare Policies in Labor Markets with Informal Jobs: The Case of the "Seguro Popular" Program in Mexico</div>
@@ -648,7 +628,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1257/pol.6.4.71" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:250ms">
+      <div class="pub-card reveal" style="animation-delay:200ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2010</span><span class="badge b-venue">American Economic Journal: Applied Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Minimum Wages and Earnings Inequality in Urban Mexico</div>
@@ -657,18 +637,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/aea/aejapp/v2y2010i4p128-49.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
-      </div>
-    </div>
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-labor-policies-working-paper')" aria-expanded="false">
-        <span class="sub-badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span>
-        <span class="sub-count">2 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-labor-policies-working-paper" style="display:none">
-        <div class="pub-list">
-      <div class="pub-card reveal" style="animation-delay:0ms">
+      <div class="pub-card reveal" style="animation-delay:240ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2021</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Intervenci&oacute;n Conductual para Mejorar el Cumplimiento de la Cuota de Empleo de Personas con Discapacidad en Per&uacute;</div>
@@ -677,7 +646,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0003148" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:280ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Nudging the Self-employed into Contributing to Social Security: Evidence from a Nationwide Quasi Experiment in Brazil</div>
@@ -686,18 +655,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0000214" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
-      </div>
-    </div>
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-labor-policies-policy-work')" aria-expanded="false">
-        <span class="sub-badge" style="background:#e8f0f4;color:#004e70">Policy Work</span>
-        <span class="sub-count">2 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-labor-policies-policy-work" style="display:none">
-        <div class="pub-list">
-      <div class="pub-card reveal" style="animation-delay:0ms">
+      <div class="pub-card reveal" style="animation-delay:320ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2017</span><span class="badge b-venue">IDB Technical Note</span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">Measuring the Cost of Salaried Labor in Latin America and the Caribbean</div>
@@ -706,7 +664,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0000758" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:360ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue">IDB Technical Note</span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">Are Conditional Cash Transfers Associated with Lower Labor Supply?: Evidence from Mexico&#39;s Oportunidades, 2000-2010</div>
@@ -715,26 +673,20 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0009093" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
       </div>
     </div>
-    </div>
-  </div>  <div class="acc-block reveal" id="topic-pensions">
+  </div>  <div class="acc-block" id="topic-pensions">
     <button class="acc-header" onclick="toggleAcc('ta-topic-pensions')" aria-expanded="false">
       <span class="acc-icon">🏦</span>
-      <span class="acc-label">Pensions &amp; Social Protection</span>
+      <div class="acc-title-group">
+        <span class="acc-label">Pensions &amp; Social Protection</span>
+        <span class="acc-desc">Pension system design, coverage gaps, retirement savings behavior, and reform options for contributory and non-contributory systems across Latin America.</span>
+      </div>
       <span class="acc-count-badge">25</span>
       <span class="acc-arrow">▾</span>
     </button>
-    <div class="acc-body acc-inner" id="body-ta-topic-pensions" style="display:none">
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-pensions-journal')" aria-expanded="false">
-        <span class="sub-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span>
-        <span class="sub-count">3 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-pensions-journal" style="display:none">
-        <div class="pub-list">
+    <div class="acc-body" id="body-ta-topic-pensions" style="display:none">
+      <div class="acc-inner pub-list">
       <div class="pub-card reveal" style="animation-delay:0ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2025</span><span class="badge b-venue">Oxford Open Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
@@ -744,7 +696,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1093/ooec/odaf001" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:40ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2023</span><span class="badge b-venue">Journal of Human Resources</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Increasing Retirement Savings through Access Points and Persuasive Messages: Evidence from Mexico</div>
@@ -753,7 +705,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://econpapers.repec.org/article/uwpjhriss/v_3a58_3ay_3a2023_3ai_3a5_3ap_3a1752-1781.htm" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:80ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2017</span><span class="badge b-venue">Journal of Pension Economics and Finance</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Better Pensions, Better Jobs: Status and Alternatives toward Universal Pension Coverage in Latin America and the Caribbean</div>
@@ -762,18 +714,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/cup/jpenef/v16y2017i02p121-143_00.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
-      </div>
-    </div>
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-pensions-book')" aria-expanded="false">
-        <span class="sub-badge" style="background:#f5e8d0;color:#7a4a10">Book</span>
-        <span class="sub-count">3 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-pensions-book" style="display:none">
-        <div class="pub-list">
-      <div class="pub-card reveal" style="animation-delay:0ms">
+      <div class="pub-card reveal" style="animation-delay:120ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2022</span><span class="badge b-venue"></span><span class="badge" style="background:#f5e8d0;color:#7a4a10">Book</span></div>
           <div class="pub-title">Aging in Latin America and the Caribbean: Social Protection and Quality of Life of Older Persons</div>
@@ -782,7 +723,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/aging-latin-america-and-caribbean-social-protection-and-quality-life-older-persons" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:160ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2018</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10">Book</span></div>
           <div class="pub-title">Presente y Futuro de las Pensiones en América Latina y el Caribe</div>
@@ -791,7 +732,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/es/presente-y-futuro-de-las-pensiones-en-america-latina-y-el-caribe" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:200ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2013</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10">Book</span></div>
           <div class="pub-title">Better Pensions, Better Jobs: Towards Universal Pension Coverage in Latin America and the Caribbean</div>
@@ -800,18 +741,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/better-pensions-better-jobs-towards-universal-coverage-latin-america-and-caribbean" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
-      </div>
-    </div>
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-pensions-book-chapter')" aria-expanded="false">
-        <span class="sub-badge" style="background:#ede8f5;color:#4a2d7a">Book Chapter</span>
-        <span class="sub-count">4 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-pensions-book-chapter" style="display:none">
-        <div class="pub-list">
-      <div class="pub-card reveal" style="animation-delay:0ms">
+      <div class="pub-card reveal" style="animation-delay:240ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2025</span><span class="badge b-venue">Cambridge University Press (Handbook)</span><span class="badge" style="background:#ede8f5;color:#4a2d7a">Book Chapter</span></div>
           <div class="pub-title">Pensions in Low- and Middle-Income Countries</div>
@@ -820,7 +750,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1017/9781009367615.008" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:280ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2017</span><span class="badge b-venue">The Economics of Poverty Traps, NBER/Univ. of Chicago Press</span><span class="badge" style="background:#ede8f5;color:#4a2d7a">Book Chapter</span></div>
           <div class="pub-title">Can Cash Transfers Help Households Escape an Inter-Generational Poverty Trap?</div>
@@ -829,7 +759,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0000618" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:320ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2016</span><span class="badge b-venue">Saving for Development, IDB Book</span><span class="badge" style="background:#ede8f5;color:#4a2d7a">Book Chapter</span></div>
           <div class="pub-title">Saving for the Future: Pension Systems</div>
@@ -838,7 +768,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/saving-development-how-latin-america-and-caribbean-can-save-more-and-better" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:150ms">
+      <div class="pub-card reveal" style="animation-delay:360ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2016</span><span class="badge b-venue">Saving for Development, IDB Book</span><span class="badge" style="background:#ede8f5;color:#4a2d7a">Book Chapter</span></div>
           <div class="pub-title">Running Out of Time: The Demographics of Saving</div>
@@ -847,18 +777,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/saving-development-how-latin-america-and-caribbean-can-save-more-and-better" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
-      </div>
-    </div>
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-pensions-working-paper')" aria-expanded="false">
-        <span class="sub-badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span>
-        <span class="sub-count">6 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-pensions-working-paper" style="display:none">
-        <div class="pub-list">
-      <div class="pub-card reveal" style="animation-delay:0ms">
+      <div class="pub-card reveal" style="animation-delay:400ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2025</span><span class="badge b-venue">IFS Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Public Pensions and the Strategic Timing of Formal Employment</div>
@@ -867,7 +786,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0013583" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:440ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2025</span><span class="badge b-venue">IDB Discussion Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Public Pensions, Retirement, and Earlier-in-Life Labor Supply: Preliminary Evidence</div>
@@ -876,7 +795,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0013402" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:480ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2023</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Employment and Living Conditions of the Population over 50 in Latin America</div>
@@ -885,7 +804,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0005146" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:150ms">
+      <div class="pub-card reveal" style="animation-delay:520ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Heterogeneous Effect of a Non-Contributory Pension: Evidence from Bolivia</div>
@@ -894,7 +813,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/ucm/doctra/2019-35.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:200ms">
+      <div class="pub-card reveal" style="animation-delay:560ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2018</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Educación Financiera y Previsional a través del Taller "Ahorra desde Ahora": Evidencia de una Evaluación de Impacto en Chile</div>
@@ -903,7 +822,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/idb/brikps/9724.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:250ms">
+      <div class="pub-card reveal" style="animation-delay:600ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2018</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Labor Market Impacts of Non-Contributory Pensions: The Case of Argentina's Moratorium</div>
@@ -912,18 +831,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/idb/brikps/4094.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
-      </div>
-    </div>
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-pensions-policy-work')" aria-expanded="false">
-        <span class="sub-badge" style="background:#e8f0f4;color:#004e70">Policy Work</span>
-        <span class="sub-count">9 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-pensions-policy-work" style="display:none">
-        <div class="pub-list">
-      <div class="pub-card reveal" style="animation-delay:0ms">
+      <div class="pub-card reveal" style="animation-delay:640ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2021</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">Saving without Barriers: Lessons from the Retirement Savings Laboratory's Pilot Projects</div>
@@ -932,7 +840,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/saving-without-barriers-lessons-retirement-savings-laboratorys-pilot-projects" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:680ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2021</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">Better Pension Institutions for a Post-COVID-19 World in Latin America and the Caribbean: The Role of Pension Advisory Councils</div>
@@ -941,7 +849,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/better-pension-institutions-post-covid-19-world-latin-america-and-caribbean-role-pension-advisory" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:720ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2020</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">Better Pension Institutions in Latin America and the Caribbean: The Role of Monitoring Mechanisms and Automatic Adjustment Rules</div>
@@ -950,7 +858,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/better-pension-institutions-latin-america-and-caribbean-role-monitoring-mechanisms-and-automatic" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:150ms">
+      <div class="pub-card reveal" style="animation-delay:760ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2020</span><span class="badge b-venue">IDB Technical Note</span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">Access to Mandatory Retirement Savings in Times of COVID-19: Public Policy Considerations</div>
@@ -959,7 +867,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/access-mandatory-retirement-savings-times-covid-19-public-policy-considerations" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:200ms">
+      <div class="pub-card reveal" style="animation-delay:800ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">How to Promote Retirement Savings for Low-Income and Independent Workers: The Cases of Chile, Colombia, Mexico and Peru</div>
@@ -968,7 +876,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/how-promote-retirement-savings-low-income-and-independent-workers-cases-chile-colombia-mexico-and" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:250ms">
+      <div class="pub-card reveal" style="animation-delay:840ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">IDB Technical Note</span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">Diagnóstico del Sistema de Pensiones Mexicano y Opciones para Reformarlo</div>
@@ -977,7 +885,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/es/diagnostico-del-sistema-de-pensiones-mexicano-y-opciones-para-reformarlo" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:300ms">
+      <div class="pub-card reveal" style="animation-delay:880ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">IDB Technical Note</span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">Diagn&oacute;stico del Sistema de Pensiones Peruano y Avenidas de Reforma</div>
@@ -986,7 +894,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0002051" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:350ms">
+      <div class="pub-card reveal" style="animation-delay:920ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2016</span><span class="badge b-venue">IDB Technical Note</span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">Promised and Affordable Replacement Rates in LAC Pension Systems in 2015 and 2065</div>
@@ -995,7 +903,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0009287" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:400ms">
+      <div class="pub-card reveal" style="animation-delay:960ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">IDB Technical Note</span><span class="badge" style="background:#e8f0f4;color:#004e70">Policy Work</span></div>
           <div class="pub-title">Diagn&oacute;stico del Sistema Previsional Colombiano y Opciones de Reforma</div>
@@ -1004,26 +912,20 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0000025" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
       </div>
     </div>
-    </div>
-  </div>  <div class="acc-block reveal" id="topic-discrimination">
+  </div>  <div class="acc-block" id="topic-discrimination">
     <button class="acc-header" onclick="toggleAcc('ta-topic-discrimination')" aria-expanded="false">
       <span class="acc-icon">⚖</span>
-      <span class="acc-label">Discrimination</span>
+      <div class="acc-title-group">
+        <span class="acc-label">Discrimination</span>
+        <span class="acc-desc">Field experimental evidence on ethnic and racial discrimination in rental housing and second-hand consumer markets in Spain.</span>
+      </div>
       <span class="acc-count-badge">3</span>
       <span class="acc-arrow">▾</span>
     </button>
-    <div class="acc-body acc-inner" id="body-ta-topic-discrimination" style="display:none">
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-discrimination-journal')" aria-expanded="false">
-        <span class="sub-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span>
-        <span class="sub-count">3 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-discrimination-journal" style="display:none">
-        <div class="pub-list">
+    <div class="acc-body" id="body-ta-topic-discrimination" style="display:none">
+      <div class="acc-inner pub-list">
       <div class="pub-card reveal" style="animation-delay:0ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">SERIEs: Journal of the Spanish Economic Association</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
@@ -1033,7 +935,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/spr/series/v6y2015i2p129-152.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:40ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2011</span><span class="badge b-venue">Applied Economic Letters</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Discrimination in Second-Hand Consumer Markets: Evidence from a Field Experiment</div>
@@ -1042,7 +944,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/ivi/wpasad/2011-09.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:80ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2010</span><span class="badge b-venue">Regional Science and Urban Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Information and Discrimination in the Rental Housing Market: Evidence from a Field Experiment</div>
@@ -1051,26 +953,20 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/eee/regeco/v40y2010i1p11-19.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
       </div>
     </div>
-    </div>
-  </div>  <div class="acc-block reveal" id="topic-growth">
+  </div>  <div class="acc-block" id="topic-growth">
     <button class="acc-header" onclick="toggleAcc('ta-topic-growth')" aria-expanded="false">
       <span class="acc-icon">🌎</span>
-      <span class="acc-label">Growth &amp; Development</span>
+      <div class="acc-title-group">
+        <span class="acc-label">Growth &amp; Development</span>
+        <span class="acc-desc">Trade liberalization, regional convergence, human capital, and inclusive growth policies across Latin America and beyond.</span>
+      </div>
       <span class="acc-count-badge">10</span>
       <span class="acc-arrow">▾</span>
     </button>
-    <div class="acc-body acc-inner" id="body-ta-topic-growth" style="display:none">
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-growth-journal')" aria-expanded="false">
-        <span class="sub-badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span>
-        <span class="sub-count">5 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-growth-journal" style="display:none">
-        <div class="pub-list">
+    <div class="acc-body" id="body-ta-topic-growth" style="display:none">
+      <div class="acc-inner pub-list">
       <div class="pub-card reveal" style="animation-delay:0ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue">Economics &amp; Human Biology</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
@@ -1080,7 +976,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/eee/ehbiol/v10y2012i3p264-275.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:40ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2011</span><span class="badge b-venue">Social Science &amp; Medicine</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Infant Mortality and Adult Stature in Spain</div>
@@ -1089,7 +985,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/eee/socmed/v72y2011i11p1893-1903.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:80ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2005</span><span class="badge b-venue">World Bank Economic Review</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Spatial Dimensions of Trade Liberalization and Economic Convergence: Mexico 1985–2002</div>
@@ -1098,7 +994,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/oup/wbecrv/v19y2005i3p345-378.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:150ms">
+      <div class="pub-card reveal" style="animation-delay:120ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2004</span><span class="badge b-venue">World Bank Economic Review</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">The Distribution of Income Shocks during Crises: An Application of Quantile Analysis to Mexico, 1992–95</div>
@@ -1107,7 +1003,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/oup/wbecrv/v18y2004i2p155-174.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:200ms">
+      <div class="pub-card reveal" style="animation-delay:160ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2000</span><span class="badge b-venue">Estudios de Economía, 27(2), 199–224</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal</span></div>
           <div class="pub-title">Crecimiento, Convergencia y Espacio en las Regiones Chilenas: 1960–1998</div>
@@ -1116,18 +1012,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/udc/esteco/v27y2000i2p199-224.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
-      </div>
-    </div>
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-growth-book')" aria-expanded="false">
-        <span class="sub-badge" style="background:#f5e8d0;color:#7a4a10">Book</span>
-        <span class="sub-count">2 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-growth-book" style="display:none">
-        <div class="pub-list">
-      <div class="pub-card reveal" style="animation-delay:0ms">
+      <div class="pub-card reveal" style="animation-delay:200ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2024</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10">Book</span></div>
           <div class="pub-title">Expanding Opportunities: Policies for Gender Equality and Inclusion</div>
@@ -1136,7 +1021,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/expanding-opportunities-policies-gender-equality-and-inclusion" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:240ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10">Book</span></div>
           <div class="pub-title">Jobs for Growth</div>
@@ -1145,18 +1030,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/jobs-growth" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
-      </div>
-    </div>
-    <div class="sub-acc">
-      <button class="sub-acc-hdr" onclick="toggleAcc('topic-growth-working-paper')" aria-expanded="false">
-        <span class="sub-badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span>
-        <span class="sub-count">3 publications</span>
-        <span class="sub-arrow">▾</span>
-      </button>
-      <div class="sub-body" id="body-topic-growth-working-paper" style="display:none">
-        <div class="pub-list">
-      <div class="pub-card reveal" style="animation-delay:0ms">
+      <div class="pub-card reveal" style="animation-delay:280ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2025</span><span class="badge b-venue">IFS Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Income Inequality and the Role of the State in Latin America: An Overview</div>
@@ -1165,7 +1039,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ifs.org.uk/sites/default/files/2025-10/WP202549-Income-inequality-and-the-role-of-the-state-in-Latin-America-an-overview.pdf" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:50ms">
+      <div class="pub-card reveal" style="animation-delay:320ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Productivity, Misallocation, and Special Tax Regimes in the Dominican Republic</div>
@@ -1174,7 +1048,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/idb/brikps/9823.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:100ms">
+      <div class="pub-card reveal" style="animation-delay:360ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span></div>
           <div class="pub-title">Special Tax Regimes in Latin America and the Caribbean: Compliance, Social Protection, and Resource Misallocation</div>
@@ -1183,9 +1057,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/idb/brikps/9511.html" target="_blank" rel="noopener">View &#8594;</a></div>
         </div>
       </div>
-        </div>
       </div>
-    </div>
     </div>
   </div>
 </section>

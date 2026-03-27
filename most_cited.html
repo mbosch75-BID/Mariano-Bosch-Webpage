@@ -445,7 +445,47 @@
 
   .nav-active{color:var(--idb-cyan)!important;border-bottom:2px solid var(--idb-cyan);}
 </style>
+<style>
+  /* ── Most Cited ─────────────────────────────────────────── */
+  .mc-list{display:flex;flex-direction:column;gap:1rem;}
+  .pub-entry{
+    background:var(--card);border:1px solid var(--border);border-radius:3px;
+    display:flex;gap:0;overflow:hidden;
+    animation:fadeUp .35s ease both;
+    transition:box-shadow .2s,border-color .2s;
+  }
+  .pub-entry:hover{box-shadow:0 4px 20px rgba(0,78,112,.1);border-color:var(--idb-cyan);}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
+  /* Rank column */
+  .rank-col{
+    width:64px;flex-shrink:0;
+    background:var(--idb-blue);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:.75rem .5rem;
+  }
+  .rank-num{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:800;color:white;line-height:1;}
+  .rank-lbl{font-family:'Montserrat',sans-serif;font-size:.42rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:.15rem;}
+
+  /* Bar chart column */
+  .bar-col{width:140px;flex-shrink:0;background:#f0f5f8;border-right:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:.75rem .6rem;}
+  .bar-wrap{width:100%;display:flex;align-items:flex-end;justify-content:center;height:80px;margin-bottom:.4rem;}
+  .cit-bar{width:36px;border-radius:2px 2px 0 0;background:linear-gradient(to top,var(--idb-blue),var(--idb-cyan));transition:height .6s ease;min-height:4px;}
+  .bar-count{font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:800;color:var(--idb-blue);}
+  .bar-lbl{font-family:'Montserrat',sans-serif;font-size:.42rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+
+  /* Pub body */
+  .pub-entry .pub-body{flex:1;padding:.9rem 1.1rem;display:flex;flex-direction:column;gap:.28rem;min-width:0;}
+  .pub-entry .pub-meta{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;}
+  .pub-entry .pub-title a{font-size:.9rem;font-weight:700;color:var(--idb-blue);text-decoration:none;line-height:1.4;}
+  .pub-entry .pub-title a:hover{color:var(--idb-cyan);text-decoration:underline;}
+  .pub-entry .pub-authors{font-size:.75rem;color:var(--muted);font-weight:300;}
+  .pub-entry .find-lbl{font-family:'Montserrat',sans-serif;font-size:.5rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--idb-cyan);margin-top:.2rem;}
+  .pub-entry .find-txt{font-size:.77rem;color:var(--ink);line-height:1.55;font-weight:300;}
+  .cit-badge{display:inline-flex;align-items:center;gap:.2rem;background:#e8f4fa;border:1px solid var(--idb-cyan);border-radius:2px;padding:.12rem .45rem;}
+  .cit-num{font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:800;color:var(--idb-blue);}
+  .cit-lbl{font-family:'Montserrat',sans-serif;font-size:.5rem;font-weight:600;color:var(--muted);}
+</style>
 </head>
 <body>
 <header class="hero">
@@ -482,156 +522,196 @@
     <div class="sec-sub">Ranked by Google Scholar citations &mdash; 5,248 total citations</div>
   </div>
   <div class="mc-list">
-    <div class="pub-entry" style="animation-delay:0ms">
-    <div class="rank-col"><div class="rank-num">1</div><div class="rank-lbl">rank</div></div>
-    <div class="pub-body">
-      <div class="pub-meta">
-        <span class="badge b-year">2012</span>
-        <span class="badge b-venue">Journal of Development Economics, 98(2), 270&#8211;286</span>
-        <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
-        <span class="cit-badge"><span class="cit-num">683</span><span class="cit-lbl">citations</span></span>
+    <div class="pub-entry reveal" style="animation-delay:0ms">
+      <div class="rank-col"><div class="rank-num">1</div><div class="rank-lbl">rank</div></div>
+      <div class="bar-col">
+        <div class="bar-wrap"><div class="cit-bar" style="height:80px"></div></div>
+        <div class="bar-count">683</div>
+        <div class="bar-lbl">citations</div>
       </div>
-      <div class="pub-title"><a href="https://doi.org/10.1016/j.jdeveco.2011.08.004" target="_blank" rel="noopener">Job Creation and Job Destruction in the Presence of Informal Markets</a></div>
-      <div class="pub-authors">Bosch, M. &amp; Esteban-Pretel, J.</div>
-      <div class="find-lbl">Key Finding</div>
-      <div class="find-txt">Informal labor markets act as strong countercyclical buffers &#8212; worker flows between formal and informal sectors mean standard job-creation/destruction models substantially underestimate true labor-market volatility in developing economies.</div>
-    </div>
-  </div>
-    <div class="pub-entry" style="animation-delay:40ms">
-    <div class="rank-col"><div class="rank-num">2</div><div class="rank-lbl">rank</div></div>
-    <div class="pub-body">
-      <div class="pub-meta">
-        <span class="badge b-year">2010</span>
-        <span class="badge b-venue">American Economic Journal: Applied Economics</span>
-        <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
-        <span class="cit-badge"><span class="cit-num">582</span><span class="cit-lbl">citations</span></span>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="badge b-year">2012</span>
+          <span class="badge b-venue">Journal of Development Economics</span>
+          <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
+          <span class="cit-badge"><span class="cit-num">683</span><span class="cit-lbl">citations</span></span>
+        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.jdeveco.2011.08.004" target="_blank" rel="noopener">Job Creation and Job Destruction in the Presence of Informal Markets</a></div>
+        <div class="pub-authors">Bosch, M. &amp; Esteban-Pretel, J.</div>
+        <div class="find-lbl">Key Finding</div><div class="find-txt">Informal labor markets act as strong countercyclical buffers &#8212; worker flows between formal and informal sectors mean standard job-creation/destruction models substantially underestimate true labor-market volatility in developing economies.</div>
       </div>
-      <div class="pub-title"><a href="https://doi.org/10.1257/app.2.4.128" target="_blank" rel="noopener">Minimum Wages and Earnings Inequality in Urban Mexico</a></div>
-      <div class="pub-authors">Bosch, M. &amp; Manacorda, M.</div>
-      <div class="find-lbl">Key Finding</div>
-      <div class="find-txt">The decline of Mexico&#39;s minimum wage in the 1980s&#8211;90s accounts for a substantial share of rising earnings inequality, particularly at the bottom of the wage distribution, through direct and spillover effects.</div>
     </div>
-  </div>
-    <div class="pub-entry" style="animation-delay:80ms">
-    <div class="rank-col"><div class="rank-num">3</div><div class="rank-lbl">rank</div></div>
-    <div class="pub-body">
-      <div class="pub-meta">
-        <span class="badge b-year">2010</span>
-        <span class="badge b-venue">Labour Economics, 17(4), 621&#8211;631</span>
-        <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
-        <span class="cit-badge"><span class="cit-num">495</span><span class="cit-lbl">citations</span></span>
+    <div class="pub-entry reveal" style="animation-delay:60ms">
+      <div class="rank-col"><div class="rank-num">2</div><div class="rank-lbl">rank</div></div>
+      <div class="bar-col">
+        <div class="bar-wrap"><div class="cit-bar" style="height:68px"></div></div>
+        <div class="bar-count">582</div>
+        <div class="bar-lbl">citations</div>
       </div>
-      <div class="pub-title"><a href="https://www.iza.org/publications/dp/3038/comparative-analysis-of-labor-market-dynamics-using-markov-processes-an-application-to-informality" target="_blank" rel="noopener">Comparative Analysis of Labor Market Dynamics Using Markov Processes: An Application to Informality</a></div>
-      <div class="pub-authors">Bosch, M. &amp; Maloney, W. F.</div>
-      <div class="find-lbl">Key Finding</div>
-      <div class="find-txt">Markov chain analysis reveals informal sectors function as flexible countercyclical buffers rather than inferior queues, challenging standard segmented-market theories of developing-country labor markets.</div>
-    </div>
-  </div>
-    <div class="pub-entry" style="animation-delay:120ms">
-    <div class="rank-col"><div class="rank-num">4</div><div class="rank-lbl">rank</div></div>
-    <div class="pub-body">
-      <div class="pub-meta">
-        <span class="badge b-year">2014</span>
-        <span class="badge b-venue">American Economic Journal: Economic Policy, 6(4), 71&#8211;99</span>
-        <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
-        <span class="cit-badge"><span class="cit-num">410</span><span class="cit-lbl">citations</span></span>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="badge b-year">2010</span>
+          <span class="badge b-venue">American Economic Journal: Applied Economics</span>
+          <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
+          <span class="cit-badge"><span class="cit-num">582</span><span class="cit-lbl">citations</span></span>
+        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1257/app.2.4.128" target="_blank" rel="noopener">Minimum Wages and Earnings Inequality in Urban Mexico</a></div>
+        <div class="pub-authors">Bosch, M. &amp; Manacorda, M.</div>
+        <div class="find-lbl">Key Finding</div><div class="find-txt">The decline of Mexico&#39;s minimum wage in the 1980s&#8211;90s accounts for a substantial share of rising earnings inequality, particularly at the bottom of the wage distribution, through direct and spillover effects.</div>
       </div>
-      <div class="pub-title"><a href="https://doi.org/10.1257/pol.6.4.71" target="_blank" rel="noopener">The Trade-Offs of Welfare Policies in Labor Markets with Informal Jobs: The Case of the &#34;Seguro Popular&#34; Program in Mexico</a></div>
-      <div class="pub-authors">Bosch, M. &amp; Campos-V&aacute;zquez, R. M.</div>
-      <div class="find-lbl">Key Finding</div>
-      <div class="find-txt">Mexico&#39;s universal health insurance significantly increased informality &#8212; each 10% expansion in coverage reduced formal employment by ~1.3%, revealing a fundamental trade-off between welfare provision and formalization.</div>
     </div>
-  </div>
-    <div class="pub-entry" style="animation-delay:160ms">
-    <div class="rank-col"><div class="rank-num">5</div><div class="rank-lbl">rank</div></div>
-    <div class="pub-body">
-      <div class="pub-meta">
-        <span class="badge b-year">2015</span>
-        <span class="badge b-venue">European Economic Review, 75, 1&#8211;17</span>
-        <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
-        <span class="cit-badge"><span class="cit-num">380</span><span class="cit-lbl">citations</span></span>
+    <div class="pub-entry reveal" style="animation-delay:120ms">
+      <div class="rank-col"><div class="rank-num">3</div><div class="rank-lbl">rank</div></div>
+      <div class="bar-col">
+        <div class="bar-wrap"><div class="cit-bar" style="height:57px"></div></div>
+        <div class="bar-count">495</div>
+        <div class="bar-lbl">citations</div>
       </div>
-      <div class="pub-title"><a href="https://doi.org/10.18235/0011471" target="_blank" rel="noopener">Labor Market Effects of Introducing Unemployment Benefits in an Economy with High Informality</a></div>
-      <div class="pub-authors">Bosch, M. &amp; Esteban-Pretel, J.</div>
-      <div class="find-lbl">Key Finding</div>
-      <div class="find-txt">Introducing unemployment insurance in high-informality economies can increase formal employment if contribution rates are well-calibrated, but must be complemented by policies reducing formal-sector costs.</div>
-    </div>
-  </div>
-    <div class="pub-entry" style="animation-delay:200ms">
-    <div class="rank-col"><div class="rank-num">6</div><div class="rank-lbl">rank</div></div>
-    <div class="pub-body">
-      <div class="pub-meta">
-        <span class="badge b-year">2010</span>
-        <span class="badge b-venue">Regional Science and Urban Economics, 40(1), 11&#8211;19</span>
-        <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
-        <span class="cit-badge"><span class="cit-num">354</span><span class="cit-lbl">citations</span></span>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="badge b-year">2010</span>
+          <span class="badge b-venue">Labour Economics</span>
+          <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
+          <span class="cit-badge"><span class="cit-num">495</span><span class="cit-lbl">citations</span></span>
+        </div>
+        <div class="pub-title"><a href="https://www.iza.org/publications/dp/3038/comparative-analysis-of-labor-market-dynamics-using-markov-processes-an-application-to-informality" target="_blank" rel="noopener">Comparative Analysis of Labor Market Dynamics Using Markov Processes: An Application to Informality</a></div>
+        <div class="pub-authors">Bosch, M. &amp; Maloney, W. F.</div>
+        <div class="find-lbl">Key Finding</div><div class="find-txt">Markov chain analysis reveals informal sectors function as flexible countercyclical buffers rather than inferior queues, challenging standard segmented-market theories of developing-country labor markets.</div>
       </div>
-      <div class="pub-title"><a href="https://doi.org/10.1016/j.regsciurbeco.2009.11.001" target="_blank" rel="noopener">Information and Discrimination in the Rental Housing Market: Evidence from a Field Experiment</a></div>
-      <div class="pub-authors">Bosch, M., Carnero, M. A. &amp; Farr&eacute;, L.</div>
-      <div class="find-lbl">Key Finding</div>
-      <div class="find-txt">A correspondence experiment in Spain finds landlords 12% less likely to respond to foreign-sounding applicants &#8212; a discrimination barrier that sustains ethnic residential segregation.</div>
     </div>
-  </div>
-    <div class="pub-entry" style="animation-delay:240ms">
-    <div class="rank-col"><div class="rank-num">7</div><div class="rank-lbl">rank</div></div>
-    <div class="pub-body">
-      <div class="pub-meta">
-        <span class="badge b-year">2013</span>
-        <span class="badge b-venue">IDB Publications (Book)</span>
-        <span class="badge" style="background:#f5e8d0;color:#7a4a10">Book</span>
-        <span class="cit-badge"><span class="cit-num">320</span><span class="cit-lbl">citations</span></span>
+    <div class="pub-entry reveal" style="animation-delay:180ms">
+      <div class="rank-col"><div class="rank-num">4</div><div class="rank-lbl">rank</div></div>
+      <div class="bar-col">
+        <div class="bar-wrap"><div class="cit-bar" style="height:48px"></div></div>
+        <div class="bar-count">410</div>
+        <div class="bar-lbl">citations</div>
       </div>
-      <div class="pub-title"><a href="https://doi.org/10.18235/0012584" target="_blank" rel="noopener">Better Pensions, Better Jobs: Towards Universal Coverage in Latin America and the Caribbean</a></div>
-      <div class="pub-authors">Bosch, M., Melguizo, &Aacute;. &amp; Pag&eacute;s, C.</div>
-      <div class="find-lbl">Key Finding</div>
-      <div class="find-txt">Universal pension coverage requires aligning incentives for formalization &#8212; expanding non-contributory programs without tackling informality risks entrenching the very problem they aim to solve.</div>
-    </div>
-  </div>
-    <div class="pub-entry" style="animation-delay:280ms">
-    <div class="rank-col"><div class="rank-num">8</div><div class="rank-lbl">rank</div></div>
-    <div class="pub-body">
-      <div class="pub-meta">
-        <span class="badge b-year">2017</span>
-        <span class="badge b-venue">NBER Book Chapter — The Economics of Poverty Traps (2017)</span>
-        <span class="badge" style="background:#f5e8d0;color:#7a4a10">Book Chapter</span>
-        <span class="cit-badge"><span class="cit-num">298</span><span class="cit-lbl">citations</span></span>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="badge b-year">2014</span>
+          <span class="badge b-venue">American Economic Journal: Economic Policy</span>
+          <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
+          <span class="cit-badge"><span class="cit-num">410</span><span class="cit-lbl">citations</span></span>
+        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1257/pol.6.4.71" target="_blank" rel="noopener">The Trade-Offs of Welfare Policies in Labor Markets with Informal Jobs: The Case of the &#34;Seguro Popular&#34; Program in Mexico</a></div>
+        <div class="pub-authors">Bosch, M. &amp; Campos-V&aacute;zquez, R. M.</div>
+        <div class="find-lbl">Key Finding</div><div class="find-txt">Mexico&#39;s universal health insurance significantly increased informality &#8212; each 10% expansion in coverage reduced formal employment by ~1.3%, revealing a fundamental trade-off between welfare provision and formalization.</div>
       </div>
-      <div class="pub-title"><a href="https://doi.org/10.18235/0000618" target="_blank" rel="noopener">Can Cash Transfers Help Households Escape an Inter-Generational Poverty Trap?</a></div>
-      <div class="pub-authors">Araujo, M. C., Bosch, M. &amp; Schady, N.</div>
-      <div class="find-lbl">Key Finding</div>
-      <div class="find-txt">Ecuador&#39;s conditional cash transfer generated lasting improvements in children&#39;s cognitive development, suggesting targeted transfers can break inter-generational poverty traps when paired with early childhood investments.</div>
     </div>
-  </div>
-    <div class="pub-entry" style="animation-delay:320ms">
-    <div class="rank-col"><div class="rank-num">9</div><div class="rank-lbl">rank</div></div>
-    <div class="pub-body">
-      <div class="pub-meta">
-        <span class="badge b-year">2012</span>
-        <span class="badge b-venue">Labour Economics, 19(5), 653&#8211;667</span>
-        <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
-        <span class="cit-badge"><span class="cit-num">241</span><span class="cit-lbl">citations</span></span>
+    <div class="pub-entry reveal" style="animation-delay:240ms">
+      <div class="rank-col"><div class="rank-num">5</div><div class="rank-lbl">rank</div></div>
+      <div class="bar-col">
+        <div class="bar-wrap"><div class="cit-bar" style="height:44px"></div></div>
+        <div class="bar-count">380</div>
+        <div class="bar-lbl">citations</div>
       </div>
-      <div class="pub-title"><a href="https://doi.org/10.1016/j.labeco.2011.12.005" target="_blank" rel="noopener">Trade Liberalization, Labor Reforms and Formal&#8211;Informal Employment Dynamics</a></div>
-      <div class="pub-authors">Bosch, M., Go&ntilde;i-Pacchioni, E. &amp; Maloney, W.</div>
-      <div class="find-lbl">Key Finding</div>
-      <div class="find-txt">Brazil&#39;s rise in informality (1983&#8211;2002) was driven primarily by constitutional reforms raising labor costs &#8212; trade liberalization played only a minor role.</div>
-    </div>
-  </div>
-    <div class="pub-entry" style="animation-delay:360ms">
-    <div class="rank-col"><div class="rank-num">10</div><div class="rank-lbl">rank</div></div>
-    <div class="pub-body">
-      <div class="pub-meta">
-        <span class="badge b-year">2019</span>
-        <span class="badge b-venue">Journal of Development Economics, 139, 17&#8211;27</span>
-        <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
-        <span class="cit-badge"><span class="cit-num">210</span><span class="cit-lbl">citations</span></span>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="badge b-year">2015</span>
+          <span class="badge b-venue">European Economic Review</span>
+          <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
+          <span class="cit-badge"><span class="cit-num">380</span><span class="cit-lbl">citations</span></span>
+        </div>
+        <div class="pub-title"><a href="https://doi.org/10.18235/0011471" target="_blank" rel="noopener">Labor Market Effects of Introducing Unemployment Benefits in an Economy with High Informality</a></div>
+        <div class="pub-authors">Bosch, M. &amp; Esteban-Pretel, J.</div>
+        <div class="find-lbl">Key Finding</div><div class="find-txt">Introducing unemployment insurance in high-informality economies can increase formal employment if contribution rates are well-calibrated, but must be complemented by policies reducing formal-sector costs.</div>
       </div>
-      <div class="pub-title"><a href="https://doi.org/10.18235/0000809" target="_blank" rel="noopener">The Effect of Welfare Payments on Work: Regression Discontinuity Evidence from Ecuador</a></div>
-      <div class="pub-authors">Bosch, M. &amp; Schady, N.</div>
-      <div class="find-lbl">Key Finding</div>
-      <div class="find-txt">Ecuador's welfare program did not discourage work overall — over a 4&#8211;5 year horizon, transfers had no effect on total labor supply for women or men. The only effect was a small shift among female recipients from formal to informal employment, suggesting welfare design matters more for formalization than for employment levels.</div>
     </div>
-  </div>
+    <div class="pub-entry reveal" style="animation-delay:300ms">
+      <div class="rank-col"><div class="rank-num">6</div><div class="rank-lbl">rank</div></div>
+      <div class="bar-col">
+        <div class="bar-wrap"><div class="cit-bar" style="height:41px"></div></div>
+        <div class="bar-count">354</div>
+        <div class="bar-lbl">citations</div>
+      </div>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="badge b-year">2010</span>
+          <span class="badge b-venue">Regional Science and Urban Economics</span>
+          <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
+          <span class="cit-badge"><span class="cit-num">354</span><span class="cit-lbl">citations</span></span>
+        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.regsciurbeco.2009.11.001" target="_blank" rel="noopener">Information and Discrimination in the Rental Housing Market: Evidence from a Field Experiment</a></div>
+        <div class="pub-authors">Bosch, M., Carnero, M. A. &amp; Farr&eacute;, L.</div>
+        <div class="find-lbl">Key Finding</div><div class="find-txt">A correspondence experiment in Spain finds landlords 12% less likely to respond to foreign-sounding applicants &#8212; a discrimination barrier that sustains ethnic residential segregation.</div>
+      </div>
+    </div>
+    <div class="pub-entry reveal" style="animation-delay:360ms">
+      <div class="rank-col"><div class="rank-num">7</div><div class="rank-lbl">rank</div></div>
+      <div class="bar-col">
+        <div class="bar-wrap"><div class="cit-bar" style="height:37px"></div></div>
+        <div class="bar-count">320</div>
+        <div class="bar-lbl">citations</div>
+      </div>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="badge b-year">2013</span>
+          <span class="badge b-venue">IDB Publications (Book)</span>
+          <span class="badge" style="background:#f5e8d0;color:#7a4a10">Book</span>
+          <span class="cit-badge"><span class="cit-num">320</span><span class="cit-lbl">citations</span></span>
+        </div>
+        <div class="pub-title"><a href="https://doi.org/10.18235/0012584" target="_blank" rel="noopener">Better Pensions, Better Jobs: Towards Universal Coverage in Latin America and the Caribbean</a></div>
+        <div class="pub-authors">Bosch, M., Melguizo, &Aacute;. &amp; Pag&eacute;s, C.</div>
+        <div class="find-lbl">Key Finding</div><div class="find-txt">Universal pension coverage requires aligning incentives for formalization &#8212; expanding non-contributory programs without tackling informality risks entrenching the very problem they aim to solve.</div>
+      </div>
+    </div>
+    <div class="pub-entry reveal" style="animation-delay:420ms">
+      <div class="rank-col"><div class="rank-num">8</div><div class="rank-lbl">rank</div></div>
+      <div class="bar-col">
+        <div class="bar-wrap"><div class="cit-bar" style="height:34px"></div></div>
+        <div class="bar-count">298</div>
+        <div class="bar-lbl">citations</div>
+      </div>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="badge b-year">2017</span>
+          <span class="badge b-venue">NBER Book Chapter — The Economics of Poverty Traps (2017)</span>
+          <span class="badge" style="background:#f5e8d0;color:#7a4a10">Book Chapter</span>
+          <span class="cit-badge"><span class="cit-num">298</span><span class="cit-lbl">citations</span></span>
+        </div>
+        <div class="pub-title"><a href="https://doi.org/10.18235/0000618" target="_blank" rel="noopener">Can Cash Transfers Help Households Escape an Inter-Generational Poverty Trap?</a></div>
+        <div class="pub-authors">Araujo, M. C., Bosch, M. &amp; Schady, N.</div>
+        <div class="find-lbl">Key Finding</div><div class="find-txt">Ecuador&#39;s conditional cash transfer generated lasting improvements in children&#39;s cognitive development, suggesting targeted transfers can break inter-generational poverty traps when paired with early childhood investments.</div>
+      </div>
+    </div>
+    <div class="pub-entry reveal" style="animation-delay:480ms">
+      <div class="rank-col"><div class="rank-num">9</div><div class="rank-lbl">rank</div></div>
+      <div class="bar-col">
+        <div class="bar-wrap"><div class="cit-bar" style="height:28px"></div></div>
+        <div class="bar-count">241</div>
+        <div class="bar-lbl">citations</div>
+      </div>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="badge b-year">2012</span>
+          <span class="badge b-venue">Labour Economics</span>
+          <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
+          <span class="cit-badge"><span class="cit-num">241</span><span class="cit-lbl">citations</span></span>
+        </div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.labeco.2011.12.005" target="_blank" rel="noopener">Trade Liberalization, Labor Reforms and Formal&#8211;Informal Employment Dynamics</a></div>
+        <div class="pub-authors">Bosch, M., Go&ntilde;i-Pacchioni, E. &amp; Maloney, W.</div>
+        <div class="find-lbl">Key Finding</div><div class="find-txt">Brazil&#39;s rise in informality (1983&#8211;2002) was driven primarily by constitutional reforms raising labor costs &#8212; trade liberalization played only a minor role.</div>
+      </div>
+    </div>
+    <div class="pub-entry reveal" style="animation-delay:540ms">
+      <div class="rank-col"><div class="rank-num">10</div><div class="rank-lbl">rank</div></div>
+      <div class="bar-col">
+        <div class="bar-wrap"><div class="cit-bar" style="height:24px"></div></div>
+        <div class="bar-count">210</div>
+        <div class="bar-lbl">citations</div>
+      </div>
+      <div class="pub-body">
+        <div class="pub-meta">
+          <span class="badge b-year">2019</span>
+          <span class="badge b-venue">Journal of Development Economics</span>
+          <span class="badge" style="background:#e8f4ea;color:#2d6a4f">Journal Article</span>
+          <span class="cit-badge"><span class="cit-num">210</span><span class="cit-lbl">citations</span></span>
+        </div>
+        <div class="pub-title"><a href="https://doi.org/10.18235/0000809" target="_blank" rel="noopener">The Effect of Welfare Payments on Work: Regression Discontinuity Evidence from Ecuador</a></div>
+        <div class="pub-authors">Bosch, M. &amp; Schady, N.</div>
+        <div class="find-lbl">Key Finding</div><div class="find-txt">Ecuador's welfare program did not discourage work overall — over a 4&#8211;5 year horizon, transfers had no effect on total labor supply for women or men. The only effect was a small shift among female recipients from formal to informal employment, suggesting welfare design matters more for formalization than for employment levels.</div>
+      </div>
+    </div>
   </div>
 </section>
 </div>
