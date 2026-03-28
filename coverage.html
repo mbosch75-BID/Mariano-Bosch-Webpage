@@ -21,6 +21,14 @@ body{font-family:'Open Sans',sans-serif;background:var(--paper);color:var(--ink)
 .back{margin-left:auto;font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s;border:1px solid rgba(255,255,255,.2);padding:.3rem .7rem;border-radius:2px;}
 .back:hover{color:var(--cyan);border-color:var(--cyan);}
 
+/* Nav */
+.page-nav{position:sticky;top:0;z-index:99;background:var(--blue);border-bottom:2px solid var(--cyan);display:flex;justify-content:center;align-items:stretch;gap:0;box-shadow:0 2px 12px rgba(0,0,0,.18);backdrop-filter:blur(8px);}
+.nav-a{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;padding:.85rem 1.1rem;position:relative;transition:color .18s;display:flex;align-items:center;gap:.3rem;}
+.nav-a::after{content:'';position:absolute;bottom:0;left:20%;right:20%;height:2px;background:var(--cyan);transform:scaleX(0);transition:transform .2s;border-radius:1px;}
+.nav-a:hover{color:white;}
+.nav-a:hover::after{transform:scaleX(1);}
+.nav-active{color:var(--cyan)!important;border-bottom:2px solid var(--cyan);}
+
 /* Layout */
 .wrap{max-width:1040px;margin:0 auto;padding:2rem 2rem 5rem;}
 .ptitle{font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:800;color:var(--blue);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.3rem;}
@@ -104,8 +112,17 @@ span.pcard-title{color:var(--ink);}
     <div class="hdr-name">Mariano Bosch</div>
     <div class="hdr-sub">Research Coverage</div>
   </div>
-  <a class="back" href="index.html">&#8592; Back</a>
 </div>
+
+<nav class="page-nav">
+  <a class="nav-a" href="index.html#publications"><span class="nav-icon">📚</span>By Topic</a>
+  <a class="nav-a" href="publications_list.html"><span class="nav-icon">📄</span>By Type</a>
+  <a class="nav-a nav-active" href="coverage.html"><span class="nav-icon">🌎</span>By Country</a>
+  <a class="nav-a" href="most_cited.html"><span class="nav-icon">⭐</span>Most Cited</a>
+  <a class="nav-a" href="media.html"><span class="nav-icon">📰</span>Media</a>
+  <a class="nav-a" href="current.html"><span class="nav-icon">🔬</span>Work in Progress</a>
+  <a class="nav-a" href="profiles.html"><span class="nav-icon">👤</span>Profiles</a>
+</nav>
 
 <div class="wrap">
   <div class="ptitle">Research Coverage</div>
