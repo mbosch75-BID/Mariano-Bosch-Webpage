@@ -453,10 +453,9 @@
 </style>
 <style>
   .section{padding-top:1.4rem;}
-  .media-stats{display:flex;gap:2rem;flex-wrap:wrap;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
-  .media-stat .n{font-family:"Montserrat",sans-serif;font-size:1.8rem;font-weight:800;color:var(--idb-blue);line-height:1;}
-  .media-stat .l{font-family:"Montserrat",sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:.2rem;}
-  .media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:.85rem;padding:.75rem .85rem .85rem;}
+  .outlet-summary{font-size:.85rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;padding:.9rem 1.1rem;background:var(--card);border:1px solid var(--border);border-radius:3px;border-left:4px solid var(--idb-cyan);}
+  .outlet-summary strong{color:var(--idb-blue);}
+  .media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:.85rem;}
   .media-card{background:var(--paper);border:1px solid var(--border);border-radius:3px;padding:1rem 1.1rem;display:flex;flex-direction:column;gap:.4rem;opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease,box-shadow .2s;}
   .media-card.visible{opacity:1;transform:none;}
   .media-card:hover{box-shadow:0 4px 16px rgba(0,78,112,.1);}
@@ -492,7 +491,6 @@
         <div class="lang-toggle" style="margin-left:auto">
           <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
           <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
-          <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
         </div>
       </div>
       <div class="hero-eyebrow" data-t="Economics Principal Advisor · IDB Vice Presidency of Sectors">Economics Principal Advisor &middot; IDB Vice Presidency of Sectors</div>
@@ -512,63 +510,60 @@
   <a class="nav-a" href="coverage.html"><span class="nav-icon">🌎</span><span data-t="By Country">By Country</span></a>
   <a class="nav-a" href="most_cited.html"><span class="nav-icon">⭐</span><span data-t="Most Cited">Most Cited</span></a>
   <a class="nav-a nav-active" href="media.html"><span class="nav-icon">📰</span><span data-t="Media">Media</span></a>
+  <a class="nav-a" href="current.html"><span class="nav-icon">🔬</span><span data-t="Work in Progress">Work in Progress</span></a>
   <a class="nav-a" href="profiles.html"><span class="nav-icon">👤</span><span data-t="Profiles">Profiles</span></a>
-  <a class="nav-a" href="questions.html"><span class="nav-icon">💬</span><span data-t="Ask">Ask</span></a>
 </nav>
 <div class="page-body">
 <section class="section">
   <div class="sec-head reveal-left" style="margin-bottom:1.2rem">
     <div class="sec-title">Media &amp; Public Writing</div>
-    <div class="sec-sub">Press, blog posts, conferences, and public engagement beyond academic publications</div>
+    <div class="sec-sub">Press &amp; media coverage</div>
   </div>
-  <div class="media-stats">
-    <div class="media-stat"><div class="n">18</div><div class="l">Press &amp; Op-eds</div></div>
-    <div class="media-stat"><div class="n">9</div><div class="l">Blog Posts</div></div>
-    <div class="media-stat"><div class="n">4</div><div class="l">Conferences</div></div>
-    <div class="media-stat"><div class="n">3</div><div class="l">Policy Roles</div></div>
-  </div>
-  <div class="note-box">
-    <strong>Help complete this page.</strong> This was compiled from public sources (LinkedIn, IDB blogs, newspaper archives, conference programmes). 
-    Two items need your confirmation: the <strong>New York Times citation</strong> and your <strong>YouTube appearances</strong> — please share the links and they will be added immediately.
-  </div>
-  <div class="acc-block" id="media-press">
-    <button class="acc-header" onclick="toggleAcc('media-press')" aria-expanded="false">
-      <span class="acc-icon">📰</span>
-      <span class="acc-label">International Press &amp; Media</span>
-      <span class="acc-count-badge">18</span>
-      <span class="acc-arrow">&#9662;</span>
-    </button>
-    <div class="acc-body" id="body-media-press" style="display:none">
-      <div class="acc-inner media-grid">
+  <div class="outlet-summary reveal">Work covered by <strong>BBC Mundo</strong> (×3), <strong>El Economista</strong> (Mexico &amp; EFE wire), <strong>RPP Noticias</strong> (Peru, ×2), <strong>Agencia Senado</strong> (Brazilian Senate), <strong>La República</strong> (Colombia), <strong>Pension Policy International</strong>, <strong>El Tiempo</strong> (Colombia), <strong>Diario Libre</strong> (Dominican Republic), and the <strong>IDB official press</strong>.</div>
+  <div class="media-grid">
         <div class="media-card reveal" style="animation-delay:0ms">
           <div class="media-card-top">
             <span class="media-flag">🌐</span>
-            <span class="media-outlet" style="background:#004e7018;color:#004e70;border:1px solid #004e7035">Project Syndicate</span>
-            <span class="media-year">2025</span>
+            <span class="media-outlet" style="background:#e67e2218;color:#e67e22;border:1px solid #e67e2235">Nueva Sociedad</span>
+            <span class="media-year">2021</span>
           </div>
-          <a href="https://www.project-syndicate.org/commentary/latin-america-shows-incremental-fiscal-reforms-more-effective-than-austerity-by-ana-maria-ibanez-and-marta-ruiz-arranz-2025-08" target="_blank" rel="noopener" class="media-title">Latin America's Fiscal Trap: Why Small Reforms Beat Austerity</a>
-          <div class="media-coauth">with Marta Ruiz-Arranz</div>
+          <a href="https://nuso.org/articulo/la-privatizacion-de-las-pensiones-en-america-latina/" target="_blank" rel="noopener" class="media-title">La privatizacion de las pensiones en America Latina</a>
+          
           <div class="media-card-bottom">
-            <span class="media-type">Op-ed</span>
-            <p class="media-desc">Op-ed on how digitalization of tax collection and better-targeted social spending are more politically viable and effective than austerity for tackling the region's fiscal deficits and rising debt burdens.</p>
+            <span class="media-type">Academic citation</span>
+            <p class="media-desc">Research cited in the leading Latin American political economy journal's analysis of four decades of pension privatization in the region, covering the IDB's comparative work on pension systems.</p>
           </div>
-          <a href="https://www.project-syndicate.org/commentary/latin-america-shows-incremental-fiscal-reforms-more-effective-than-austerity-by-ana-maria-ibanez-and-marta-ruiz-arranz-2025-08" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
+          <a href="https://nuso.org/articulo/la-privatizacion-de-las-pensiones-en-america-latina/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
         </div>
         <div class="media-card reveal" style="animation-delay:50ms">
           <div class="media-card-top">
             <span class="media-flag">🌐</span>
-            <span class="media-outlet" style="background:#E3120B18;color:#E3120B;border:1px solid #E3120B35">The Economist</span>
-            <span class="media-year">2025</span>
+            <span class="media-outlet" style="background:#1a6b4a18;color:#1a6b4a;border:1px solid #1a6b4a35">Pension Policy International</span>
+            <span class="media-year">2021</span>
           </div>
-          <a href="https://www.economist.com" target="_blank" rel="noopener" class="media-title">Reducing Inequality in Latin America Means Making Growth Work for Everyone</a>
-          
+          <a href="https://www.pensionpolicyinternational.com/ahorro-previsional-voluntario-experiencia-del-laboratorio-de-ahorro-para-el-retiro-en-america-latina-y-el-caribe/" target="_blank" rel="noopener" class="media-title">Ahorro Previsional Voluntario: Experiencia del Laboratorio de Ahorro para el Retiro en ALC</a>
+          <div class="media-coauth">with G. Caballero, F. Cofre, S. Gonzalez, A. Hand, L. Keller, M.T. Silva Porto, C. Rodriguez</div>
           <div class="media-card-bottom">
-            <span class="media-type">Op-ed</span>
-            <p class="media-desc">Contribution highlighting structural barriers — informality, weak competition, limited redistribution — that prevent growth from translating into lower inequality across the region.</p>
+            <span class="media-type">Policy journal</span>
+            <p class="media-desc">Published in Pension Policy International (PPI) — an independent global platform specialising in pension policy analysis. Summarises four years of the IDB Retirement Savings Lab across Chile, Colombia, Mexico and Peru, applying behavioural science tools to promote voluntary pension savings among informal and independent workers.</p>
           </div>
-          <a href="https://www.economist.com" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
+          <a href="https://www.pensionpolicyinternational.com/ahorro-previsional-voluntario-experiencia-del-laboratorio-de-ahorro-para-el-retiro-en-america-latina-y-el-caribe/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
         </div>
         <div class="media-card reveal" style="animation-delay:100ms">
+          <div class="media-card-top">
+            <span class="media-flag">🇲🇽</span>
+            <span class="media-outlet" style="background:#005a9c18;color:#005a9c;border:1px solid #005a9c35">El Economista (Mexico)</span>
+            <span class="media-year">2021</span>
+          </div>
+          <a href="https://www.pensionpolicyinternational.com/sistema-del-ahorro-para-el-retiro-en-mexico-innovador-en-america-latina-bid/" target="_blank" rel="noopener" class="media-title">Sistema del ahorro para el retiro en Mexico, innovador en America Latina: BID</a>
+          <div class="media-coauth">with Oliver Azuara</div>
+          <div class="media-card-bottom">
+            <span class="media-type">Press interview</span>
+            <p class="media-desc">Quoted as IDB lead expert calling Mexico SAR (Sistema del Ahorro para el Retiro) the most innovative retirement savings system in LAC, citing the GanAhorro program, the Afore Movil app, and the expansion of savings contributions through convenience stores. Presenting results of the IDB Retirement Savings Lab report. Article syndicated by Pension Policy International.</p>
+          </div>
+          <a href="https://www.pensionpolicyinternational.com/sistema-del-ahorro-para-el-retiro-en-mexico-innovador-en-america-latina-bid/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
+        </div>
+        <div class="media-card reveal" style="animation-delay:150ms">
           <div class="media-card-top">
             <span class="media-flag">🇬🇧</span>
             <span class="media-outlet" style="background:#BB191918;color:#BB1919;border:1px solid #BB191935">BBC Mundo</span>
@@ -582,7 +577,21 @@
           </div>
           <a href="https://www.bbc.com/mundo/noticias-50309572" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
         </div>
-        <div class="media-card reveal" style="animation-delay:150ms">
+        <div class="media-card reveal" style="animation-delay:200ms">
+          <div class="media-card-top">
+            <span class="media-flag">🇵🇪</span>
+            <span class="media-outlet" style="background:#c0392b18;color:#c0392b;border:1px solid #c0392b35">RPP Noticias (Peru)</span>
+            <span class="media-year">2020</span>
+          </div>
+          <a href="https://rpp.pe/economia/economia/coronavirus-cuanto-dinero-han-perdido-los-fondos-de-pensiones-en-medio-de-la-pandemia-noticia-1260593" target="_blank" rel="noopener" class="media-title">Coronavirus: Cuanto dinero han perdido los fondos de pensiones en medio de la pandemia?</a>
+          
+          <div class="media-card-bottom">
+            <span class="media-type">Press interview</span>
+            <p class="media-desc">Quoted as the IDB lead voice on COVID-19 impacts on pension funds across Latin America: "En Latinoamerica se habrian perdido en promedio un 15% de los fondos de pensiones, eso solo si se cuenta desde mediados de febrero." One of the most-read economics stories in Peru during the first weeks of the pandemic.</p>
+          </div>
+          <a href="https://rpp.pe/economia/economia/coronavirus-cuanto-dinero-han-perdido-los-fondos-de-pensiones-en-medio-de-la-pandemia-noticia-1260593" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
+        </div>
+        <div class="media-card reveal" style="animation-delay:250ms">
           <div class="media-card-top">
             <span class="media-flag">🇲🇽</span>
             <span class="media-outlet" style="background:#1a527618;color:#1a5276;border:1px solid #1a527635">El Economista (Mexico)</span>
@@ -596,21 +605,7 @@
           </div>
           <a href="https://www.eleconomista.com.mx/sectorfinanciero/En-pensiones-hay-expectativas-poco-realistas-20191023-0149.html" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
         </div>
-        <div class="media-card reveal" style="animation-delay:200ms">
-          <div class="media-card-top">
-            <span class="media-flag">🇬🇧</span>
-            <span class="media-outlet" style="background:#BB191918;color:#BB1919;border:1px solid #BB191935">BBC Mundo</span>
-            <span class="media-year">2014</span>
-          </div>
-          <a href="https://www.bbc.com/mundo/noticias/2014/05/140527_economia_trabajo_informal_wbm" target="_blank" rel="noopener" class="media-title">Como terminar con el trabajo informal en America Latina</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Press mention</span>
-            <p class="media-desc">Quoted extensively in this BBC Mundo feature on informal labour in Latin America (127 million workers, nearly half the workforce): "Entre el 47% y el 60% de los 140 millones de mayores de 65 anos que llegaran a la edad de jubilacion en 2050 no habran ahorrado lo suficiente para financiarse una vejez digna." Story syndicated by El Comercio (Peru) and other LAC papers.</p>
-          </div>
-          <a href="https://www.bbc.com/mundo/noticias/2014/05/140527_economia_trabajo_informal_wbm" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:250ms">
+        <div class="media-card reveal" style="animation-delay:300ms">
           <div class="media-card-top">
             <span class="media-flag">🌎</span>
             <span class="media-outlet" style="background:#1a527618;color:#1a5276;border:1px solid #1a527635">El Economista / Agencia EFE</span>
@@ -624,35 +619,7 @@
           </div>
           <a href="https://www.eleconomista.net/actualidad/El-sistema-de-pensiones-pone-en-jaque-el-gasto-publico-en-Latinoamerica-20191101-0006.html" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
         </div>
-        <div class="media-card reveal" style="animation-delay:300ms">
-          <div class="media-card-top">
-            <span class="media-flag">🇧🇴</span>
-            <span class="media-outlet" style="background:#1a527618;color:#1a5276;border:1px solid #1a527635">Opinion (Bolivia)</span>
-            <span class="media-year">2018</span>
-          </div>
-          <a href="https://www.opinion.com.bo/articulo/mundo/sistemas-pensiones-regi-oacute-n-est-aacute-n-listos-envejecimiento-poblacional/20181129140600634091.html" target="_blank" rel="noopener" class="media-title">Sistemas de pensiones de la region no estan listos para el envejecimiento poblacional</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Press mention</span>
-            <p class="media-desc">Quoted on the launch of the IDB flagship pensions report: "Pese a su gran importancia para el ciudadano y para las cuentas del Estado, las caracteristicas y consecuencias de los distintos disenos del sistema de pensiones son ampliamente desconocidas en la region." Picked up by Opinion, the main newspaper of Cochabamba, Bolivia.</p>
-          </div>
-          <a href="https://www.opinion.com.bo/articulo/mundo/sistemas-pensiones-regi-oacute-n-est-aacute-n-listos-envejecimiento-poblacional/20181129140600634091.html" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
         <div class="media-card reveal" style="animation-delay:350ms">
-          <div class="media-card-top">
-            <span class="media-flag">🇨🇴</span>
-            <span class="media-outlet" style="background:#c0392b18;color:#c0392b;border:1px solid #c0392b35">Semana (Colombia)</span>
-            <span class="media-year">2015</span>
-          </div>
-          <a href="https://www.semana.com/problemas-pensionales-mujeres-america-latina/212781/" target="_blank" rel="noopener" class="media-title">Los problemas pensionales de las mujeres en America Latina</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Press mention</span>
-            <p class="media-desc">Featured in the leading Colombian news magazine on pension disadvantages facing women in LAC: informality, low coverage, and the cost of unpaid care work. Cites IDB data on the gender gap in labor participation (56% vs 83% for men) and projects 140 million people aged 65+ in the region by 2050.</p>
-          </div>
-          <a href="https://www.semana.com/problemas-pensionales-mujeres-america-latina/212781/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:400ms">
           <div class="media-card-top">
             <span class="media-flag">🇨🇴</span>
             <span class="media-outlet" style="background:#c0392b18;color:#c0392b;border:1px solid #c0392b35">La Republica (Colombia)</span>
@@ -665,6 +632,20 @@
             <p class="media-desc">Quoted as IDB labor markets specialist at the Colpensiones International Forum on pension reform, outlining IDB proposals to expand coverage, integrate Colombia Mayor, and link Beps with contributory pillars.</p>
           </div>
           <a href="https://www.larepublica.co/finanzas/colombia-tiene-baja-cobertura-pero-alta-tasa-de-reemplazo-en-pension-2735673" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
+        </div>
+        <div class="media-card reveal" style="animation-delay:400ms">
+          <div class="media-card-top">
+            <span class="media-flag">🇧🇴</span>
+            <span class="media-outlet" style="background:#1a527618;color:#1a5276;border:1px solid #1a527635">Opinion (Bolivia)</span>
+            <span class="media-year">2018</span>
+          </div>
+          <a href="https://www.opinion.com.bo/articulo/mundo/sistemas-pensiones-regi-oacute-n-est-aacute-n-listos-envejecimiento-poblacional/20181129140600634091.html" target="_blank" rel="noopener" class="media-title">Sistemas de pensiones de la region no estan listos para el envejecimiento poblacional</a>
+          
+          <div class="media-card-bottom">
+            <span class="media-type">Press mention</span>
+            <p class="media-desc">Quoted on the launch of the IDB flagship pensions report: "Pese a su gran importancia para el ciudadano y para las cuentas del Estado, las caracteristicas y consecuencias de los distintos disenos del sistema de pensiones son ampliamente desconocidas en la region." Picked up by Opinion, the main newspaper of Cochabamba, Bolivia.</p>
+          </div>
+          <a href="https://www.opinion.com.bo/articulo/mundo/sistemas-pensiones-regi-oacute-n-est-aacute-n-listos-envejecimiento-poblacional/20181129140600634091.html" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
         </div>
         <div class="media-card reveal" style="animation-delay:450ms">
           <div class="media-card-top">
@@ -682,34 +663,6 @@
         </div>
         <div class="media-card reveal" style="animation-delay:500ms">
           <div class="media-card-top">
-            <span class="media-flag">🌐</span>
-            <span class="media-outlet" style="background:#e67e2218;color:#e67e22;border:1px solid #e67e2235">Nueva Sociedad</span>
-            <span class="media-year">2021</span>
-          </div>
-          <a href="https://nuso.org/articulo/la-privatizacion-de-las-pensiones-en-america-latina/" target="_blank" rel="noopener" class="media-title">La privatizacion de las pensiones en America Latina</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Academic citation</span>
-            <p class="media-desc">Research cited in the leading Latin American political economy journal's analysis of four decades of pension privatization in the region, covering the IDB's comparative work on pension systems.</p>
-          </div>
-          <a href="https://nuso.org/articulo/la-privatizacion-de-las-pensiones-en-america-latina/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:550ms">
-          <div class="media-card-top">
-            <span class="media-flag">🇵🇪</span>
-            <span class="media-outlet" style="background:#c0392b18;color:#c0392b;border:1px solid #c0392b35">RPP Noticias (Peru)</span>
-            <span class="media-year">2020</span>
-          </div>
-          <a href="https://rpp.pe/economia/economia/coronavirus-cuanto-dinero-han-perdido-los-fondos-de-pensiones-en-medio-de-la-pandemia-noticia-1260593" target="_blank" rel="noopener" class="media-title">Coronavirus: Cuanto dinero han perdido los fondos de pensiones en medio de la pandemia?</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Press interview</span>
-            <p class="media-desc">Quoted as the IDB lead voice on COVID-19 impacts on pension funds across Latin America: "En Latinoamerica se habrian perdido en promedio un 15% de los fondos de pensiones, eso solo si se cuenta desde mediados de febrero." One of the most-read economics stories in Peru during the first weeks of the pandemic.</p>
-          </div>
-          <a href="https://rpp.pe/economia/economia/coronavirus-cuanto-dinero-han-perdido-los-fondos-de-pensiones-en-medio-de-la-pandemia-noticia-1260593" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:600ms">
-          <div class="media-card-top">
             <span class="media-flag">🇵🇪</span>
             <span class="media-outlet" style="background:#c0392b18;color:#c0392b;border:1px solid #c0392b35">RPP Noticias (Peru)</span>
             <span class="media-year">2018</span>
@@ -722,19 +675,47 @@
           </div>
           <a href="https://rpp.pe/economia/economia/afp-el-13-de-pensionistas-que-retiraron-el-955-de-sus-fondos-ya-se-lo-gasto-noticia-1149576" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
         </div>
-        <div class="media-card reveal" style="animation-delay:650ms">
+        <div class="media-card reveal" style="animation-delay:550ms">
           <div class="media-card-top">
-            <span class="media-flag">🇧🇷</span>
-            <span class="media-outlet" style="background:#c0392b18;color:#c0392b;border:1px solid #c0392b35">Vermelho (Brazil)</span>
-            <span class="media-year">2013</span>
+            <span class="media-flag">🇨🇴</span>
+            <span class="media-outlet" style="background:#c0392b18;color:#c0392b;border:1px solid #c0392b35">Semana (Colombia)</span>
+            <span class="media-year">2015</span>
           </div>
-          <a href="https://vermelho.org.br/2013/10/28/bolivia-e-o-pais-que-mais-protege-aposentados-na-america-latina/" target="_blank" rel="noopener" class="media-title">Bolivia e o pais que mais protege aposentados na America Latina</a>
+          <a href="https://www.semana.com/problemas-pensionales-mujeres-america-latina/212781/" target="_blank" rel="noopener" class="media-title">Los problemas pensionales de las mujeres en America Latina</a>
           
           <div class="media-card-bottom">
             <span class="media-type">Press mention</span>
-            <p class="media-desc">Quoted in this Brazilian news article (Vermelho, one of Brazil largest political news sites) about Bolivia Renta Dignidad pension programme, drawing on the BID book "Melhores pensoes, melhores trabalhos": "Esse programa oferece tal seguranca de ingressos que notamos que ha uma diminuicao da oferta de trabalho do setor populacional que, antes, tinha que seguir trabalhando ate os 80 anos para sobreviver."</p>
+            <p class="media-desc">Featured in the leading Colombian news magazine on pension disadvantages facing women in LAC: informality, low coverage, and the cost of unpaid care work. Cites IDB data on the gender gap in labor participation (56% vs 83% for men) and projects 140 million people aged 65+ in the region by 2050.</p>
           </div>
-          <a href="https://vermelho.org.br/2013/10/28/bolivia-e-o-pais-que-mais-protege-aposentados-na-america-latina/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
+          <a href="https://www.semana.com/problemas-pensionales-mujeres-america-latina/212781/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
+        </div>
+        <div class="media-card reveal" style="animation-delay:600ms">
+          <div class="media-card-top">
+            <span class="media-flag">🗞</span>
+            <span class="media-outlet" style="background:#00000018;color:#000000;border:1px solid #00000035">The New York Times</span>
+            <span class="media-year">2015</span>
+          </div>
+          <a href="https://www.nytimes.com/2015/10/21/world/americas/brazil-pension-crisis-mounts-as-more-retire-earlier-then-pass-benefits-on.html" target="_blank" rel="noopener" class="media-title">Brazil Pension Crisis Mounts as More Retire Earlier, Then Pass Benefits On</a>
+          
+          <div class="media-card-bottom">
+            <span class="media-type">Press mention</span>
+            <p class="media-desc">Quoted as IDB pensions expert on the Brazilian pension system, which allowed early retirement in the 50s and consumed 57% of the federal budget. Noted: "The people who are retiring in their 50s, those are not the low-income people... This is the beginning of a series of changes that will have to be made in the next two decades to fix the system."</p>
+          </div>
+          <a href="https://www.nytimes.com/2015/10/21/world/americas/brazil-pension-crisis-mounts-as-more-retire-earlier-then-pass-benefits-on.html" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
+        </div>
+        <div class="media-card reveal" style="animation-delay:650ms">
+          <div class="media-card-top">
+            <span class="media-flag">🇬🇧</span>
+            <span class="media-outlet" style="background:#BB191918;color:#BB1919;border:1px solid #BB191935">BBC Mundo</span>
+            <span class="media-year">2014</span>
+          </div>
+          <a href="https://www.bbc.com/mundo/noticias/2014/05/140527_economia_trabajo_informal_wbm" target="_blank" rel="noopener" class="media-title">Como terminar con el trabajo informal en America Latina</a>
+          
+          <div class="media-card-bottom">
+            <span class="media-type">Press mention</span>
+            <p class="media-desc">Quoted extensively in this BBC Mundo feature on informal labour in Latin America (127 million workers, nearly half the workforce): "Entre el 47% y el 60% de los 140 millones de mayores de 65 anos que llegaran a la edad de jubilacion en 2050 no habran ahorrado lo suficiente para financiarse una vejez digna." Story syndicated by El Comercio (Peru) and other LAC papers.</p>
+          </div>
+          <a href="https://www.bbc.com/mundo/noticias/2014/05/140527_economia_trabajo_informal_wbm" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
         </div>
         <div class="media-card reveal" style="animation-delay:700ms">
           <div class="media-card-top">
@@ -752,336 +733,19 @@
         </div>
         <div class="media-card reveal" style="animation-delay:750ms">
           <div class="media-card-top">
-            <span class="media-flag">🌐</span>
-            <span class="media-outlet" style="background:#1a6b4a18;color:#1a6b4a;border:1px solid #1a6b4a35">Pension Policy International</span>
-            <span class="media-year">2021</span>
+            <span class="media-flag">🇧🇷</span>
+            <span class="media-outlet" style="background:#c0392b18;color:#c0392b;border:1px solid #c0392b35">Vermelho (Brazil)</span>
+            <span class="media-year">2013</span>
           </div>
-          <a href="https://www.pensionpolicyinternational.com/ahorro-previsional-voluntario-experiencia-del-laboratorio-de-ahorro-para-el-retiro-en-america-latina-y-el-caribe/" target="_blank" rel="noopener" class="media-title">Ahorro Previsional Voluntario: Experiencia del Laboratorio de Ahorro para el Retiro en ALC</a>
-          <div class="media-coauth">with G. Caballero, F. Cofre, S. Gonzalez, A. Hand, L. Keller, M.T. Silva Porto, C. Rodriguez</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Policy journal</span>
-            <p class="media-desc">Published in Pension Policy International (PPI) — an independent global platform specialising in pension policy analysis. Summarises four years of the IDB Retirement Savings Lab across Chile, Colombia, Mexico and Peru, applying behavioural science tools to promote voluntary pension savings among informal and independent workers.</p>
-          </div>
-          <a href="https://www.pensionpolicyinternational.com/ahorro-previsional-voluntario-experiencia-del-laboratorio-de-ahorro-para-el-retiro-en-america-latina-y-el-caribe/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:800ms">
-          <div class="media-card-top">
-            <span class="media-flag">🇲🇽</span>
-            <span class="media-outlet" style="background:#005a9c18;color:#005a9c;border:1px solid #005a9c35">El Economista (Mexico)</span>
-            <span class="media-year">2021</span>
-          </div>
-          <a href="https://www.pensionpolicyinternational.com/sistema-del-ahorro-para-el-retiro-en-mexico-innovador-en-america-latina-bid/" target="_blank" rel="noopener" class="media-title">Sistema del ahorro para el retiro en Mexico, innovador en America Latina: BID</a>
-          <div class="media-coauth">with Oliver Azuara</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Press interview</span>
-            <p class="media-desc">Quoted as IDB lead expert calling Mexico SAR (Sistema del Ahorro para el Retiro) the most innovative retirement savings system in LAC, citing the GanAhorro program, the Afore Movil app, and the expansion of savings contributions through convenience stores. Presenting results of the IDB Retirement Savings Lab report. Article syndicated by Pension Policy International.</p>
-          </div>
-          <a href="https://www.pensionpolicyinternational.com/sistema-del-ahorro-para-el-retiro-en-mexico-innovador-en-america-latina-bid/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:850ms">
-          <div class="media-card-top">
-            <span class="media-flag">🗞</span>
-            <span class="media-outlet" style="background:#00000018;color:#000000;border:1px solid #00000035">The New York Times</span>
-            <span class="media-year">2015</span>
-          </div>
-          <a href="https://www.nytimes.com/2015/10/21/world/americas/brazil-pension-crisis-mounts-as-more-retire-earlier-then-pass-benefits-on.html" target="_blank" rel="noopener" class="media-title">Brazil Pension Crisis Mounts as More Retire Earlier, Then Pass Benefits On</a>
+          <a href="https://vermelho.org.br/2013/10/28/bolivia-e-o-pais-que-mais-protege-aposentados-na-america-latina/" target="_blank" rel="noopener" class="media-title">Bolivia e o pais que mais protege aposentados na America Latina</a>
           
           <div class="media-card-bottom">
             <span class="media-type">Press mention</span>
-            <p class="media-desc">Quoted as IDB pensions expert on the Brazilian pension system, which allowed early retirement in the 50s and consumed 57% of the federal budget. Noted: "The people who are retiring in their 50s, those are not the low-income people... This is the beginning of a series of changes that will have to be made in the next two decades to fix the system."</p>
+            <p class="media-desc">Quoted in this Brazilian news article (Vermelho, one of Brazil largest political news sites) about Bolivia Renta Dignidad pension programme, drawing on the BID book "Melhores pensoes, melhores trabalhos": "Esse programa oferece tal seguranca de ingressos que notamos que ha uma diminuicao da oferta de trabalho do setor populacional que, antes, tinha que seguir trabalhando ate os 80 anos para sobreviver."</p>
           </div>
-          <a href="https://www.nytimes.com/2015/10/21/world/americas/brazil-pension-crisis-mounts-as-more-retire-earlier-then-pass-benefits-on.html" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
+          <a href="https://vermelho.org.br/2013/10/28/bolivia-e-o-pais-que-mais-protege-aposentados-na-america-latina/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
         </div>
-      </div>
-    </div>
   </div>
-  <div class="acc-block" id="media-idb-blog">
-    <button class="acc-header" onclick="toggleAcc('media-idb-blog')" aria-expanded="false">
-      <span class="acc-icon">✍️</span>
-      <span class="acc-label">IDB Blog Posts</span>
-      <span class="acc-count-badge">9</span>
-      <span class="acc-arrow">&#9662;</span>
-    </button>
-    <div class="acc-body" id="body-media-idb-blog" style="display:none">
-      <div class="acc-inner media-grid">
-        <div class="media-card reveal" style="animation-delay:0ms">
-          <div class="media-card-top">
-            <span class="media-flag">🖊</span>
-            <span class="media-outlet" style="background:#009ade18;color:#009ade;border:1px solid #009ade35">IDB Ideas Matter</span>
-            <span class="media-year">2025</span>
-          </div>
-          <a href="https://blogs.iadb.org/ideas-matter/en/why-do-workers-in-ecuador-go-formal-at-age-50-and-what-do-pensions-have-to-do-with-it/" target="_blank" rel="noopener" class="media-title">Why Do Workers in Ecuador Go Formal at Age 50? And What Do Pensions Have to Do With It?</a>
-          <div class="media-coauth">with J. Leganza, T. Mojica, M.L. Oliveri & D. Vera-Cossio</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Blog post</span>
-            <p class="media-desc">New research reveals that pension program design creates a surprising spike in formal employment exactly at age 50 — decades before retirement — because of how contribution rules interact with eligibility thresholds.</p>
-          </div>
-          <a href="https://blogs.iadb.org/ideas-matter/en/why-do-workers-in-ecuador-go-formal-at-age-50-and-what-do-pensions-have-to-do-with-it/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:50ms">
-          <div class="media-card-top">
-            <span class="media-flag">🖊</span>
-            <span class="media-outlet" style="background:#009ade18;color:#009ade;border:1px solid #009ade35">Factor Trabajo (IDB)</span>
-            <span class="media-year">2020</span>
-          </div>
-          <a href="https://blogs.iadb.org/trabajo/es/author/mbosch/page/3/" target="_blank" rel="noopener" class="media-title">Pan para hoy y hambre para manana? El dilema del acceso temprano a los fondos de pensiones durante el coronavirus</a>
-          <div class="media-coauth">with C. Cabrita Felix, M. Garcia Huitron & M.T. Silva-Porto</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Blog post</span>
-            <p class="media-desc">On the fundamental tension between granting early access to pension savings during COVID-19 — relieving immediate hardship — and the long-term cost of depleting retirement funds for younger workers.</p>
-          </div>
-          <a href="https://blogs.iadb.org/trabajo/es/author/mbosch/page/3/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:100ms">
-          <div class="media-card-top">
-            <span class="media-flag">🖊</span>
-            <span class="media-outlet" style="background:#009ade18;color:#009ade;border:1px solid #009ade35">Factor Trabajo (IDB)</span>
-            <span class="media-year">2020</span>
-          </div>
-          <a href="https://blogs.iadb.org/trabajo/es/el-hoy-y-el-manana-una-reflexion-sobre-los-retos-de-las-pensiones-en-tiempos-de-coronavirus/" target="_blank" rel="noopener" class="media-title">El hoy y el manana: Una reflexion sobre los retos de las pensiones en tiempos de coronavirus</a>
-          <div class="media-coauth">with M. Garcia Huitron & M.T. Silva-Porto</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Blog post</span>
-            <p class="media-desc">Should we give high benefits to today's generations knowing tomorrow's may not receive them? How much solidarity must exist with older adults? Reflecting on pension futures during the COVID-19 crisis.</p>
-          </div>
-          <a href="https://blogs.iadb.org/trabajo/es/el-hoy-y-el-manana-una-reflexion-sobre-los-retos-de-las-pensiones-en-tiempos-de-coronavirus/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:150ms">
-          <div class="media-card-top">
-            <span class="media-flag">🖊</span>
-            <span class="media-outlet" style="background:#009ade18;color:#009ade;border:1px solid #009ade35">Factor Trabajo (IDB)</span>
-            <span class="media-year">2019</span>
-          </div>
-          <a href="https://blogs.iadb.org/trabajo/es/winter-is-coming-lecciones-de-las-reformas-de-pensiones-en-brasil-y-chile/" target="_blank" rel="noopener" class="media-title">Winter is Coming: Lecciones de las reformas de pensiones en Brasil y Chile</a>
-          <div class="media-coauth">with A. Altamirano & M. Garcia Huitron</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Blog post</span>
-            <p class="media-desc">Just as winter was inevitable in Game of Thrones, no pension system can escape demographic aging without adjustment. Brazil and Chile illustrate two very different crisis paths — yet both face the same demographic reckoning.</p>
-          </div>
-          <a href="https://blogs.iadb.org/trabajo/es/winter-is-coming-lecciones-de-las-reformas-de-pensiones-en-brasil-y-chile/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:200ms">
-          <div class="media-card-top">
-            <span class="media-flag">🖊</span>
-            <span class="media-outlet" style="background:#009ade18;color:#009ade;border:1px solid #009ade35">Y si hablamos de igualdad (IDB)</span>
-            <span class="media-year">2019</span>
-          </div>
-          <a href="https://blogs.iadb.org/igualdad/es/author/marianobosch/" target="_blank" rel="noopener" class="media-title">Deben las pensiones compensar las desigualdades de genero?</a>
-          <div class="media-coauth">with S. Gonzalez & A. Altamirano</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Blog post</span>
-            <p class="media-desc">Pension systems are a mirror of what happens in the labor market, where women are substantially underrepresented. Should pension system design explicitly compensate for gender inequalities accumulated over a lifetime?</p>
-          </div>
-          <a href="https://blogs.iadb.org/igualdad/es/author/marianobosch/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:250ms">
-          <div class="media-card-top">
-            <span class="media-flag">🖊</span>
-            <span class="media-outlet" style="background:#009ade18;color:#009ade;border:1px solid #009ade35">Factor Trabajo (IDB)</span>
-            <span class="media-year">2018</span>
-          </div>
-          <a href="https://blogs.iadb.org/trabajo/es/author/mbosch/" target="_blank" rel="noopener" class="media-title">Presente y Futuro de las Pensiones en America Latina y el Caribe</a>
-          <div class="media-coauth">with C. Pages & L. Ripani</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Blog post</span>
-            <p class="media-desc">Launching the IDB pensions flagship: What pension can workers expect given their labor history? Which systems are most equitable? What will happen as countries age?</p>
-          </div>
-          <a href="https://blogs.iadb.org/trabajo/es/author/mbosch/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:300ms">
-          <div class="media-card-top">
-            <span class="media-flag">🖊</span>
-            <span class="media-outlet" style="background:#009ade18;color:#009ade;border:1px solid #009ade35">Factor Trabajo (IDB)</span>
-            <span class="media-year">2017</span>
-          </div>
-          <a href="https://blogs.iadb.org/trabajo/es/author/mbosch/page/4/" target="_blank" rel="noopener" class="media-title">Argentina no esta sola: las reformas de pensiones que estan por venir</a>
-          <div class="media-coauth">with M.T. Silva-Porto & O. Azuara</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Blog post</span>
-            <p class="media-desc">Argentina's pension reform debate is a preview of debates coming across the entire LAC region, where pension systems face serious challenges of coverage, sufficiency, and fiscal viability.</p>
-          </div>
-          <a href="https://blogs.iadb.org/trabajo/es/author/mbosch/page/4/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:350ms">
-          <div class="media-card-top">
-            <span class="media-flag">🖊</span>
-            <span class="media-outlet" style="background:#009ade18;color:#009ade;border:1px solid #009ade35">IDB Ideas Matter</span>
-            <span class="media-year">2017</span>
-          </div>
-          <a href="https://blogs.iadb.org/ideas-matter/en/author/mbosch/" target="_blank" rel="noopener" class="media-title">When Poorly Designed Pensions Threaten the Future</a>
-          <div class="media-coauth">with Eduardo Cavallo</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Blog post</span>
-            <p class="media-desc">Brazil's pension crisis — with demonstrators blocking roads over the government's push to raise the retirement age — illustrates how poorly designed pension systems create fiscal time bombs.</p>
-          </div>
-          <a href="https://blogs.iadb.org/ideas-matter/en/author/mbosch/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:400ms">
-          <div class="media-card-top">
-            <span class="media-flag">🌐</span>
-            <span class="media-outlet" style="background:#1a6b8a18;color:#1a6b8a;border:1px solid #1a6b8a35">Pension Policy International</span>
-            <span class="media-year">2021</span>
-          </div>
-          <a href="https://www.pensionpolicyinternational.com/ahorro-previsional-voluntario-experiencia-del-laboratorio-de-ahorro-para-el-retiro-en-america-latina-y-el-caribe/" target="_blank" rel="noopener" class="media-title">Ahorro Previsional Voluntario: Experiencia del Laboratorio de Ahorro para el Retiro en ALC</a>
-          <div class="media-coauth">with G. Caballero, F. Cofre, S. Gonzalez, A. Hand, L. Keller & M.T. Silva Porto</div>
-          <div class="media-card-bottom">
-            <span class="media-type">Policy article</span>
-            <p class="media-desc">Summary of four years of the IDB Retirement Savings Laboratory (LAR) — a major behavioral economics initiative in Chile, Colombia, Mexico and Peru using nudges, financial education, and digital access points to increase voluntary pension savings among low-income and independent workers.</p>
-          </div>
-          <a href="https://www.pensionpolicyinternational.com/ahorro-previsional-voluntario-experiencia-del-laboratorio-de-ahorro-para-el-retiro-en-america-latina-y-el-caribe/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="acc-block" id="media-speaking">
-    <button class="acc-header" onclick="toggleAcc('media-speaking')" aria-expanded="false">
-      <span class="acc-icon">🎤</span>
-      <span class="acc-label">Conferences &amp; Speaking</span>
-      <span class="acc-count-badge">4</span>
-      <span class="acc-arrow">&#9662;</span>
-    </button>
-    <div class="acc-body" id="body-media-speaking" style="display:none">
-      <div class="acc-inner media-grid">
-        <div class="media-card reveal" style="animation-delay:0ms">
-          <div class="media-card-top">
-            <span class="media-flag">🇵🇪</span>
-            <span class="media-outlet" style="background:#00308718;color:#003087;border:1px solid #00308735">PUCP - Pontificia Universidad Catolica del Peru</span>
-            <span class="media-year">2019</span>
-          </div>
-          <a href="https://educast.pucp.edu.pe/video/9375/taller_internacional_reformas_de_pensiones_lecciones_para_peru" target="_blank" rel="noopener" class="media-title">Taller Internacional: Reformas de Pensiones. Lecciones para Peru</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Academic conference (video)</span>
-            <p class="media-desc">Featured speaker at this international workshop hosted by Peru leading university, presenting IDB research and international lessons on pension reform for the Peruvian context. The full session was recorded and published on PUCP academic video platform (Educast PUCP).</p>
-          </div>
-          <a href="https://educast.pucp.edu.pe/video/9375/taller_internacional_reformas_de_pensiones_lecciones_para_peru" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:50ms">
-          <div class="media-card-top">
-            <span class="media-flag">🇨🇱</span>
-            <span class="media-outlet" style="background:#004e7018;color:#004e70;border:1px solid #004e7035">Universidad Diego Portales, Chile</span>
-            <span class="media-year">2023</span>
-          </div>
-          <a href="https://www.udp.cl/agenda/conferencia-internacional-reforma-de-pensiones-en-chile/" target="_blank" rel="noopener" class="media-title">International Conference: Pension Reform in Chile</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Conference</span>
-            <p class="media-desc">Featured speaker alongside ILO Southern Cone Director Fabio Bertranou at the international conference on pension reform in Chile, presenting IDB evidence and reform options for the Chilean pension debate.</p>
-          </div>
-          <a href="https://www.udp.cl/agenda/conferencia-internacional-reforma-de-pensiones-en-chile/" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:100ms">
-          <div class="media-card-top">
-            <span class="media-flag">🌐</span>
-            <span class="media-outlet" style="background:#004e7018;color:#004e70;border:1px solid #004e7035">IDB Global Pensions Programme</span>
-            <span class="media-year">2023</span>
-          </div>
-          <a href="https://cursos.iadb.org/en/programs/global-pensions-programme" target="_blank" rel="noopener" class="media-title">Featured Speaker — IDB Global Pensions Programme</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Conference</span>
-            <p class="media-desc">Presenting IDB pension research alongside World Bank, IMF, and OECD pension specialists in the IDB's flagship global pension capacity-building programme for policymakers from across LAC.</p>
-          </div>
-          <a href="https://cursos.iadb.org/en/programs/global-pensions-programme" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:150ms">
-          <div class="media-card-top">
-            <span class="media-flag">🇨🇴</span>
-            <span class="media-outlet" style="background:#c0392b18;color:#c0392b;border:1px solid #c0392b35">Colpensiones International Forum, Colombia</span>
-            <span class="media-year">2019</span>
-          </div>
-          <a href="https://www.larepublica.co/finanzas/colombia-tiene-baja-cobertura-pero-alta-tasa-de-reemplazo-en-pension-2735673" target="_blank" rel="noopener" class="media-title">Foro Internacional: El rol del Estado en la proteccion para la vejez</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Conference</span>
-            <p class="media-desc">Presented IDB pension reform proposals for Colombia — expanding coverage, establishing future adjustment institutions, and integrating Beps with contributory pillars — at Colombia's national pension policy forum.</p>
-          </div>
-          <a href="https://www.larepublica.co/finanzas/colombia-tiene-baja-cobertura-pero-alta-tasa-de-reemplazo-en-pension-2735673" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="acc-block" id="media-policy">
-    <button class="acc-header" onclick="toggleAcc('media-policy')" aria-expanded="false">
-      <span class="acc-icon">🏛</span>
-      <span class="acc-label">Policy &amp; Institutional Work</span>
-      <span class="acc-count-badge">3</span>
-      <span class="acc-arrow">&#9662;</span>
-    </button>
-    <div class="acc-body" id="body-media-policy" style="display:none">
-      <div class="acc-inner media-grid">
-        <div class="media-card reveal" style="animation-delay:0ms">
-          <div class="media-card-top">
-            <span class="media-flag">🏛</span>
-            <span class="media-outlet" style="background:#004e7018;color:#004e70;border:1px solid #004e7035">IDB / LSE / Yale / IFS</span>
-            <span class="media-year">2024</span>
-          </div>
-          <a href="https://www.iadb.org/en/news/complexities-inequality-latin-america-and-caribbean" target="_blank" rel="noopener" class="media-title">Leading the LAC Inequality Research Initiative (LACIR)</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Initiative</span>
-            <p class="media-desc">Led an unprecedented multi-institution effort with LSE, Yale University, the Institute for Fiscal Studies, and over a dozen leading universities to fundamentally rethink the drivers of inequality in Latin America.</p>
-          </div>
-          <a href="https://www.iadb.org/en/news/complexities-inequality-latin-america-and-caribbean" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:50ms">
-          <div class="media-card-top">
-            <span class="media-flag">🏛</span>
-            <span class="media-outlet" style="background:#004e7018;color:#004e70;border:1px solid #004e7035">IDB DIA Report</span>
-            <span class="media-year">2024</span>
-          </div>
-          <a href="https://publications.iadb.org/en/expanding-opportunities-policies-gender-equality-and-inclusion" target="_blank" rel="noopener" class="media-title">Expanding Opportunities: Policies for Gender Equality and Inclusion</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Policy report</span>
-            <p class="media-desc">Launch of the IDB's flagship Development in the Americas (DIA) report, the bank's most prestigious annual publication, focused on policies for gender equality across Latin America and the Caribbean.</p>
-          </div>
-          <a href="https://publications.iadb.org/en/expanding-opportunities-policies-gender-equality-and-inclusion" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-        <div class="media-card reveal" style="animation-delay:100ms">
-          <div class="media-card-top">
-            <span class="media-flag">🏛</span>
-            <span class="media-outlet" style="background:#004e7018;color:#004e70;border:1px solid #004e7035">IDB VPS</span>
-            <span class="media-year">2025</span>
-          </div>
-          <a href="https://www.iadb.org" target="_blank" rel="noopener" class="media-title">Coordinating the IDB Knowledge Program for the Vice Presidency of Sectors</a>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">Leadership</span>
-            <p class="media-desc">Leading the knowledge agenda for the IDB's largest operational vice presidency, coordinating research and knowledge products across labor, pensions, health, education, transport, energy, and other sectors.</p>
-          </div>
-          <a href="https://www.iadb.org" target="_blank" rel="noopener" class="media-link">Read more &#8594;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="acc-block" id="media-missing">
-    <button class="acc-header" onclick="toggleAcc('media-missing')" aria-expanded="false">
-      <span class="acc-icon">🔍</span>
-      <span class="acc-label">To Confirm — Your Input Needed</span>
-      <span class="acc-count-badge">1</span>
-      <span class="acc-arrow">&#9662;</span>
-    </button>
-    <div class="acc-body" id="body-media-missing" style="display:none">
-      <div class="acc-inner media-grid">
-        <div class="media-card reveal" style="animation-delay:0ms">
-          <div class="media-card-top">
-            <span class="media-flag">🎥</span>
-            <span class="media-outlet" style="background:#FF000018;color:#FF0000;border:1px solid #FF000035">YouTube Appearances</span>
-            <span class="media-year">—</span>
-          </div>
-          <span class="media-title media-title-nolink">Video Appearances — Links Needed</span>
-          
-          <div class="media-card-bottom">
-            <span class="media-type">To confirm</span>
-            <p class="media-desc">IDB YouTube appearances not yet linked. Please share specific video URLs or titles (e.g. conference talks, book launches, panel discussions) and they will be added here with proper links.</p>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-
 </section>
 </div>
 <script>
