@@ -489,7 +489,7 @@
       <h1 class="hero-name">Mariano Bosch</h1>
       <div class="hero-role" data-t="Inter-American Development Bank">Inter-American Development Bank</div>
       <div class="bio-toggle-wrap">
-        <p class="hero-bio" id="bio-academic">I am Principal Advisor at the IDB&#39;s Vice Presidency of Sectors, where I lead the coordination of the knowledge program. My research focuses on labor markets, informality, and pension systems in developing countries. I have published in the <em>American Economic Journal: Applied Economics</em>, <em>American Economic Journal: Economic Policy</em>, <em>Journal of Development Economics</em>, <em>European Economic Review</em>, <em>Journal of Human Resources</em>, and <em>Labour Economics</em>, among others. I hold a PhD in Economics from the London School of Economics.</p>
+        <p class="hero-bio" id="bio-academic">I have spent 15 years producing evidence that has contributed to the policy debate around pension reform and labor markets in Latin America and the Caribbean. My research on informality, retirement savings, and social protection has been published in the <em>American Economic Journal: Applied Economics</em>, <em>AEJ: Economic Policy</em>, <em>Journal of Development Economics</em>, <em>European Economic Review</em>, <em>Journal of Human Resources</em>, and <em>Labour Economics</em>, among others. I hold a PhD in Economics from the London School of Economics.</p>
         <p class="hero-bio bio-hidden" id="bio-policy">I have spent 15 years producing the evidence base that governments in Latin America and the Caribbean use to reform pension systems and labor markets. My research has informed pension reform debates and labor market reforms in Mexico, Colombia, Peru, Chile, El Salvador, and other countries across the region, and shaped IDB advisory engagements at the highest level. Before joining the IDB in 2011, I was a consultant at the World Bank and an assistant professor at the University of Alicante. I coordinate the knowledge agenda for the Vice Presidency of Sectors and Knowledge at the IDB.</p>
       </div>
     </div>
@@ -509,13 +509,13 @@
 
 <div class="cur-wrap">
   <div class="cur-intro reveal">
-    <p>These are working papers and policy reports from the last three years — research that is ongoing, under review, or recently completed. Findings should be treated as preliminary.</p>
+    <p data-t="These are working papers and policy reports from the last three years — research that is ongoing, under review, or recently completed. Findings should be treated as preliminary.">These are working papers and policy reports from the last three years — research that is ongoing, under review, or recently completed. Findings should be treated as preliminary.</p>
   </div>
   <div class="cur-list">
   <div class="cur-card reveal">
     <div class="cur-card-top">
       <span class="cur-year">2025</span>
-      <span class="cur-badge" style="background:#e8f4ea;color:#2d6a4f">Working Paper</span>
+      <span class="cur-badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span>
       <span class="cur-venue">IDB Working Paper</span>
     </div>
     <div class="cur-title"><a href="https://publications.iadb.org/en/public-pensions-and-strategic-timing-formal-employment" target="_blank" rel="noopener" style="color:var(--idb-blue);text-decoration:none;">Public Pensions and the Strategic Timing of Formal Employment</a></div>
@@ -535,7 +535,7 @@
   <div class="cur-card reveal">
     <div class="cur-card-top">
       <span class="cur-year">2023</span>
-      <span class="cur-badge" style="background:#e8f4ea;color:#2d6a4f">Working Paper</span>
+      <span class="cur-badge" style="background:#f2f2f2;color:#3a3a3a">Working Paper</span>
       <span class="cur-venue">IDB Working Paper</span>
     </div>
     <div class="cur-title"><a href="https://doi.org/10.18235/0005146" target="_blank" rel="noopener" style="color:var(--idb-blue);text-decoration:none;">Employment and Living Conditions of the Population over 50 in Latin America</a></div>
@@ -582,24 +582,82 @@ function switchBio(type) {
 </script>
 
 <script>
+// ── Language system ────────────────────────────────────────────────────────
 var TRANSLATIONS = {
-  es: {"Explore my work": "Explorar mi trabajo", "By Topic": "Por tema", "By Type": "Por tipo", "By Country": "Por país", "Most Cited": "Más citados", "Profiles": "Perfiles", "Academic": "Académico", "Policy": "Política", "Economics Principal Advisor · IDB Vice Presidency of Sectors": "Asesor Principal de Economía · VPS, Banco Interamericano de Desarrollo", "Inter-American Development Bank": "Banco Interamericano de Desarrollo", "All Analytical Work": "Todo el trabajo analítico", "Research Coverage": "Cobertura de investigación", "Academic Profiles": "Perfiles académicos", "Countries where research was conducted, policies informed, or advisory work carried out": "Países donde se realizó investigación, se informaron políticas o se realizó trabajo de asesoría", "Ranked by Google Scholar citations — 5,248 total citations": "Clasificados por citas de Google Scholar — 5.248 citas totales", "research · citations · networks": "investigación · citas · redes", "total publications — click any category to expand": "publicaciones en total — haga clic para expandir", "Countries & regions — click to expand": "Países y regiones — haga clic para expandir", "Click a country on the map or a card below": "Haga clic en un país del mapa o en una tarjeta", "Publications per country": "Publicaciones por país", "Labor Market Dynamics": "Dinámica del Mercado Laboral", "Labor Market Policies": "Políticas del Mercado Laboral", "Pensions & Social Protection": "Pensiones y Protección Social", "Discrimination": "Discriminación", "Growth & Development": "Crecimiento y Desarrollo", "How workers and firms move between formal and informal employment — the mechanics of job creation, destruction, and labor market transitions in developing economies.": "Cómo trabajadores y empresas se desplazan entre el empleo formal e informal — la mecánica de la creación y destrucción de empleo y las transiciones en el mercado laboral de economías en desarrollo.", "The effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.": "Los efectos de los salarios mínimos, los seguros de desempleo, los programas de bienestar y las políticas de cumplimiento de la seguridad social sobre el empleo, la formalidad y la desigualdad.", "Pension system design, coverage gaps, retirement savings behavior, and reform options for contributory and non-contributory systems across Latin America.": "Diseño de sistemas de pensiones, brechas de cobertura, comportamiento del ahorro para el retiro y opciones de reforma para sistemas contributivos y no contributivos en América Latina.", "Field experimental evidence on ethnic and racial discrimination in rental housing and second-hand consumer markets in Spain.": "Evidencia experimental de campo sobre discriminación étnica y racial en el mercado de vivienda en alquiler y mercados de consumo de segunda mano en España.", "Trade liberalization, regional convergence, human capital, and inclusive growth policies across Latin America and beyond.": "Liberalización comercial, convergencia regional, capital humano y políticas de crecimiento inclusivo en América Latina y más allá.", "Journal": "Revista científica", "Book": "Libro", "Book Chapter": "Capítulo de libro", "Working Paper": "Documento de trabajo", "Policy Work": "Trabajo de política", "Journal Article": "Artículo de revista", "Key Finding": "Hallazgo clave", "View →": "Ver →", "View &#8594;": "Ver &#8594;", "rank": "rango", "citations": "citas", "Countries": "Países", "Primary region": "Región principal", "Years of research": "Años de investigación", "LAC-wide · not on map": "Toda la región · no en el mapa", "publications": "publicaciones", "publication": "publicación", "pubs": "pub.", "pub": "pub.", "Google Scholar": "Google Scholar", "Citations, h-index & metrics": "Citas, índice h y métricas", "IDEAS / RePEC": "IDEAS / RePEC", "Economics research database": "Base de datos de economía", "EconPapers / RePEC": "EconPapers / RePEC", "Working papers & articles": "Documentos de trabajo y artículos", "LinkedIn": "LinkedIn", "Professional network": "Red profesional", "ResearchGate": "ResearchGate", "Research network & papers": "Red de investigación y artículos", "Regional Work (LAC)": "Trabajo regional (ALC)"},
-  fr: {"Explore my work": "Explorer mon travail", "By Topic": "Par thème", "By Type": "Par type", "By Country": "Par pays", "Most Cited": "Plus cités", "Profiles": "Profils", "Academic": "Académique", "Policy": "Politique", "Economics Principal Advisor · IDB Vice Presidency of Sectors": "Conseiller Principal en Économie · VPS, Banque Interaméricaine de Développement", "Inter-American Development Bank": "Banque Interaméricaine de Développement", "All Analytical Work": "Tout le travail analytique", "Research Coverage": "Couverture de recherche", "Academic Profiles": "Profils académiques", "total publications — click any category to expand": "publications au total — cliquez pour développer", "Countries & regions — click to expand": "Pays et régions — cliquez pour développer", "Click a country on the map or a card below": "Cliquez sur un pays sur la carte ou sur une carte ci-dessous", "Publications per country": "Publications par pays", "research · citations · networks": "recherche · citations · réseaux", "Labor Market Dynamics": "Dynamique du marché du travail", "Labor Market Policies": "Politiques du marché du travail", "Pensions & Social Protection": "Retraites et protection sociale", "Discrimination": "Discrimination", "Growth & Development": "Croissance et développement", "How workers and firms move between formal and informal employment — the mechanics of job creation, destruction, and labor market transitions in developing economies.": "Comment les travailleurs et les entreprises se déplacent entre l'emploi formel et informel — la mécanique de la création et destruction d'emplois et les transitions du marché du travail dans les économies en développement.", "The effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.": "Les effets des salaires minimums, des allocations chômage, des programmes sociaux et des politiques de conformité à la sécurité sociale sur l'emploi, la formalité et les inégalités.", "Pension system design, coverage gaps, retirement savings behavior, and reform options for contributory and non-contributory systems across Latin America.": "Conception des systèmes de retraite, lacunes de couverture, comportement d'épargne-retraite et options de réforme pour les systèmes contributifs et non contributifs en Amérique latine.", "Field experimental evidence on ethnic and racial discrimination in rental housing and second-hand consumer markets in Spain.": "Preuves expérimentales sur le terrain sur la discrimination ethnique et raciale dans le marché locatif et les marchés de consommation de seconde main en Espagne.", "Trade liberalization, regional convergence, human capital, and inclusive growth policies across Latin America and beyond.": "Libéralisation commerciale, convergence régionale, capital humain et politiques de croissance inclusive en Amérique latine et au-delà.", "Journal": "Revue scientifique", "Book": "Livre", "Book Chapter": "Chapitre de livre", "Working Paper": "Document de travail", "Policy Work": "Travail politique", "Journal Article": "Article de revue", "Key Finding": "Résultat clé", "View →": "Voir →", "View &#8594;": "Voir &#8594;", "rank": "rang", "citations": "citations", "Countries": "Pays", "Primary region": "Région principale", "Years of research": "Années de recherche", "LAC-wide · not on map": "Toute la région · pas sur la carte", "publications": "publications", "publication": "publication", "Regional Work (LAC)": "Travaux régionaux (ALC)", "Citations, h-index & metrics": "Citations, indice h et métriques", "Economics research database": "Base de données d'économie", "Working papers & articles": "Documents de travail et articles", "Professional network": "Réseau professionnel", "Research network & papers": "Réseau de recherche et articles"}
+  "Explore my work": "Explorar mi trabajo",
+  "By Topic": "Por tema",
+  "By Type": "Por tipo",
+  "By Country": "Por país",
+  "Most Cited": "Más citados",
+  "Profiles": "Perfiles",
+  "Media": "Medios",
+  "Work in Progress": "Trabajo en Progreso",
+  "Academic": "Académico",
+  "Policy": "Política",
+  "Economics Principal Advisor · IDB Vice Presidency of Sectors": "Asesor Principal de Economía · VPS, Banco Interamericano de Desarrollo",
+  "Inter-American Development Bank": "Banco Interamericano de Desarrollo",
+  "All Analytical Work": "Todo el trabajo analítico",
+  "Research Coverage": "Cobertura de investigación",
+  "Academic Profiles": "Perfiles académicos",
+  "Countries where research was conducted, policies informed, or advisory work carried out": "Países donde se realizó investigación, se informaron políticas o se realizó trabajo de asesoría",
+  "Ranked by Google Scholar citations — 5,248 total citations": "Clasificados por citas de Google Scholar — 5.248 citas totales",
+  "research · citations · networks": "investigación · citas · redes",
+  "total publications — click any category to expand": "publicaciones en total — haga clic para expandir",
+  "Countries & regions — click to expand": "Países y regiones — haga clic para expandir",
+  "Click a country on the map or a card below": "Haga clic en un país del mapa o en una tarjeta",
+  "Publications per country": "Publicaciones por país",
+  "Labor Markets in High-Informality Countries": "Mercados Laborales en Países con Alta Informalidad",
+  "Labor Market Dynamics": "Dinámica del Mercado Laboral",
+  "Labor Market Policies": "Políticas del Mercado Laboral",
+  "Pensions & Social Protection": "Pensiones y Protección Social",
+  "Discrimination": "Discriminación",
+  "Growth & Development": "Crecimiento y Desarrollo",
+  "How workers and firms move between formal and informal employment, and the effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.": "Cómo trabajadores y empresas se desplazan entre el empleo formal e informal, y los efectos de los salarios mínimos, los seguros de desempleo, los programas de bienestar y las políticas de seguridad social sobre el empleo, la formalidad y la desigualdad.",
+  "How workers and firms move between formal and informal employment — the mechanics of job creation, destruction, and labor market transitions in developing economies.": "Cómo trabajadores y empresas se desplazan entre el empleo formal e informal — la mecánica de la creación y destrucción de empleo y las transiciones en el mercado laboral de economías en desarrollo.",
+  "The effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.": "Los efectos de los salarios mínimos, los seguros de desempleo, los programas de bienestar y las políticas de cumplimiento de la seguridad social sobre el empleo, la formalidad y la desigualdad.",
+  "Pension system design, coverage gaps, retirement savings behavior, and reform options for contributory and non-contributory systems across Latin America.": "Diseño de sistemas de pensiones, brechas de cobertura, comportamiento del ahorro para el retiro y opciones de reforma para sistemas contributivos y no contributivos en América Latina.",
+  "Field experimental evidence on ethnic and racial discrimination in rental housing and second-hand consumer markets in Spain.": "Evidencia experimental de campo sobre discriminación étnica y racial en el mercado de vivienda en alquiler y mercados de consumo de segunda mano en España.",
+  "Trade liberalization, regional convergence, human capital, and inclusive growth policies across Latin America and beyond.": "Liberalización comercial, convergencia regional, capital humano y políticas de crecimiento inclusivo en América Latina y más allá.",
+  "Journal": "Revista científica",
+  "Book": "Libro",
+  "Book Chapter": "Capítulo de libro",
+  "Working Paper": "Documento de trabajo",
+  "Policy Work": "Trabajo de política",
+  "Journal Article": "Artículo de revista",
+  "Key Finding": "Hallazgo clave",
+  "View →": "Ver →",
+  "View &#8594;": "Ver &#8594;",
+  "rank": "rango",
+  "citations": "citas",
+  "Countries": "Países",
+  "Primary region": "Región principal",
+  "Years of research": "Años de investigación",
+  "LAC-wide · not on map": "Toda la región · no en el mapa",
+  "publications": "publicaciones",
+  "publication": "publicación",
+  "pubs": "pub.",
+  "pub": "pub.",
+  "Google Scholar": "Google Scholar",
+  "Citations, h-index & metrics": "Citas, índice h y métricas",
+  "IDEAS / RePEC": "IDEAS / RePEC",
+  "Economics research database": "Base de datos de economía",
+  "EconPapers / RePEC": "EconPapers / RePEC",
+  "Working papers & articles": "Documentos de trabajo y artículos",
+  "LinkedIn": "LinkedIn",
+  "Professional network": "Red profesional",
+  "ResearchGate": "ResearchGate",
+  "Research network & papers": "Red de investigación y artículos",
+  "Regional Work (LAC)": "Trabajo regional (ALC)",
+  "My research spans three interconnected areas. First, <strong>labor markets in developing economies</strong> — understanding why informality persists, how workers transition between formal and informal jobs, and how policies such as minimum wages, unemployment insurance, and social security compliance shape those transitions. Second, <strong>pension systems and social protection</strong> — diagnosing coverage gaps, studying behavioral barriers to retirement savings, and evaluating the fiscal and redistributive impacts of contributory and non-contributory pension reforms across Latin America and the Caribbean. Third, <strong>growth, inequality, and discrimination</strong> — including field experiments on ethnic discrimination in housing markets and evidence on how trade liberalization and cash transfers affect long-run development outcomes.": "Mi investigación abarca tres áreas interconectadas. Primero, los <strong>mercados laborales en economías en desarrollo</strong> — entendiendo por qué persiste la informalidad, cómo los trabajadores transitan entre empleos formales e informales, y cómo políticas como el salario mínimo, el seguro de desempleo y el cumplimiento de la seguridad social moldean esas transiciones. Segundo, los <strong>sistemas de pensiones y protección social</strong> — diagnosticando brechas de cobertura, estudiando barreras conductuales al ahorro para el retiro y evaluando los impactos fiscales y redistributivos de las reformas previsionales en América Latina y el Caribe. Tercero, <strong>crecimiento, desigualdad y discriminación</strong> — incluyendo experimentos de campo sobre discriminación étnica en mercados de vivienda y evidencia sobre cómo la liberalización comercial y las transferencias monetarias afectan los resultados del desarrollo a largo plazo.",
+  "These are the works that academics and policymakers have found most relevant — ranked by Google Scholar citations.": "Estos son los trabajos que académicos y responsables de políticas han encontrado más relevantes — clasificados por citas en Google Scholar.",
+  "Work covered by <strong>BBC Mundo</strong> (×3), <strong>El Economista</strong> (Mexico &amp; EFE wire), <strong>RPP Noticias</strong> (Peru, ×2), <strong>Agencia Senado</strong> (Brazilian Senate), <strong>La República</strong> (Colombia), <strong>Pension Policy International</strong>, <strong>El Tiempo</strong> (Colombia), <strong>Diario Libre</strong> (Dominican Republic), and the <strong>IDB official press</strong>.": "Trabajo cubierto por <strong>BBC Mundo</strong> (×3), <strong>El Economista</strong> (México y agencia EFE), <strong>RPP Noticias</strong> (Perú, ×2), <strong>Agencia Senado</strong> (Senado de Brasil), <strong>La República</strong> (Colombia), <strong>Pension Policy International</strong>, <strong>El Tiempo</strong> (Colombia), <strong>Diario Libre</strong> (República Dominicana) y la <strong>prensa oficial del BID</strong>.",
+  "These are working papers and policy reports from the last three years — research that is ongoing, under review, or recently completed. Findings should be treated as preliminary.": "Estos son documentos de trabajo e informes de política de los últimos tres años — investigación en curso, en revisión o recientemente concluida. Los resultados deben considerarse preliminares.",
+  "Countries where empirical research has been conducted, policies informed, or advisory work carried out. Click any country on the map or card to see the papers.": "Países donde se ha realizado investigación empírica, se han informado políticas o se ha llevado a cabo trabajo de asesoría. Haga clic en cualquier país del mapa o tarjeta para ver los artículos."
 };
 
-var BIOS = {
-  en: {
-    academic: "",
-    policy:   ""
-  },
-  es: {
-    academic: "Soy Asesor Principal en la Vicepresidencia de Sectores del BID, donde coordino el programa de conocimiento. Mi investigación se centra en los mercados laborales, la informalidad y los sistemas de pensiones en países en desarrollo. He publicado en el <em>American Economic Journal: Applied Economics</em>, <em>American Economic Journal: Economic Policy</em>, <em>Journal of Development Economics</em>, <em>European Economic Review</em>, <em>Journal of Human Resources</em> y <em>Labour Economics</em>, entre otras revistas. Doctorado en Economía por la London School of Economics.",
-    policy:   "Durante 15 años he producido la base de evidencia que los gobiernos de América Latina y el Caribe utilizan para reformar los sistemas de pensiones y los mercados laborales. Mi investigación ha orientado debates de reforma pensional y de mercado laboral en México, Colombia, Perú, Chile, El Salvador y otros países de la región, e informado asesorías del BID al más alto nivel. Antes de unirme al BID en 2011, fui consultor del Banco Mundial y profesor en la Universidad de Alicante. Lidero la agenda de conocimiento de la mayor vicepresidencia operativa del BID."
-  },
-  fr: {
-    academic: "Je suis Conseiller Principal à la Vice-Présidence des Secteurs de la BID, où je coordonne le programme de connaissances. Mes recherches portent sur les marchés du travail, l'informalité et les systèmes de retraite dans les pays en développement. J'ai publié dans l'<em>American Economic Journal: Applied Economics</em>, l'<em>American Economic Journal: Economic Policy</em>, le <em>Journal of Development Economics</em>, l'<em>European Economic Review</em>, le <em>Journal of Human Resources</em> et <em>Labour Economics</em>, entre autres. Doctorat en économie de la London School of Economics.",
-    policy:   "Depuis 15 ans, je produis la base de preuves que les gouvernements d'Amérique latine et des Caraïbes utilisent pour réformer les systèmes de retraite et les marchés du travail. Mes recherches ont orienté des débats de réforme des retraites et du marché du travail au Mexique, en Colombie, au Pérou, au Chili, au Salvador et dans d'autres pays de la région, et ont informé des engagements consultatifs de la BID au plus haut niveau. Avant de rejoindre la BID en 2011, j'ai été consultant à la Banque mondiale et professeur à l'Université d'Alicante. Je dirige l'agenda de connaissances de la plus grande vice-présidence opérationnelle de la BID."
-  }
+var BIOS_ES = {
+  academic: "He pasado 15 años produciendo evidencia que ha contribuido al debate de política sobre la reforma de pensiones y los mercados laborales en América Latina y el Caribe. Mi investigación sobre informalidad, ahorro para el retiro y protección social ha sido publicada en el <em>American Economic Journal: Applied Economics</em>, <em>AEJ: Economic Policy</em>, <em>Journal of Development Economics</em>, <em>European Economic Review</em>, <em>Journal of Human Resources</em> y <em>Labour Economics</em>, entre otras. Doctorado en Economía por la London School of Economics.",
+  policy:   "Durante 15 años he producido la base de evidencia que los gobiernos de América Latina y el Caribe utilizan para reformar los sistemas de pensiones y los mercados laborales. Mi investigación ha orientado debates de reforma pensional y de mercado laboral en México, Colombia, Perú, Chile, El Salvador y otros países de la región, e informado asesorías del BID al más alto nivel. Antes de unirme al BID en 2011, fui consultor del Banco Mundial y profesor en la Universidad de Alicante. Lidero la agenda de conocimiento de la mayor vicepresidencia operativa del BID."
 };
 
 var currentLang = localStorage.getItem('lang') || 'en';
@@ -607,36 +665,39 @@ var currentLang = localStorage.getItem('lang') || 'en';
 function setLang(lang) {
   currentLang = lang;
   try { localStorage.setItem('lang', lang); } catch(e) {}
-  document.documentElement.setAttribute('lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'es' ? 'es' : 'en');
+
+  // Toggle button states
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
+
+  // Translate all [data-t] elements
   document.querySelectorAll('[data-t]').forEach(function(el) {
     var key = el.getAttribute('data-t');
-    var val = lang !== 'en' && TRANSLATIONS[lang] && TRANSLATIONS[lang][key]
-               ? TRANSLATIONS[lang][key] : key;
-    el.innerHTML = val;
+    if (lang === 'es' && TRANSLATIONS[key]) {
+      el.innerHTML = TRANSLATIONS[key];
+    } else {
+      el.innerHTML = key;
+    }
   });
+
+  // Swap bios
   var bioAc = document.getElementById('bio-academic');
   var bioPo = document.getElementById('bio-policy');
-  if (bioAc) {
-    var enAc = bioAc.getAttribute('data-en') || bioAc.innerHTML;
-    if (!bioAc.getAttribute('data-en')) bioAc.setAttribute('data-en', enAc);
-    bioAc.innerHTML = lang !== 'en' && BIOS[lang] ? BIOS[lang].academic : enAc;
-  }
-  if (bioPo) {
-    var enPo = bioPo.getAttribute('data-en') || bioPo.innerHTML;
-    if (!bioPo.getAttribute('data-en')) bioPo.setAttribute('data-en', enPo);
-    bioPo.innerHTML = lang !== 'en' && BIOS[lang] ? BIOS[lang].policy : enPo;
-  }
+  if (bioAc) bioAc.innerHTML = lang === 'es' ? BIOS_ES.academic : bioAc.getAttribute('data-en');
+  if (bioPo) bioPo.innerHTML = lang === 'es' ? BIOS_ES.policy   : bioPo.getAttribute('data-en');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Store EN bio text for restoration
   var bioAc = document.getElementById('bio-academic');
   var bioPo = document.getElementById('bio-policy');
-  if (bioAc) bioAc.setAttribute('data-en', bioAc.innerHTML);
-  if (bioPo) bioPo.setAttribute('data-en', bioPo.innerHTML);
-  if (currentLang !== 'en') setLang(currentLang);
+  if (bioAc && !bioAc.getAttribute('data-en')) bioAc.setAttribute('data-en', bioAc.innerHTML);
+  if (bioPo && !bioPo.getAttribute('data-en')) bioPo.setAttribute('data-en', bioPo.innerHTML);
+
+  // Apply saved language
+  if (currentLang === 'es') setLang('es');
 });
 </script>
 </body>

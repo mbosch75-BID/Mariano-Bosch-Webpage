@@ -453,12 +453,15 @@
 </style>
 <style>
   .acc-title-group{display:flex;flex-direction:column;flex:1;gap:.2rem;text-align:left;}
+  .acc-label{font-size:.88rem;font-weight:700;font-family:'Montserrat',sans-serif;color:var(--ink);}
   .acc-desc{font-size:.72rem;color:var(--muted);font-weight:300;line-height:1.45;font-family:'Open Sans',sans-serif;}
   .acc-header{align-items:flex-start;padding:1rem 1.1rem;}
-  .acc-icon{margin-top:.1rem;}
-  .acc-count-badge{margin-top:.15rem;align-self:flex-start;}
-  .acc-arrow{align-self:flex-start;margin-top:.3rem;}
+  .acc-icon{margin-top:.1rem;flex-shrink:0;}
+  .acc-count-badge{margin-top:.15rem;align-self:flex-start;flex-shrink:0;}
+  .acc-arrow{align-self:flex-start;margin-top:.3rem;flex-shrink:0;}
   .acc-inner.pub-list{display:flex;flex-direction:column;gap:.6rem;padding:.75rem .85rem .85rem;}
+  /* topic accordion blocks — equal header height so titles line up */
+  .acc-block .acc-header{min-height:4.2rem;}
 </style>
 </head>
 <body>
@@ -482,7 +485,7 @@
       <h1 class="hero-name">Mariano Bosch</h1>
       <div class="hero-role" data-t="Inter-American Development Bank">Inter-American Development Bank</div>
       <div class="bio-toggle-wrap">
-        <p class="hero-bio" id="bio-academic">I am Principal Advisor at the IDB&#39;s Vice Presidency of Sectors, where I lead the coordination of the knowledge program. My research focuses on labor markets, informality, and pension systems in developing countries. I have published in the <em>American Economic Journal: Applied Economics</em>, <em>American Economic Journal: Economic Policy</em>, <em>Journal of Development Economics</em>, <em>European Economic Review</em>, <em>Journal of Human Resources</em>, and <em>Labour Economics</em>, among others. I hold a PhD in Economics from the London School of Economics.</p>
+        <p class="hero-bio" id="bio-academic">I have spent 15 years producing evidence that has contributed to the policy debate around pension reform and labor markets in Latin America and the Caribbean. My research on informality, retirement savings, and social protection has been published in the <em>American Economic Journal: Applied Economics</em>, <em>AEJ: Economic Policy</em>, <em>Journal of Development Economics</em>, <em>European Economic Review</em>, <em>Journal of Human Resources</em>, and <em>Labour Economics</em>, among others. I hold a PhD in Economics from the London School of Economics.</p>
         <p class="hero-bio bio-hidden" id="bio-policy">I have spent 15 years producing the evidence base that governments in Latin America and the Caribbean use to reform pension systems and labor markets. My research has informed pension reform debates and labor market reforms in Mexico, Colombia, Peru, Chile, El Salvador, and other countries across the region, and shaped IDB advisory engagements at the highest level. Before joining the IDB in 2011, I was a consultant at the World Bank and an assistant professor at the University of Alicante. I coordinate the knowledge agenda for the Vice Presidency of Sectors and Knowledge at the IDB.</p>
       </div>
     </div>
@@ -504,7 +507,7 @@
     <button class="acc-header" onclick="toggleAcc('ta-topic-labor')" aria-expanded="false">
       <span class="acc-icon">⚙</span>
       <div class="acc-title-group">
-        <span class="acc-label">Labor Markets in High-Informality Countries</span>
+        <span class="acc-label" data-t="Labor Markets in High-Informality Countries">Labor Markets in High-Informality Countries</span>
         <span class="acc-desc" data-t="How workers and firms move between formal and informal employment, and the effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.">How workers and firms move between formal and informal employment, and the effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.</span>
       </div>
       <span class="acc-count-badge">18</span>
@@ -550,69 +553,6 @@
       </div>
       <div class="pub-card reveal" style="animation-delay:160ms">
         <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">Journal of Development Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">The Effect of Welfare Payments on Work: Regression Discontinuity Evidence from Ecuador</div>
-          <div class="pub-authors">Bosch, M. &amp; Schady, N.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Ecuador's welfare program did not discourage work overall — over a 4&#8211;5 year horizon, transfers had no effect on total labor supply for women or men. The only effect was a small shift among female recipients from formal to informal employment, suggesting welfare design matters more for formalization than for employment levels.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/eee/deveco/v139y2019icp17-27.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:200ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">European Economic Review</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">Labor Market Effects of Introducing Unemployment Benefits in an Economy with High Informality</div>
-          <div class="pub-authors">Bosch, M. &amp; Esteban-Pretel, J.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Introducing unemployment benefits in high-informality economies can increase formal employment if contributions are set correctly — but complementary policies reducing formal-sector costs are essential.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.euroecorev.2015.01.007" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:240ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2014</span><span class="badge b-venue">American Economic Journal: Economic Policy</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">The Trade-Offs of Welfare Policies in Labor Markets with Informal Jobs: The Case of the "Seguro Popular" Program in Mexico</div>
-          <div class="pub-authors">Bosch, M. &amp; Campos-Vázquez, R. M.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Mexico's universal health insurance significantly increased informality — each 10% expansion in coverage reduced formal employment by ~1.3%, revealing a fundamental trade-off between welfare provision and formalization.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1257/pol.6.4.71" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:280ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue">Journal of Development Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">Job Creation and Job Destruction in the Presence of Informal Markets</div>
-          <div class="pub-authors">Bosch, M. &amp; Esteban-Pretel, J.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Informal labor markets act as countercyclical buffers — workers cycle between formal and informal sectors, so standard job-creation/destruction models substantially underestimate true labor-market volatility in developing economies.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.jdeveco.2011.08.004" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:320ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue">Labour Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">Trade Liberalization, Labor Reforms and Formal–Informal Employment Dynamics</div>
-          <div class="pub-authors">Bosch, M., Goñi-Pacchioni, E. &amp; Maloney, W.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Brazil's rise in informality (1983–2002) was driven primarily by constitutional reforms raising labor costs — trade liberalization played only a minor role.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.labeco.2011.12.005" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:360ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2010</span><span class="badge b-venue">American Economic Journal: Applied Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">Minimum Wages and Earnings Inequality in Urban Mexico</div>
-          <div class="pub-authors">Bosch, M. &amp; Manacorda, M.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">The decline of Mexico's minimum wage in the 1980s–90s accounts for a substantial share of rising earnings inequality, particularly at the bottom of the wage distribution, through direct and spillover effects.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/aea/aejapp/v2y2010i4p128-49.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:400ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2010</span><span class="badge b-venue">Labour Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">Comparative Analysis of Labor Market Dynamics Using Markov Processes: An Application to Informality</div>
-          <div class="pub-authors">Bosch, M. &amp; Maloney, W. F.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Markov chain analysis reveals informal sectors function as flexible countercyclical buffers rather than inferior queues — challenging standard segmented-market theories.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.labeco.2009.12.004" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:440ms">
-        <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2021</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
           <div class="pub-title">Intervenci&oacute;n Conductual para Mejorar el Cumplimiento de la Cuota de Empleo de Personas con Discapacidad en Per&uacute;</div>
           <div class="pub-authors">Bosch, M., Duryea, S., Gonz&aacute;lez, S. &amp; Silva Porto, M. T.</div>
@@ -620,43 +560,16 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0003148" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:480ms">
+      <div class="pub-card reveal" style="animation-delay:200ms">
         <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
-          <div class="pub-title">Nudging the Self-employed into Contributing to Social Security: Evidence from a Nationwide Quasi Experiment in Brazil</div>
-          <div class="pub-authors">Villa, J. M., Fernandes, D. & Bosch, M.</div>
-          
-          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0000214" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+          <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">Journal of Development Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">The Effect of Welfare Payments on Work: Regression Discontinuity Evidence from Ecuador</div>
+          <div class="pub-authors">Bosch, M. &amp; Schady, N.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Ecuador's welfare program did not discourage work overall — over a 4&#8211;5 year horizon, transfers had no effect on total labor supply for women or men. The only effect was a small shift among female recipients from formal to informal employment, suggesting welfare design matters more for formalization than for employment levels.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/eee/deveco/v139y2019icp17-27.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:520ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">BBVA Research Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
-          <div class="pub-title">Savings under Formal and Informal Conditions</div>
-          <div class="pub-authors">Bosch, M., Melguizo, A., Peña, X. &amp; Tuesta, D.</div>
-          
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/bbv/wpaper/1519.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:560ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2008</span><span class="badge b-venue">IZA Discussion Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
-          <div class="pub-title">Cyclical Movements in Unemployment and Informality in Developing Countries</div>
-          <div class="pub-authors">Bosch, M. &amp; Maloney, W. F.</div>
-          
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/iza/izadps/dp3514.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:600ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2005</span><span class="badge b-venue">World Bank Policy Research Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
-          <div class="pub-title">Patenting and Research and Development: A Global View</div>
-          <div class="pub-authors">Bosch, M., Lederman, D. &amp; Maloney, W. F.</div>
-          
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/wbk/wbrwps/3739.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:640ms">
+      <div class="pub-card reveal" style="animation-delay:240ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2017</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">Measuring the Cost of Salaried Labor in Latin America and the Caribbean</div>
@@ -665,7 +578,61 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0000758" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:680ms">
+      <div class="pub-card reveal" style="animation-delay:280ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">European Economic Review</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">Labor Market Effects of Introducing Unemployment Benefits in an Economy with High Informality</div>
+          <div class="pub-authors">Bosch, M. &amp; Esteban-Pretel, J.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Introducing unemployment benefits in high-informality economies can increase formal employment if contributions are set correctly — but complementary policies reducing formal-sector costs are essential.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.euroecorev.2015.01.007" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:320ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
+          <div class="pub-title">Nudging the Self-employed into Contributing to Social Security: Evidence from a Nationwide Quasi Experiment in Brazil</div>
+          <div class="pub-authors">Villa, J. M., Fernandes, D. & Bosch, M.</div>
+          
+          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0000214" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:360ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">BBVA Research Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
+          <div class="pub-title">Savings under Formal and Informal Conditions</div>
+          <div class="pub-authors">Bosch, M., Melguizo, A., Peña, X. &amp; Tuesta, D.</div>
+          
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/bbv/wpaper/1519.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:400ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2014</span><span class="badge b-venue">American Economic Journal: Economic Policy</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">The Trade-Offs of Welfare Policies in Labor Markets with Informal Jobs: The Case of the "Seguro Popular" Program in Mexico</div>
+          <div class="pub-authors">Bosch, M. &amp; Campos-Vázquez, R. M.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Mexico's universal health insurance significantly increased informality — each 10% expansion in coverage reduced formal employment by ~1.3%, revealing a fundamental trade-off between welfare provision and formalization.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1257/pol.6.4.71" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:440ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue">Journal of Development Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">Job Creation and Job Destruction in the Presence of Informal Markets</div>
+          <div class="pub-authors">Bosch, M. &amp; Esteban-Pretel, J.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Informal labor markets act as countercyclical buffers — workers cycle between formal and informal sectors, so standard job-creation/destruction models substantially underestimate true labor-market volatility in developing economies.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.jdeveco.2011.08.004" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:480ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue">Labour Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">Trade Liberalization, Labor Reforms and Formal–Informal Employment Dynamics</div>
+          <div class="pub-authors">Bosch, M., Goñi-Pacchioni, E. &amp; Maloney, W.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Brazil's rise in informality (1983–2002) was driven primarily by constitutional reforms raising labor costs — trade liberalization played only a minor role.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.labeco.2011.12.005" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:520ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">Are Conditional Cash Transfers Associated with Lower Labor Supply?: Evidence from Mexico&#39;s Oportunidades, 2000-2010</div>
@@ -674,13 +641,49 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0009093" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
+      <div class="pub-card reveal" style="animation-delay:560ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2010</span><span class="badge b-venue">American Economic Journal: Applied Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">Minimum Wages and Earnings Inequality in Urban Mexico</div>
+          <div class="pub-authors">Bosch, M. &amp; Manacorda, M.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">The decline of Mexico's minimum wage in the 1980s–90s accounts for a substantial share of rising earnings inequality, particularly at the bottom of the wage distribution, through direct and spillover effects.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/aea/aejapp/v2y2010i4p128-49.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:600ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2010</span><span class="badge b-venue">Labour Economics</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">Comparative Analysis of Labor Market Dynamics Using Markov Processes: An Application to Informality</div>
+          <div class="pub-authors">Bosch, M. &amp; Maloney, W. F.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Markov chain analysis reveals informal sectors function as flexible countercyclical buffers rather than inferior queues — challenging standard segmented-market theories.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1016/j.labeco.2009.12.004" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:640ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2008</span><span class="badge b-venue">IZA Discussion Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
+          <div class="pub-title">Cyclical Movements in Unemployment and Informality in Developing Countries</div>
+          <div class="pub-authors">Bosch, M. &amp; Maloney, W. F.</div>
+          
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/iza/izadps/dp3514.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:680ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2005</span><span class="badge b-venue">World Bank Policy Research Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
+          <div class="pub-title">Patenting and Research and Development: A Global View</div>
+          <div class="pub-authors">Bosch, M., Lederman, D. &amp; Maloney, W. F.</div>
+          
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/wbk/wbrwps/3739.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
       </div>
     </div>
   </div>  <div class="acc-block" id="topic-pensions">
     <button class="acc-header" onclick="toggleAcc('ta-topic-pensions')" aria-expanded="false">
       <span class="acc-icon">🏦</span>
       <div class="acc-title-group">
-        <span class="acc-label">Pensions &amp; Social Protection</span>
+        <span class="acc-label" data-t="Pensions &amp; Social Protection">Pensions &amp; Social Protection</span>
         <span class="acc-desc" data-t="Pension system design, coverage gaps, retirement savings behavior, and reform options for contributory and non-contributory systems across Latin America.">Pension system design, coverage gaps, retirement savings behavior, and reform options for contributory and non-contributory systems across Latin America.</span>
       </div>
       <span class="acc-count-badge">24</span>
@@ -699,51 +702,6 @@
       </div>
       <div class="pub-card reveal" style="animation-delay:40ms">
         <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2023</span><span class="badge b-venue">Journal of Human Resources</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">Increasing Retirement Savings through Access Points and Persuasive Messages: Evidence from Mexico</div>
-          <div class="pub-authors">Bosch, M. &amp; Rubli, A.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Combining physical access points with targeted persuasive messages nearly doubles voluntary pension contributions among informal workers in Mexico, offering a scalable low-cost behavioral intervention.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://econpapers.repec.org/article/uwpjhriss/v_3a58_3ay_3a2023_3ai_3a5_3ap_3a1752-1781.htm" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:80ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2017</span><span class="badge b-venue">Journal of Pension Economics and Finance</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">Better Pensions, Better Jobs: Status and Alternatives toward Universal Pension Coverage in Latin America and the Caribbean</div>
-          <div class="pub-authors">Melguizo, A., Bosch, M. &amp; Pages, C.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Only half of LAC workers contribute to pensions — universal coverage requires aligning pension incentives with formalization, not treating non-contributory programs as substitutes for formal employment.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/cup/jpenef/v16y2017i02p121-143_00.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:120ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2022</span><span class="badge b-venue"></span><span class="badge" style="background:#f5e8d0;color:#7a4a10" data-t="Book">Book</span></div>
-          <div class="pub-title">Aging in Latin America and the Caribbean: Social Protection and Quality of Life of Older Persons</div>
-          <div class="pub-authors">Aranco, N., Bosch, M., Stampini, M., Herrera, O. A., Goyeneche, L., Ibarrarán, P. et al.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">This IDB flagship report documents the challenges of population aging across LAC, examining gaps in pension coverage, health care, and social services for older persons, and proposing integrated policy responses to ensure dignity and quality of life in old age.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/aging-latin-america-and-caribbean-social-protection-and-quality-life-older-persons" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:160ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2018</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10" data-t="Book">Book</span></div>
-          <div class="pub-title">Presente y Futuro de las Pensiones en América Latina y el Caribe</div>
-          <div class="pub-authors">Bosch, M., Oliveri, M. L., Berstein, S., García-Huitrón, M. &amp; Altamirano Montoya, Á.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">A comprehensive diagnostic of LAC pension systems examining coverage, adequacy, and fiscal sustainability challenges — and the key reform options available to governments across the region as demographic pressures mount.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/es/presente-y-futuro-de-las-pensiones-en-america-latina-y-el-caribe" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:200ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2013</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10" data-t="Book">Book</span></div>
-          <div class="pub-title">Better Pensions, Better Jobs: Towards Universal Pension Coverage in Latin America and the Caribbean</div>
-          <div class="pub-authors">Bosch, M., Melguizo, A. &amp; Pagés, C.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Universal pension coverage requires aligning incentives for formalization — expanding non-contributory programs without tackling informality risks entrenching the very problem they aim to solve.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/better-pensions-better-jobs-towards-universal-coverage-latin-america-and-caribbean" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:240ms">
-        <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2025</span><span class="badge b-venue">Cambridge University Press (Handbook)</span><span class="badge" style="background:#ede8f5;color:#4a2d7a" data-t="Book Chapter">Book Chapter</span></div>
           <div class="pub-title">Pensions in Low- and Middle-Income Countries</div>
           <div class="pub-authors">Bosch, M. et al.</div>
@@ -751,34 +709,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.1017/9781009367615.008" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:280ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2017</span><span class="badge b-venue">The Economics of Poverty Traps, NBER/Univ. of Chicago Press</span><span class="badge" style="background:#ede8f5;color:#4a2d7a" data-t="Book Chapter">Book Chapter</span></div>
-          <div class="pub-title">Can Cash Transfers Help Households Escape an Inter-Generational Poverty Trap?</div>
-          <div class="pub-authors">Araujo, M. C., Bosch, M. & Schady, N.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Ecuador's cash transfer program generated lasting improvements in children's cognitive development, suggesting targeted transfers can break inter-generational poverty traps when accompanied by early childhood investments.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0000618" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:320ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2016</span><span class="badge b-venue">Saving for Development, IDB Book</span><span class="badge" style="background:#ede8f5;color:#4a2d7a" data-t="Book Chapter">Book Chapter</span></div>
-          <div class="pub-title">Saving for the Future: Pension Systems</div>
-          <div class="pub-authors">Berstein, S. &amp; Bosch, M.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Pension systems in LAC face a dual challenge — contributory systems exclude most informal workers while non-contributory programs create fiscal pressure. Reform paths must align savings incentives with formalization.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/saving-development-how-latin-america-and-caribbean-can-save-more-and-better" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:360ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2016</span><span class="badge b-venue">Saving for Development, IDB Book</span><span class="badge" style="background:#ede8f5;color:#4a2d7a" data-t="Book Chapter">Book Chapter</span></div>
-          <div class="pub-title">Running Out of Time: The Demographics of Saving</div>
-          <div class="pub-authors">Berstein, S., Bosch, M. &amp; Oliveri, M. L.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Demographic transitions across LAC compress the window for adequate retirement savings — aging populations and late formalization mean many workers will reach retirement with insufficient contributions.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/saving-development-how-latin-america-and-caribbean-can-save-more-and-better" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:400ms">
+      <div class="pub-card reveal" style="animation-delay:80ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2025</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
           <div class="pub-title">Public Pensions and the Strategic Timing of Formal Employment</div>
@@ -787,7 +718,16 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/public-pensions-and-strategic-timing-formal-employment" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:440ms">
+      <div class="pub-card reveal" style="animation-delay:120ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2023</span><span class="badge b-venue">Journal of Human Resources</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">Increasing Retirement Savings through Access Points and Persuasive Messages: Evidence from Mexico</div>
+          <div class="pub-authors">Bosch, M. &amp; Rubli, A.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Combining physical access points with targeted persuasive messages nearly doubles voluntary pension contributions among informal workers in Mexico, offering a scalable low-cost behavioral intervention.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://econpapers.repec.org/article/uwpjhriss/v_3a58_3ay_3a2023_3ai_3a5_3ap_3a1752-1781.htm" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:160ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2023</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
           <div class="pub-title">Employment and Living Conditions of the Population over 50 in Latin America</div>
@@ -796,34 +736,16 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0005146" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:480ms">
+      <div class="pub-card reveal" style="animation-delay:200ms">
         <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
-          <div class="pub-title">Heterogeneous Effect of a Non-Contributory Pension: Evidence from Bolivia</div>
-          <div class="pub-authors">Borrella-Mas, M. A., Bosch, M. &amp; Sartarelli, M.</div>
-          
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/ucm/doctra/2019-35.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+          <div class="pub-meta"><span class="badge b-year">2022</span><span class="badge b-venue"></span><span class="badge" style="background:#f5e8d0;color:#7a4a10" data-t="Book">Book</span></div>
+          <div class="pub-title">Aging in Latin America and the Caribbean: Social Protection and Quality of Life of Older Persons</div>
+          <div class="pub-authors">Aranco, N., Bosch, M., Stampini, M., Herrera, O. A., Goyeneche, L., Ibarrarán, P. et al.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">This IDB flagship report documents the challenges of population aging across LAC, examining gaps in pension coverage, health care, and social services for older persons, and proposing integrated policy responses to ensure dignity and quality of life in old age.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/aging-latin-america-and-caribbean-social-protection-and-quality-life-older-persons" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:520ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2018</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
-          <div class="pub-title">Educación Financiera y Previsional a través del Taller "Ahorra desde Ahora": Evidencia de una Evaluación de Impacto en Chile</div>
-          <div class="pub-authors">Bosch, M., Caballero, G., Cofré, F., González, S., Keller, L. &amp; Silva Porto, M. T.</div>
-          
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/idb/brikps/9724.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:560ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2018</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
-          <div class="pub-title">Labor Market Impacts of Non-Contributory Pensions: The Case of Argentina's Moratorium</div>
-          <div class="pub-authors">Bosch, M. &amp; Guajardo, J.</div>
-          
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/idb/brikps/4094.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:600ms">
+      <div class="pub-card reveal" style="animation-delay:240ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2021</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">Saving without Barriers: Lessons from the Retirement Savings Laboratory's Pilot Projects</div>
@@ -832,7 +754,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/saving-without-barriers-lessons-retirement-savings-laboratorys-pilot-projects" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:640ms">
+      <div class="pub-card reveal" style="animation-delay:280ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2021</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">Better Pension Institutions for a Post-COVID-19 World in Latin America and the Caribbean: The Role of Pension Advisory Councils</div>
@@ -841,7 +763,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/better-pension-institutions-post-covid-19-world-latin-america-and-caribbean-role-pension-advisory" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:680ms">
+      <div class="pub-card reveal" style="animation-delay:320ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2020</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">Better Pension Institutions in Latin America and the Caribbean: The Role of Monitoring Mechanisms and Automatic Adjustment Rules</div>
@@ -850,7 +772,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/better-pension-institutions-latin-america-and-caribbean-role-monitoring-mechanisms-and-automatic" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:720ms">
+      <div class="pub-card reveal" style="animation-delay:360ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2020</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">Access to Mandatory Retirement Savings in Times of COVID-19: Public Policy Considerations</div>
@@ -859,7 +781,16 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/access-mandatory-retirement-savings-times-covid-19-public-policy-considerations" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:760ms">
+      <div class="pub-card reveal" style="animation-delay:400ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
+          <div class="pub-title">Heterogeneous Effect of a Non-Contributory Pension: Evidence from Bolivia</div>
+          <div class="pub-authors">Borrella-Mas, M. A., Bosch, M. &amp; Sartarelli, M.</div>
+          
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/ucm/doctra/2019-35.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:440ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">How to Promote Retirement Savings for Low-Income and Independent Workers: The Cases of Chile, Colombia, Mexico and Peru</div>
@@ -868,7 +799,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/how-promote-retirement-savings-low-income-and-independent-workers-cases-chile-colombia-mexico-and" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:800ms">
+      <div class="pub-card reveal" style="animation-delay:480ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">Diagnóstico del Sistema de Pensiones Mexicano y Opciones para Reformarlo</div>
@@ -877,7 +808,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/es/diagnostico-del-sistema-de-pensiones-mexicano-y-opciones-para-reformarlo" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:840ms">
+      <div class="pub-card reveal" style="animation-delay:520ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">Diagn&oacute;stico del Sistema de Pensiones Peruano y Avenidas de Reforma</div>
@@ -886,7 +817,70 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0002051" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:880ms">
+      <div class="pub-card reveal" style="animation-delay:560ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2018</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10" data-t="Book">Book</span></div>
+          <div class="pub-title">Presente y Futuro de las Pensiones en América Latina y el Caribe</div>
+          <div class="pub-authors">Bosch, M., Oliveri, M. L., Berstein, S., García-Huitrón, M. &amp; Altamirano Montoya, Á.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">A comprehensive diagnostic of LAC pension systems examining coverage, adequacy, and fiscal sustainability challenges — and the key reform options available to governments across the region as demographic pressures mount.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/es/presente-y-futuro-de-las-pensiones-en-america-latina-y-el-caribe" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:600ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2018</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
+          <div class="pub-title">Educación Financiera y Previsional a través del Taller "Ahorra desde Ahora": Evidencia de una Evaluación de Impacto en Chile</div>
+          <div class="pub-authors">Bosch, M., Caballero, G., Cofré, F., González, S., Keller, L. &amp; Silva Porto, M. T.</div>
+          
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/idb/brikps/9724.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:640ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2018</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
+          <div class="pub-title">Labor Market Impacts of Non-Contributory Pensions: The Case of Argentina's Moratorium</div>
+          <div class="pub-authors">Bosch, M. &amp; Guajardo, J.</div>
+          
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/idb/brikps/4094.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:680ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2017</span><span class="badge b-venue">Journal of Pension Economics and Finance</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">Better Pensions, Better Jobs: Status and Alternatives toward Universal Pension Coverage in Latin America and the Caribbean</div>
+          <div class="pub-authors">Melguizo, A., Bosch, M. &amp; Pages, C.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Only half of LAC workers contribute to pensions — universal coverage requires aligning pension incentives with formalization, not treating non-contributory programs as substitutes for formal employment.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/cup/jpenef/v16y2017i02p121-143_00.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:720ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2017</span><span class="badge b-venue">The Economics of Poverty Traps, NBER/Univ. of Chicago Press</span><span class="badge" style="background:#ede8f5;color:#4a2d7a" data-t="Book Chapter">Book Chapter</span></div>
+          <div class="pub-title">Can Cash Transfers Help Households Escape an Inter-Generational Poverty Trap?</div>
+          <div class="pub-authors">Araujo, M. C., Bosch, M. & Schady, N.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Ecuador's cash transfer program generated lasting improvements in children's cognitive development, suggesting targeted transfers can break inter-generational poverty traps when accompanied by early childhood investments.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0000618" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:760ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2016</span><span class="badge b-venue">Saving for Development, IDB Book</span><span class="badge" style="background:#ede8f5;color:#4a2d7a" data-t="Book Chapter">Book Chapter</span></div>
+          <div class="pub-title">Saving for the Future: Pension Systems</div>
+          <div class="pub-authors">Berstein, S. &amp; Bosch, M.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Pension systems in LAC face a dual challenge — contributory systems exclude most informal workers while non-contributory programs create fiscal pressure. Reform paths must align savings incentives with formalization.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/saving-development-how-latin-america-and-caribbean-can-save-more-and-better" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:800ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2016</span><span class="badge b-venue">Saving for Development, IDB Book</span><span class="badge" style="background:#ede8f5;color:#4a2d7a" data-t="Book Chapter">Book Chapter</span></div>
+          <div class="pub-title">Running Out of Time: The Demographics of Saving</div>
+          <div class="pub-authors">Berstein, S., Bosch, M. &amp; Oliveri, M. L.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Demographic transitions across LAC compress the window for adequate retirement savings — aging populations and late formalization mean many workers will reach retirement with insufficient contributions.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/saving-development-how-latin-america-and-caribbean-can-save-more-and-better" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:840ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2016</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">Promised and Affordable Replacement Rates in LAC Pension Systems in 2015 and 2065</div>
@@ -895,7 +889,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0009287" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:920ms">
+      <div class="pub-card reveal" style="animation-delay:880ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue"></span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
           <div class="pub-title">Diagn&oacute;stico del Sistema Previsional Colombiano y Opciones de Reforma</div>
@@ -904,13 +898,22 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://doi.org/10.18235/0000025" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
+      <div class="pub-card reveal" style="animation-delay:920ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2013</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10" data-t="Book">Book</span></div>
+          <div class="pub-title">Better Pensions, Better Jobs: Towards Universal Pension Coverage in Latin America and the Caribbean</div>
+          <div class="pub-authors">Bosch, M., Melguizo, A. &amp; Pagés, C.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Universal pension coverage requires aligning incentives for formalization — expanding non-contributory programs without tackling informality risks entrenching the very problem they aim to solve.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/better-pensions-better-jobs-towards-universal-coverage-latin-america-and-caribbean" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
       </div>
     </div>
   </div>  <div class="acc-block" id="topic-discrimination">
     <button class="acc-header" onclick="toggleAcc('ta-topic-discrimination')" aria-expanded="false">
       <span class="acc-icon">⚖</span>
       <div class="acc-title-group">
-        <span class="acc-label">Discrimination</span>
+        <span class="acc-label" data-t="Discrimination">Discrimination</span>
         <span class="acc-desc" data-t="Field experimental evidence on ethnic and racial discrimination in rental housing and second-hand consumer markets in Spain.">Field experimental evidence on ethnic and racial discrimination in rental housing and second-hand consumer markets in Spain.</span>
       </div>
       <span class="acc-count-badge">3</span>
@@ -951,7 +954,7 @@
     <button class="acc-header" onclick="toggleAcc('ta-topic-growth')" aria-expanded="false">
       <span class="acc-icon">🌎</span>
       <div class="acc-title-group">
-        <span class="acc-label">Growth &amp; Development</span>
+        <span class="acc-label" data-t="Growth &amp; Development">Growth &amp; Development</span>
         <span class="acc-desc" data-t="Trade liberalization, regional convergence, human capital, and inclusive growth policies across Latin America and beyond.">Trade liberalization, regional convergence, human capital, and inclusive growth policies across Latin America and beyond.</span>
       </div>
       <span class="acc-count-badge">10</span>
@@ -961,50 +964,14 @@
       <div class="acc-inner pub-list">
       <div class="pub-card reveal" style="animation-delay:0ms">
         <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue">Economics &amp; Human Biology</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">The Evolution of Adult Height across Spanish Regions, 1950–1980: A New Source of Data</div>
-          <div class="pub-authors">Quintana-Domeque, C., Bozzoli, C. &amp; Bosch, M.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">New regional data reveal persistent north–south height gradients across Spanish birth cohorts, reflecting longstanding regional inequalities in nutrition and living standards during early childhood.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/eee/ehbiol/v10y2012i3p264-275.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+          <div class="pub-meta"><span class="badge b-year">2025</span><span class="badge b-venue">IFS Working Paper</span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
+          <div class="pub-title">Income Inequality and the Role of the State in Latin America: An Overview</div>
+          <div class="pub-authors">Bosch, M. et al.</div>
+          
+          <div class="pub-foot"><a class="pub-lnk" href="https://ifs.org.uk/sites/default/files/2025-10/WP202549-Income-inequality-and-the-role-of-the-state-in-Latin-America-an-overview.pdf" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
       <div class="pub-card reveal" style="animation-delay:40ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2011</span><span class="badge b-venue">Social Science &amp; Medicine</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">Infant Mortality and Adult Stature in Spain</div>
-          <div class="pub-authors">Quintana-Domeque, C., Bozzoli, C. &amp; Bosch, M.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Regions with higher historical infant mortality rates produce shorter adults, confirming that early-life health conditions have lasting effects on adult stature and human capital across Spanish birth cohorts.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/eee/socmed/v72y2011i11p1893-1903.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:80ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2005</span><span class="badge b-venue">World Bank Economic Review</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">Spatial Dimensions of Trade Liberalization and Economic Convergence: Mexico 1985–2002</div>
-          <div class="pub-authors">Aroca, P., Bosch, M. &amp; Maloney, W. F.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Trade liberalization accelerated regional convergence in Mexico's border states while leaving southern regions further behind — geographic proximity to the U.S. was the key mediating factor.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/oup/wbecrv/v19y2005i3p345-378.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:120ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2004</span><span class="badge b-venue">World Bank Economic Review</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">The Distribution of Income Shocks during Crises: An Application of Quantile Analysis to Mexico, 1992–95</div>
-          <div class="pub-authors">Maloney, W. F., Cunningham, W. V. &amp; Bosch, M.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">During Mexico's 1994–95 crisis, income shocks were far more severe for low-income workers — the bottom decile suffered income losses three times larger than the top decile.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/oup/wbecrv/v18y2004i2p155-174.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:160ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2000</span><span class="badge b-venue">Estudios de Economía, 27(2), 199–224</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
-          <div class="pub-title">Crecimiento, Convergencia y Espacio en las Regiones Chilenas: 1960–1998</div>
-          <div class="pub-authors">Aroca, P. &amp; Bosch, M.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Chilean regions showed significant income convergence between 1960–1998, but spatial effects and public investment played a key role — suggesting geography-blind national policies underestimate regional heterogeneity.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/udc/esteco/v27y2000i2p199-224.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:200ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2024</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10" data-t="Book">Book</span></div>
           <div class="pub-title">Expanding Opportunities: Policies for Gender Equality and Inclusion</div>
@@ -1013,16 +980,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/expanding-opportunities-policies-gender-equality-and-inclusion" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:240ms">
-        <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10" data-t="Book">Book</span></div>
-          <div class="pub-title">Jobs for Growth</div>
-          <div class="pub-authors">Alaimo, V., Bosch, M., Kaplan, D. S., Pagés, C. &amp; Ripani, L.</div>
-          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Labor market outcomes in LAC improved significantly in the 2000s, but growth was uneven — raising productivity and reducing informality are the twin pillars needed to sustain inclusive job creation.</div>
-          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/jobs-growth" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
-        </div>
-      </div>
-      <div class="pub-card reveal" style="animation-delay:280ms">
+      <div class="pub-card reveal" style="animation-delay:80ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
           <div class="pub-title">Productivity, Misallocation, and Special Tax Regimes in the Dominican Republic</div>
@@ -1031,7 +989,7 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/idb/brikps/9823.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
-      <div class="pub-card reveal" style="animation-delay:320ms">
+      <div class="pub-card reveal" style="animation-delay:120ms">
         <div class="pub-body">
           <div class="pub-meta"><span class="badge b-year">2019</span><span class="badge b-venue">IDB Working Paper</span><span class="badge" style="background:#f2f2f2;color:#3a3a3a" data-t="Working Paper">Working Paper</span></div>
           <div class="pub-title">Special Tax Regimes in Latin America and the Caribbean: Compliance, Social Protection, and Resource Misallocation</div>
@@ -1040,13 +998,58 @@
           <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/p/idb/brikps/9511.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
+      <div class="pub-card reveal" style="animation-delay:160ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2015</span><span class="badge b-venue">IDB Publications (Books)</span><span class="badge" style="background:#f5e8d0;color:#7a4a10" data-t="Book">Book</span></div>
+          <div class="pub-title">Jobs for Growth</div>
+          <div class="pub-authors">Alaimo, V., Bosch, M., Kaplan, D. S., Pagés, C. &amp; Ripani, L.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Labor market outcomes in LAC improved significantly in the 2000s, but growth was uneven — raising productivity and reducing informality are the twin pillars needed to sustain inclusive job creation.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://publications.iadb.org/en/jobs-growth" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:200ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2012</span><span class="badge b-venue">Economics &amp; Human Biology</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">The Evolution of Adult Height across Spanish Regions, 1950–1980: A New Source of Data</div>
+          <div class="pub-authors">Quintana-Domeque, C., Bozzoli, C. &amp; Bosch, M.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">New regional data reveal persistent north–south height gradients across Spanish birth cohorts, reflecting longstanding regional inequalities in nutrition and living standards during early childhood.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/eee/ehbiol/v10y2012i3p264-275.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:240ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2011</span><span class="badge b-venue">Social Science &amp; Medicine</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">Infant Mortality and Adult Stature in Spain</div>
+          <div class="pub-authors">Quintana-Domeque, C., Bozzoli, C. &amp; Bosch, M.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Regions with higher historical infant mortality rates produce shorter adults, confirming that early-life health conditions have lasting effects on adult stature and human capital across Spanish birth cohorts.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/eee/socmed/v72y2011i11p1893-1903.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:280ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2005</span><span class="badge b-venue">World Bank Economic Review</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">Spatial Dimensions of Trade Liberalization and Economic Convergence: Mexico 1985–2002</div>
+          <div class="pub-authors">Aroca, P., Bosch, M. &amp; Maloney, W. F.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Trade liberalization accelerated regional convergence in Mexico's border states while leaving southern regions further behind — geographic proximity to the U.S. was the key mediating factor.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/oup/wbecrv/v19y2005i3p345-378.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
+      <div class="pub-card reveal" style="animation-delay:320ms">
+        <div class="pub-body">
+          <div class="pub-meta"><span class="badge b-year">2004</span><span class="badge b-venue">World Bank Economic Review</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">The Distribution of Income Shocks during Crises: An Application of Quantile Analysis to Mexico, 1992–95</div>
+          <div class="pub-authors">Maloney, W. F., Cunningham, W. V. &amp; Bosch, M.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">During Mexico's 1994–95 crisis, income shocks were far more severe for low-income workers — the bottom decile suffered income losses three times larger than the top decile.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/oup/wbecrv/v18y2004i2p155-174.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+        </div>
+      </div>
       <div class="pub-card reveal" style="animation-delay:360ms">
         <div class="pub-body">
-          <div class="pub-meta"><span class="badge b-year">2025</span><span class="badge b-venue">IFS Working Paper</span><span class="badge" style="background:#e8f0f4;color:#004e70" data-t="Policy Work">Policy Work</span></div>
-          <div class="pub-title">Income Inequality and the Role of the State in Latin America: An Overview</div>
-          <div class="pub-authors">Bosch, M. et al.</div>
-          
-          <div class="pub-foot"><a class="pub-lnk" href="https://ifs.org.uk/sites/default/files/2025-10/WP202549-Income-inequality-and-the-role-of-the-state-in-Latin-America-an-overview.pdf" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
+          <div class="pub-meta"><span class="badge b-year">2000</span><span class="badge b-venue">Estudios de Economía, 27(2), 199–224</span><span class="badge" style="background:#e8f4ea;color:#2d6a4f" data-t="Journal">Journal</span></div>
+          <div class="pub-title">Crecimiento, Convergencia y Espacio en las Regiones Chilenas: 1960–1998</div>
+          <div class="pub-authors">Aroca, P. &amp; Bosch, M.</div>
+          <div class="find-lbl" data-t="Key Finding">Key Finding</div><div class="find-txt">Chilean regions showed significant income convergence between 1960–1998, but spatial effects and public investment played a key role — suggesting geography-blind national policies underestimate regional heterogeneity.</div>
+          <div class="pub-foot"><a class="pub-lnk" href="https://ideas.repec.org/a/udc/esteco/v27y2000i2p199-224.html" target="_blank" rel="noopener"><span data-t="View →">View &#8594;</span></a></div>
         </div>
       </div>
       </div>
@@ -1090,24 +1093,82 @@ function switchBio(type) {
 </script>
 
 <script>
+// ── Language system ────────────────────────────────────────────────────────
 var TRANSLATIONS = {
-  es: {"Explore my work": "Explorar mi trabajo", "By Topic": "Por tema", "By Type": "Por tipo", "By Country": "Por país", "Most Cited": "Más citados", "Profiles": "Perfiles", "Academic": "Académico", "Policy": "Política", "Economics Principal Advisor · IDB Vice Presidency of Sectors": "Asesor Principal de Economía · VPS, Banco Interamericano de Desarrollo", "Inter-American Development Bank": "Banco Interamericano de Desarrollo", "All Analytical Work": "Todo el trabajo analítico", "Research Coverage": "Cobertura de investigación", "Academic Profiles": "Perfiles académicos", "Countries where research was conducted, policies informed, or advisory work carried out": "Países donde se realizó investigación, se informaron políticas o se realizó trabajo de asesoría", "Ranked by Google Scholar citations — 5,248 total citations": "Clasificados por citas de Google Scholar — 5.248 citas totales", "research · citations · networks": "investigación · citas · redes", "total publications — click any category to expand": "publicaciones en total — haga clic para expandir", "Countries & regions — click to expand": "Países y regiones — haga clic para expandir", "Click a country on the map or a card below": "Haga clic en un país del mapa o en una tarjeta", "Publications per country": "Publicaciones por país", "Labor Market Dynamics": "Dinámica del Mercado Laboral", "Labor Market Policies": "Políticas del Mercado Laboral", "Pensions & Social Protection": "Pensiones y Protección Social", "Discrimination": "Discriminación", "Growth & Development": "Crecimiento y Desarrollo", "How workers and firms move between formal and informal employment — the mechanics of job creation, destruction, and labor market transitions in developing economies.": "Cómo trabajadores y empresas se desplazan entre el empleo formal e informal — la mecánica de la creación y destrucción de empleo y las transiciones en el mercado laboral de economías en desarrollo.", "The effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.": "Los efectos de los salarios mínimos, los seguros de desempleo, los programas de bienestar y las políticas de cumplimiento de la seguridad social sobre el empleo, la formalidad y la desigualdad.", "Pension system design, coverage gaps, retirement savings behavior, and reform options for contributory and non-contributory systems across Latin America.": "Diseño de sistemas de pensiones, brechas de cobertura, comportamiento del ahorro para el retiro y opciones de reforma para sistemas contributivos y no contributivos en América Latina.", "Field experimental evidence on ethnic and racial discrimination in rental housing and second-hand consumer markets in Spain.": "Evidencia experimental de campo sobre discriminación étnica y racial en el mercado de vivienda en alquiler y mercados de consumo de segunda mano en España.", "Trade liberalization, regional convergence, human capital, and inclusive growth policies across Latin America and beyond.": "Liberalización comercial, convergencia regional, capital humano y políticas de crecimiento inclusivo en América Latina y más allá.", "Journal": "Revista científica", "Book": "Libro", "Book Chapter": "Capítulo de libro", "Working Paper": "Documento de trabajo", "Policy Work": "Trabajo de política", "Journal Article": "Artículo de revista", "Key Finding": "Hallazgo clave", "View →": "Ver →", "View &#8594;": "Ver &#8594;", "rank": "rango", "citations": "citas", "Countries": "Países", "Primary region": "Región principal", "Years of research": "Años de investigación", "LAC-wide · not on map": "Toda la región · no en el mapa", "publications": "publicaciones", "publication": "publicación", "pubs": "pub.", "pub": "pub.", "Google Scholar": "Google Scholar", "Citations, h-index & metrics": "Citas, índice h y métricas", "IDEAS / RePEC": "IDEAS / RePEC", "Economics research database": "Base de datos de economía", "EconPapers / RePEC": "EconPapers / RePEC", "Working papers & articles": "Documentos de trabajo y artículos", "LinkedIn": "LinkedIn", "Professional network": "Red profesional", "ResearchGate": "ResearchGate", "Research network & papers": "Red de investigación y artículos", "Regional Work (LAC)": "Trabajo regional (ALC)"},
-  fr: {"Explore my work": "Explorer mon travail", "By Topic": "Par thème", "By Type": "Par type", "By Country": "Par pays", "Most Cited": "Plus cités", "Profiles": "Profils", "Academic": "Académique", "Policy": "Politique", "Economics Principal Advisor · IDB Vice Presidency of Sectors": "Conseiller Principal en Économie · VPS, Banque Interaméricaine de Développement", "Inter-American Development Bank": "Banque Interaméricaine de Développement", "All Analytical Work": "Tout le travail analytique", "Research Coverage": "Couverture de recherche", "Academic Profiles": "Profils académiques", "total publications — click any category to expand": "publications au total — cliquez pour développer", "Countries & regions — click to expand": "Pays et régions — cliquez pour développer", "Click a country on the map or a card below": "Cliquez sur un pays sur la carte ou sur une carte ci-dessous", "Publications per country": "Publications par pays", "research · citations · networks": "recherche · citations · réseaux", "Labor Market Dynamics": "Dynamique du marché du travail", "Labor Market Policies": "Politiques du marché du travail", "Pensions & Social Protection": "Retraites et protection sociale", "Discrimination": "Discrimination", "Growth & Development": "Croissance et développement", "How workers and firms move between formal and informal employment — the mechanics of job creation, destruction, and labor market transitions in developing economies.": "Comment les travailleurs et les entreprises se déplacent entre l'emploi formel et informel — la mécanique de la création et destruction d'emplois et les transitions du marché du travail dans les économies en développement.", "The effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.": "Les effets des salaires minimums, des allocations chômage, des programmes sociaux et des politiques de conformité à la sécurité sociale sur l'emploi, la formalité et les inégalités.", "Pension system design, coverage gaps, retirement savings behavior, and reform options for contributory and non-contributory systems across Latin America.": "Conception des systèmes de retraite, lacunes de couverture, comportement d'épargne-retraite et options de réforme pour les systèmes contributifs et non contributifs en Amérique latine.", "Field experimental evidence on ethnic and racial discrimination in rental housing and second-hand consumer markets in Spain.": "Preuves expérimentales sur le terrain sur la discrimination ethnique et raciale dans le marché locatif et les marchés de consommation de seconde main en Espagne.", "Trade liberalization, regional convergence, human capital, and inclusive growth policies across Latin America and beyond.": "Libéralisation commerciale, convergence régionale, capital humain et politiques de croissance inclusive en Amérique latine et au-delà.", "Journal": "Revue scientifique", "Book": "Livre", "Book Chapter": "Chapitre de livre", "Working Paper": "Document de travail", "Policy Work": "Travail politique", "Journal Article": "Article de revue", "Key Finding": "Résultat clé", "View →": "Voir →", "View &#8594;": "Voir &#8594;", "rank": "rang", "citations": "citations", "Countries": "Pays", "Primary region": "Région principale", "Years of research": "Années de recherche", "LAC-wide · not on map": "Toute la région · pas sur la carte", "publications": "publications", "publication": "publication", "Regional Work (LAC)": "Travaux régionaux (ALC)", "Citations, h-index & metrics": "Citations, indice h et métriques", "Economics research database": "Base de données d'économie", "Working papers & articles": "Documents de travail et articles", "Professional network": "Réseau professionnel", "Research network & papers": "Réseau de recherche et articles"}
+  "Explore my work": "Explorar mi trabajo",
+  "By Topic": "Por tema",
+  "By Type": "Por tipo",
+  "By Country": "Por país",
+  "Most Cited": "Más citados",
+  "Profiles": "Perfiles",
+  "Media": "Medios",
+  "Work in Progress": "Trabajo en Progreso",
+  "Academic": "Académico",
+  "Policy": "Política",
+  "Economics Principal Advisor · IDB Vice Presidency of Sectors": "Asesor Principal de Economía · VPS, Banco Interamericano de Desarrollo",
+  "Inter-American Development Bank": "Banco Interamericano de Desarrollo",
+  "All Analytical Work": "Todo el trabajo analítico",
+  "Research Coverage": "Cobertura de investigación",
+  "Academic Profiles": "Perfiles académicos",
+  "Countries where research was conducted, policies informed, or advisory work carried out": "Países donde se realizó investigación, se informaron políticas o se realizó trabajo de asesoría",
+  "Ranked by Google Scholar citations — 5,248 total citations": "Clasificados por citas de Google Scholar — 5.248 citas totales",
+  "research · citations · networks": "investigación · citas · redes",
+  "total publications — click any category to expand": "publicaciones en total — haga clic para expandir",
+  "Countries & regions — click to expand": "Países y regiones — haga clic para expandir",
+  "Click a country on the map or a card below": "Haga clic en un país del mapa o en una tarjeta",
+  "Publications per country": "Publicaciones por país",
+  "Labor Markets in High-Informality Countries": "Mercados Laborales en Países con Alta Informalidad",
+  "Labor Market Dynamics": "Dinámica del Mercado Laboral",
+  "Labor Market Policies": "Políticas del Mercado Laboral",
+  "Pensions & Social Protection": "Pensiones y Protección Social",
+  "Discrimination": "Discriminación",
+  "Growth & Development": "Crecimiento y Desarrollo",
+  "How workers and firms move between formal and informal employment, and the effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.": "Cómo trabajadores y empresas se desplazan entre el empleo formal e informal, y los efectos de los salarios mínimos, los seguros de desempleo, los programas de bienestar y las políticas de seguridad social sobre el empleo, la formalidad y la desigualdad.",
+  "How workers and firms move between formal and informal employment — the mechanics of job creation, destruction, and labor market transitions in developing economies.": "Cómo trabajadores y empresas se desplazan entre el empleo formal e informal — la mecánica de la creación y destrucción de empleo y las transiciones en el mercado laboral de economías en desarrollo.",
+  "The effects of minimum wages, unemployment benefits, welfare programs, and social security compliance policies on employment, formality, and inequality.": "Los efectos de los salarios mínimos, los seguros de desempleo, los programas de bienestar y las políticas de cumplimiento de la seguridad social sobre el empleo, la formalidad y la desigualdad.",
+  "Pension system design, coverage gaps, retirement savings behavior, and reform options for contributory and non-contributory systems across Latin America.": "Diseño de sistemas de pensiones, brechas de cobertura, comportamiento del ahorro para el retiro y opciones de reforma para sistemas contributivos y no contributivos en América Latina.",
+  "Field experimental evidence on ethnic and racial discrimination in rental housing and second-hand consumer markets in Spain.": "Evidencia experimental de campo sobre discriminación étnica y racial en el mercado de vivienda en alquiler y mercados de consumo de segunda mano en España.",
+  "Trade liberalization, regional convergence, human capital, and inclusive growth policies across Latin America and beyond.": "Liberalización comercial, convergencia regional, capital humano y políticas de crecimiento inclusivo en América Latina y más allá.",
+  "Journal": "Revista científica",
+  "Book": "Libro",
+  "Book Chapter": "Capítulo de libro",
+  "Working Paper": "Documento de trabajo",
+  "Policy Work": "Trabajo de política",
+  "Journal Article": "Artículo de revista",
+  "Key Finding": "Hallazgo clave",
+  "View →": "Ver →",
+  "View &#8594;": "Ver &#8594;",
+  "rank": "rango",
+  "citations": "citas",
+  "Countries": "Países",
+  "Primary region": "Región principal",
+  "Years of research": "Años de investigación",
+  "LAC-wide · not on map": "Toda la región · no en el mapa",
+  "publications": "publicaciones",
+  "publication": "publicación",
+  "pubs": "pub.",
+  "pub": "pub.",
+  "Google Scholar": "Google Scholar",
+  "Citations, h-index & metrics": "Citas, índice h y métricas",
+  "IDEAS / RePEC": "IDEAS / RePEC",
+  "Economics research database": "Base de datos de economía",
+  "EconPapers / RePEC": "EconPapers / RePEC",
+  "Working papers & articles": "Documentos de trabajo y artículos",
+  "LinkedIn": "LinkedIn",
+  "Professional network": "Red profesional",
+  "ResearchGate": "ResearchGate",
+  "Research network & papers": "Red de investigación y artículos",
+  "Regional Work (LAC)": "Trabajo regional (ALC)",
+  "My research spans three interconnected areas. First, <strong>labor markets in developing economies</strong> — understanding why informality persists, how workers transition between formal and informal jobs, and how policies such as minimum wages, unemployment insurance, and social security compliance shape those transitions. Second, <strong>pension systems and social protection</strong> — diagnosing coverage gaps, studying behavioral barriers to retirement savings, and evaluating the fiscal and redistributive impacts of contributory and non-contributory pension reforms across Latin America and the Caribbean. Third, <strong>growth, inequality, and discrimination</strong> — including field experiments on ethnic discrimination in housing markets and evidence on how trade liberalization and cash transfers affect long-run development outcomes.": "Mi investigación abarca tres áreas interconectadas. Primero, los <strong>mercados laborales en economías en desarrollo</strong> — entendiendo por qué persiste la informalidad, cómo los trabajadores transitan entre empleos formales e informales, y cómo políticas como el salario mínimo, el seguro de desempleo y el cumplimiento de la seguridad social moldean esas transiciones. Segundo, los <strong>sistemas de pensiones y protección social</strong> — diagnosticando brechas de cobertura, estudiando barreras conductuales al ahorro para el retiro y evaluando los impactos fiscales y redistributivos de las reformas previsionales en América Latina y el Caribe. Tercero, <strong>crecimiento, desigualdad y discriminación</strong> — incluyendo experimentos de campo sobre discriminación étnica en mercados de vivienda y evidencia sobre cómo la liberalización comercial y las transferencias monetarias afectan los resultados del desarrollo a largo plazo.",
+  "These are the works that academics and policymakers have found most relevant — ranked by Google Scholar citations.": "Estos son los trabajos que académicos y responsables de políticas han encontrado más relevantes — clasificados por citas en Google Scholar.",
+  "Work covered by <strong>BBC Mundo</strong> (×3), <strong>El Economista</strong> (Mexico &amp; EFE wire), <strong>RPP Noticias</strong> (Peru, ×2), <strong>Agencia Senado</strong> (Brazilian Senate), <strong>La República</strong> (Colombia), <strong>Pension Policy International</strong>, <strong>El Tiempo</strong> (Colombia), <strong>Diario Libre</strong> (Dominican Republic), and the <strong>IDB official press</strong>.": "Trabajo cubierto por <strong>BBC Mundo</strong> (×3), <strong>El Economista</strong> (México y agencia EFE), <strong>RPP Noticias</strong> (Perú, ×2), <strong>Agencia Senado</strong> (Senado de Brasil), <strong>La República</strong> (Colombia), <strong>Pension Policy International</strong>, <strong>El Tiempo</strong> (Colombia), <strong>Diario Libre</strong> (República Dominicana) y la <strong>prensa oficial del BID</strong>.",
+  "These are working papers and policy reports from the last three years — research that is ongoing, under review, or recently completed. Findings should be treated as preliminary.": "Estos son documentos de trabajo e informes de política de los últimos tres años — investigación en curso, en revisión o recientemente concluida. Los resultados deben considerarse preliminares.",
+  "Countries where empirical research has been conducted, policies informed, or advisory work carried out. Click any country on the map or card to see the papers.": "Países donde se ha realizado investigación empírica, se han informado políticas o se ha llevado a cabo trabajo de asesoría. Haga clic en cualquier país del mapa o tarjeta para ver los artículos."
 };
 
-var BIOS = {
-  en: {
-    academic: "",
-    policy:   ""
-  },
-  es: {
-    academic: "Soy Asesor Principal en la Vicepresidencia de Sectores del BID, donde coordino el programa de conocimiento. Mi investigación se centra en los mercados laborales, la informalidad y los sistemas de pensiones en países en desarrollo. He publicado en el <em>American Economic Journal: Applied Economics</em>, <em>American Economic Journal: Economic Policy</em>, <em>Journal of Development Economics</em>, <em>European Economic Review</em>, <em>Journal of Human Resources</em> y <em>Labour Economics</em>, entre otras revistas. Doctorado en Economía por la London School of Economics.",
-    policy:   "Durante 15 años he producido la base de evidencia que los gobiernos de América Latina y el Caribe utilizan para reformar los sistemas de pensiones y los mercados laborales. Mi investigación ha orientado debates de reforma pensional y de mercado laboral en México, Colombia, Perú, Chile, El Salvador y otros países de la región, e informado asesorías del BID al más alto nivel. Antes de unirme al BID en 2011, fui consultor del Banco Mundial y profesor en la Universidad de Alicante. Lidero la agenda de conocimiento de la mayor vicepresidencia operativa del BID."
-  },
-  fr: {
-    academic: "Je suis Conseiller Principal à la Vice-Présidence des Secteurs de la BID, où je coordonne le programme de connaissances. Mes recherches portent sur les marchés du travail, l'informalité et les systèmes de retraite dans les pays en développement. J'ai publié dans l'<em>American Economic Journal: Applied Economics</em>, l'<em>American Economic Journal: Economic Policy</em>, le <em>Journal of Development Economics</em>, l'<em>European Economic Review</em>, le <em>Journal of Human Resources</em> et <em>Labour Economics</em>, entre autres. Doctorat en économie de la London School of Economics.",
-    policy:   "Depuis 15 ans, je produis la base de preuves que les gouvernements d'Amérique latine et des Caraïbes utilisent pour réformer les systèmes de retraite et les marchés du travail. Mes recherches ont orienté des débats de réforme des retraites et du marché du travail au Mexique, en Colombie, au Pérou, au Chili, au Salvador et dans d'autres pays de la région, et ont informé des engagements consultatifs de la BID au plus haut niveau. Avant de rejoindre la BID en 2011, j'ai été consultant à la Banque mondiale et professeur à l'Université d'Alicante. Je dirige l'agenda de connaissances de la plus grande vice-présidence opérationnelle de la BID."
-  }
+var BIOS_ES = {
+  academic: "He pasado 15 años produciendo evidencia que ha contribuido al debate de política sobre la reforma de pensiones y los mercados laborales en América Latina y el Caribe. Mi investigación sobre informalidad, ahorro para el retiro y protección social ha sido publicada en el <em>American Economic Journal: Applied Economics</em>, <em>AEJ: Economic Policy</em>, <em>Journal of Development Economics</em>, <em>European Economic Review</em>, <em>Journal of Human Resources</em> y <em>Labour Economics</em>, entre otras. Doctorado en Economía por la London School of Economics.",
+  policy:   "Durante 15 años he producido la base de evidencia que los gobiernos de América Latina y el Caribe utilizan para reformar los sistemas de pensiones y los mercados laborales. Mi investigación ha orientado debates de reforma pensional y de mercado laboral en México, Colombia, Perú, Chile, El Salvador y otros países de la región, e informado asesorías del BID al más alto nivel. Antes de unirme al BID en 2011, fui consultor del Banco Mundial y profesor en la Universidad de Alicante. Lidero la agenda de conocimiento de la mayor vicepresidencia operativa del BID."
 };
 
 var currentLang = localStorage.getItem('lang') || 'en';
@@ -1115,36 +1176,39 @@ var currentLang = localStorage.getItem('lang') || 'en';
 function setLang(lang) {
   currentLang = lang;
   try { localStorage.setItem('lang', lang); } catch(e) {}
-  document.documentElement.setAttribute('lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'es' ? 'es' : 'en');
+
+  // Toggle button states
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
+
+  // Translate all [data-t] elements
   document.querySelectorAll('[data-t]').forEach(function(el) {
     var key = el.getAttribute('data-t');
-    var val = lang !== 'en' && TRANSLATIONS[lang] && TRANSLATIONS[lang][key]
-               ? TRANSLATIONS[lang][key] : key;
-    el.innerHTML = val;
+    if (lang === 'es' && TRANSLATIONS[key]) {
+      el.innerHTML = TRANSLATIONS[key];
+    } else {
+      el.innerHTML = key;
+    }
   });
+
+  // Swap bios
   var bioAc = document.getElementById('bio-academic');
   var bioPo = document.getElementById('bio-policy');
-  if (bioAc) {
-    var enAc = bioAc.getAttribute('data-en') || bioAc.innerHTML;
-    if (!bioAc.getAttribute('data-en')) bioAc.setAttribute('data-en', enAc);
-    bioAc.innerHTML = lang !== 'en' && BIOS[lang] ? BIOS[lang].academic : enAc;
-  }
-  if (bioPo) {
-    var enPo = bioPo.getAttribute('data-en') || bioPo.innerHTML;
-    if (!bioPo.getAttribute('data-en')) bioPo.setAttribute('data-en', enPo);
-    bioPo.innerHTML = lang !== 'en' && BIOS[lang] ? BIOS[lang].policy : enPo;
-  }
+  if (bioAc) bioAc.innerHTML = lang === 'es' ? BIOS_ES.academic : bioAc.getAttribute('data-en');
+  if (bioPo) bioPo.innerHTML = lang === 'es' ? BIOS_ES.policy   : bioPo.getAttribute('data-en');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Store EN bio text for restoration
   var bioAc = document.getElementById('bio-academic');
   var bioPo = document.getElementById('bio-policy');
-  if (bioAc) bioAc.setAttribute('data-en', bioAc.innerHTML);
-  if (bioPo) bioPo.setAttribute('data-en', bioPo.innerHTML);
-  if (currentLang !== 'en') setLang(currentLang);
+  if (bioAc && !bioAc.getAttribute('data-en')) bioAc.setAttribute('data-en', bioAc.innerHTML);
+  if (bioPo && !bioPo.getAttribute('data-en')) bioPo.setAttribute('data-en', bioPo.innerHTML);
+
+  // Apply saved language
+  if (currentLang === 'es') setLang('es');
 });
 </script>
 </body>
