@@ -491,6 +491,28 @@
   <a class="nav-a nav-active" href="profiles.html"><span class="nav-icon">👤</span><span data-t="Profiles">Profiles</span></a>
 </nav>
 <div class="page-body">
+<section class="section" style="padding-bottom:1rem;">
+  <div class="sec-head reveal-left" style="margin-bottom:1.5rem">
+    <div class="sec-title">About</div>
+  </div>
+  <div class="reveal" style="background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1.5rem 1.8rem;max-width:780px;">
+    <div class="bio-toggle-btns" style="margin-bottom:1rem;">
+      <button class="bio-btn active" onclick="switchBio2('academic')" id="btn2-academic" data-t="Academic">Academic</button>
+      <button class="bio-btn" onclick="switchBio2('policy')" id="btn2-policy" data-t="Policy">Public Policy</button>
+    </div>
+    <p id="bio2-academic" style="font-size:.88rem;color:var(--ink);line-height:1.75;">I have spent 20 years producing evidence that has contributed to the policy debate around pension reform and labor markets in Latin America and the Caribbean. My research on informality, retirement savings, and social protection has been published in the <em>American Economic Journal: Applied Economics</em>, <em>AEJ: Economic Policy</em>, <em>Journal of Development Economics</em>, <em>European Economic Review</em>, <em>Journal of Human Resources</em>, and <em>Labour Economics</em>, among others. I hold a PhD in Economics from the London School of Economics.</p>
+    <p id="bio2-policy" style="font-size:.88rem;color:var(--ink);line-height:1.75;display:none;">I have spent 20 years working at the intersection of research and public policy on labor markets and pension systems in Latin America and the Caribbean. My research has informed pension reform debates and labor market reforms in Mexico, Colombia, Peru, Chile, El Salvador, and other countries across the region, and shaped IDB advisory engagements at the highest level. Before joining the IDB in 2011, I was a consultant at the World Bank and an assistant professor at the University of Alicante. I coordinate the knowledge agenda for the Vice Presidency of Sectors and Knowledge at the IDB.</p>
+  </div>
+</section>
+<script>
+function switchBio2(type) {
+  document.getElementById('bio2-academic').style.display = type === 'academic' ? '' : 'none';
+  document.getElementById('bio2-policy').style.display   = type === 'policy'   ? '' : 'none';
+  document.getElementById('btn2-academic').classList.toggle('active', type === 'academic');
+  document.getElementById('btn2-policy').classList.toggle('active', type === 'policy');
+}
+</script>
+
 <section class="section">
   <div class="sec-head reveal-left" style="margin-bottom:1.5rem">
     <div class="sec-title" data-t="Academic Profiles">Academic Profiles</div>
